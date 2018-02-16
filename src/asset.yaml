@@ -1,0 +1,6 @@
+id: "https://schema.coinspec.io/asset#"
+type: object
+properties:
+  name:
+    title: Name
+    type: string
