@@ -1,6 +1,52 @@
 $id: "https://schema.coinspec.io/asset#"
 type: object
+definitions:
+  file:
+    type: object
+    properties:
+      type:
+        type: string
+      data:
+        type: string
+        media:
+          binaryEncoding: base64
+    additionalProperties: false
+required:
+  - name
 properties:
   name:
     title: Name
     type: string
+  start_date:
+    title: Start Date
+    type: string
+    format: date
+  proof_type:
+    title: Proof Type
+    type: string
+  web:
+    type: string
+    format: url
+  denominations:
+    type: object
+    properties:
+      plural:
+        type: string
+      symbol:
+        type: string
+      subunits:
+        type: array
+        items:
+          type: object
+          properties:
+            unit:
+              type: number
+            name:
+              type: string
+  images:
+    type: object
+    properties:
+      logo_square:
+        $ref: '#/definitions/file'
+
+additionalProperties: false
