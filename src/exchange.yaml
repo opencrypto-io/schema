@@ -1,4 +1,4 @@
-$id: "https://schema.coinspec.io/asset#"
+$id: "https://schema.coinspec.io/exchange#"
 type: object
 properties:
   name:
