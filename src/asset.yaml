@@ -48,5 +48,8 @@ properties:
     properties:
       logo_square:
         $ref: '#/definitions/file'
+      logo_full:
+        $ref: '#/definitions/file'
+    additionalProperties: false
 
 additionalProperties: false
