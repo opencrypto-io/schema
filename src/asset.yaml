@@ -1,38 +1,15 @@
 $id: "https://schema.coinspec.io/asset#"
 type: object
-definitions:
-  webids:
-    type: object
-  file:
-    type: object
-    properties:
-      type:
-        type: string
-      data:
-        type: string
-        media:
-          binaryEncoding: base64
-    additionalProperties: false
-  links:
-    oneof:
-      - type: string
-        format: url
-      - type: array
-        items:
-          type: string
-          format: url
-  person:
-    type: object
-    properties:
-      name:
-        type: string
-      role:
-        type: string
-      webids:
-        $ref: '#/definitions/webids'
 required:
   - name
 properties:
+  symbol:
+    type: string
+  type:
+    type: string
+    enum:
+      - coin
+      - token
   name:
     title: Name
     type: string
@@ -45,6 +22,8 @@ properties:
     type: string
   web:
     $ref: '#/definitions/links'
+  mineable:
+    type: boolean
   denominations:
     type: object
     properties:
@@ -90,5 +69,34 @@ properties:
       logo_full:
         $ref: '#/definitions/file'
     additionalProperties: false
-
 additionalProperties: false
+definitions:
+  webids:
+    type: object
+  file:
+    type: object
+    properties:
+      type:
+        type: string
+      data:
+        type: string
+        media:
+          binaryEncoding: base64
+    additionalProperties: false
+  links:
+    oneof:
+      - type: string
+        format: url
+      - type: array
+        items:
+          type: string
+          format: url
+  person:
+    type: object
+    properties:
+      name:
+        type: string
+      role:
+        type: string
+      webids:
+        $ref: '#/definitions/webids'
