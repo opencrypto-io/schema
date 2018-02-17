@@ -1,19 +1,36 @@
 $id: "https://schema.coinspec.io/exchange#"
 type: object
-properties:
-  name:
-    title: Name
+definitions:
+  country:
     type: string
-  web:
-    oneOf:
+    pattern: '^(\w){2}$'
+  market_ident:
+    type: string
+  links:
+    oneof:
       - type: string
         format: url
       - type: array
         items:
           type: string
           format: url
+properties:
+  name:
+    title: Name
+    type: string
+  countries:
+    oneOf:
+      - $ref: '#/definitions/country' 
+      - type: array
+        items:
+          $ref: '#/definitions/country'
+  web:
+    $ref: '#/definitions/links'
+  api:
+    url:
+      $ref: '#/definitions/links'
   markets:
     type: array
     items:
-      type: string
+      $ref: '#/definitions/market_ident'
 additionalProperties: false

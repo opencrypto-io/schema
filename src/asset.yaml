@@ -11,6 +11,14 @@ definitions:
         media:
           binaryEncoding: base64
     additionalProperties: false
+  links:
+    oneof:
+      - type: string
+        format: url
+      - type: array
+        items:
+          type: string
+          format: url
 required:
   - name
 properties:
@@ -25,8 +33,7 @@ properties:
     title: Proof Type
     type: string
   web:
-    type: string
-    format: url
+    $ref: '#/definitions/links'
   denominations:
     type: object
     properties:
