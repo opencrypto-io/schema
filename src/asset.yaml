@@ -43,6 +43,9 @@ properties:
               type: number
             name:
               type: string
+  whitepaper:
+    type: string
+    format: url
   images:
     type: object
     properties:

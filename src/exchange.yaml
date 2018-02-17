@@ -5,9 +5,15 @@ properties:
     title: Name
     type: string
   web:
-    type: string
-    format: url
+    oneOf:
+      - type: string
+        format: url
+      - type: array
+        items:
+          type: string
+          format: url
   markets:
     type: array
     items:
       type: string
+additionalProperties: false
