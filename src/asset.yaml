@@ -54,7 +54,7 @@ properties:
   resources:
     type: object
     properties:
-      message-board:
+      message_board:
         $ref: '#/definitions/links'
       announcement:
         $ref: '#/definitions/links'
@@ -71,6 +71,53 @@ properties:
       logo_full:
         $ref: '#/definitions/file'
     additionalProperties: false
+  rt_data:
+    type: object
+    properties:
+      price:
+        type: object
+        properties:
+          usd:
+            type: number
+          btc:
+            type: number
+      prices:
+        type: array
+        items:
+          type: object
+          properties:
+            value:
+              type: number
+            bid:
+              type: number
+            ask:
+              type: number
+            base:
+              type: string
+            source:
+              type: string
+            time:
+              type: string
+      marketcap:
+        type: object
+        properties:
+          usd:
+            type: number
+          btc:
+            type: number
+      marketcaps:
+        type: array
+        items:
+          type: object
+          properties:
+            value:
+              type: number
+            base:
+              type: string
+            source:
+              type: string
+            time:
+              type: string
 additionalProperties: false
 definitions:
   webids:
@@ -86,13 +133,10 @@ definitions:
           binaryEncoding: base64
     additionalProperties: false
   links:
-    oneof:
-      - type: string
-        format: url
-      - type: array
-        items:
-          type: string
-          format: url
+    type: array
+    items:
+      type: string
+      format: url
   person:
     type: object
     properties:

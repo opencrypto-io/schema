@@ -7,11 +7,10 @@ properties:
     title: Name
     type: string
   countries:
-    oneOf:
-      - $ref: '#/definitions/country' 
-      - type: array
-        items:
-          $ref: '#/definitions/country'
+    type: array
+    items:
+      type: string
+      pattern: '^(\w){2}$'
   web:
     $ref: '#/definitions/links'
   api:
@@ -20,14 +19,9 @@ properties:
   markets:
     type: array
     items:
-      $ref: '#/definitions/market_ident'
+      type: string
 additionalProperties: false
 definitions:
-  country:
-    type: string
-    pattern: '^(\w){2}$'
-  market_ident:
-    type: string
   links:
     oneof:
       - type: string
