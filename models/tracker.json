@@ -1,5 +1,5 @@
 {
-  "$id": "https://schema.coinspec.io/tracker#",
+  "$id": "https://schema.opencrypto.io/models/tracker#",
   "type": "object",
   "required": [
     "name"

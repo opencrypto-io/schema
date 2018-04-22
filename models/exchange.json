@@ -1,5 +1,5 @@
 {
-  "$id": "https://schema.coinspec.io/exchange#",
+  "$id": "https://schema.opencrypto.io/models/exchange#",
   "type": "object",
   "properties": {
     "id": {
