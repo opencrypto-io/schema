@@ -4,11 +4,11 @@ Schemas for structured cryptocurrency-related data in [JSON Schema](http://json-
 
 ## Structure
 
-* Models
-  * **[Asset](/models/asset.json)** ([example](/examples/models/asset.json))
-  * **[Exchange](/models/exchange.json)** ([example](/examples/models/exchange.json))
-  * **[Wallet](/models/wallet.json)** ([example](/examples/models/wallet.json))
-  * **[Tracker](/models/tracker.json)** ([example](/examples/models/tracker.json))
+### Models
+* **[Asset](/models/asset.json)** ([example](/examples/models/asset.json))
+* **[Exchange](/models/exchange.json)** ([example](/examples/models/exchange.json))
+* **[Wallet](/models/wallet.json)** ([example](/examples/models/wallet.json))
+* **[Tracker](/models/tracker.json)** ([example](/examples/models/tracker.json))
 
 ## Usage
 
