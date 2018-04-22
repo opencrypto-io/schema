@@ -12,7 +12,10 @@
         <script src="https://cdn.rawgit.com/showdownjs/showdown/1.8.6/dist/showdown.min.js"></script>
         <script>
           var converter = new showdown.Converter()
-          m.request({ url: "/README.md" }).then(output => {
+          m.request({
+            url: "/README.md",
+            deserialize: value => {return value}
+          }).then(output => {
             m.render(document.body, m.trust(converter.makeHtml(output)))
           })
         </script>
