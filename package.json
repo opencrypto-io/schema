@@ -1,0 +1,26 @@
+{
+  "name": "opencrypto-schema",
+  "version": "0.1.0",
+  "description": "Schemas for structured cryptocurrency-related data",
+  "main": "index.js",
+  "directories": {
+    "example": "examples"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/opencrypto-io/schema.git"
+  },
+  "keywords": [
+    "schema",
+    "open-data"
+  ],
+  "author": "Opencrypto.io <contact@opencrypto.io>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/opencrypto-io/schema/issues"
+  },
+  "homepage": "https://github.com/opencrypto-io/schema#readme"
+}
