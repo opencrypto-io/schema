@@ -1,9 +1,0 @@
-$id: "https://schema.coinspec.io/tracker#"
-type: object
-required:
-  - name
-properties:
-  id:
-    type: string
-  name:
-    type: string
