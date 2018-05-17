@@ -1,0 +1,11 @@
+{
+  "id": "bitfinex",
+  "name": "Bitfinex",
+  "countries": [
+    "HK"
+  ],
+  "web": "https://www.bitfinex.com/",
+  "markets": [
+    "ethusd"
+  ]
+}

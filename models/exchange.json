@@ -1,6 +1,9 @@
 {
   "$id": "https://schema.opencrypto.io/models/exchange#",
   "type": "object",
+  "required": [
+    "name"
+  ],
   "properties": {
     "id": {
       "type": "string"
@@ -31,7 +34,6 @@
       }
     }
   },
-  "additionalProperties": false,
   "definitions": {
     "links": {
       "oneof": [

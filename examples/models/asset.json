@@ -1,4 +1,10 @@
 {
   "name": "Bitcoin",
-  "symbol": "BTC"
+  "symbol": "BTC",
+  "networks": [
+    {
+      "id": "main",
+      "type": "main"
+    }
+  ]
 }

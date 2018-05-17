@@ -2,6 +2,9 @@
   "$id": "https://schema.opencrypto.io/models/wallet#",
   "type": "object",
   "properties": {
+    "id": {
+      "type": "string"
+    },
     "name": {
       "title": "Name",
       "type": "string"
