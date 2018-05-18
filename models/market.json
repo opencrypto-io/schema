@@ -1,6 +1,8 @@
 {
   "$schema": "http://json-schema.org/draft-06/schema#",
   "$id": "https://schema.opencrypto.io/models/market#",
+  "title": "Market",
+  "description": "Specific pairing (market) on exchange.",
   "type": "object",
   "required": [
   ],

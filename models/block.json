@@ -1,6 +1,8 @@
 {
   "$schema": "http://json-schema.org/draft-06/schema#",
   "$id": "https://schema.opencrypto.io/models/block#",
+  "title": "Block",
+  "description": "Block produced by network (blockchain) of digital asset.",
   "type": "object",
   "properties": {
     "id": {

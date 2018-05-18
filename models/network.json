@@ -1,0 +1,17 @@
+{
+  "$schema": "http://json-schema.org/draft-06/schema#",
+  "$id": "https://schema.opencrypto.io/models/network#",
+  "title": "Network",
+  "description": "Network (blockchain) of digital asset.",
+  "type": "object",
+  "properties": {
+    "id": {
+      "title": "Network ID",
+      "type": "string"
+    },
+    "name": {
+      "title": "Name of network",
+      "type": "string"
+    }
+  }
+}

@@ -1,6 +1,8 @@
 {
   "$schema": "http://json-schema.org/draft-06/schema#",
   "$id": "https://schema.opencrypto.io/models/asset#",
+  "title": "Asset",
+  "description": "Digital assets or coins & tokens.",
   "type": "object",
   "required": [
     "name"
