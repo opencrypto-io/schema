@@ -6,11 +6,24 @@
   "type": "object",
   "properties": {
     "id": {
-      "title": "Network ID",
+      "title": "ID",
       "type": "string"
     },
     "name": {
-      "title": "Name of network",
+      "title": "Name",
+      "type": "string"
+    },
+    "type": {
+      "title": "Type",
+      "description": "Type of Network",
+      "type": "string",
+      "enum": [
+        "main",
+        "test"
+      ]
+    },
+    "proof_type": {
+      "title": "Proof Type",
       "type": "string"
     }
   }

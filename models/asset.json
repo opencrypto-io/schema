@@ -2,37 +2,37 @@
   "$schema": "http://json-schema.org/draft-06/schema#",
   "$id": "https://schema.opencrypto.io/models/asset#",
   "title": "Asset",
-  "description": "Digital assets or coins & tokens.",
+  "description": "Cryptocurrency - digital asset (coin or token).",
   "type": "object",
   "required": [
     "name"
   ],
   "properties": {
     "id": {
+      "title": "ID",
       "type": "string"
     },
     "symbol": {
+      "title": "Symbol",
+      "type": "string"
+    },
+    "name": {
+      "title": "Name",
       "type": "string"
     },
     "type": {
+      "title": "Type",
       "type": "string",
       "enum": [
         "coin",
         "token"
       ]
     },
-    "name": {
-      "title": "Name",
-      "type": "string"
-    },
     "start_date": {
       "title": "Start Date",
+      "description": "The day when the project began to be first published.",
       "type": "string",
       "format": "date"
-    },
-    "proof_type": {
-      "title": "Proof Type",
-      "type": "string"
     },
     "web": {
       "$ref": "#/definitions/links"
@@ -109,22 +109,7 @@
       }
     },
     "networks": {
-      "type": "array",
-      "items": {
-        "type": "object",
-        "properties": {
-          "id": {
-            "type": "string"
-          },
-          "type": {
-            "type": "string",
-            "enum": [
-              "main",
-              "test"
-            ]
-          }
-        }
-      }
+      "$ref": "https://schema.opencrypto.io/models/network#"
     },
     "rt_data": {
       "type": "object",

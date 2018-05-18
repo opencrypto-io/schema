@@ -19,10 +19,12 @@ function walk(root, example = false) {
           let schemaId = null
 
           if (example) {
-            let s = Object.assign({}, CryptoSchema[ci][ki])
-            s.additionalProperties = false
-            env.addSchema(ki, s)
-            schemaId = ki
+            Object.keys(CryptoSchema[ci]).forEach(ccp => {
+              let s = Object.assign({}, CryptoSchema[ci][ccp])
+              s.additionalProperties = false
+              env.addSchema(s.$id, s)
+            })
+            schemaId = CryptoSchema[ci][ki].$id
 
           } else {
             env.addSchema(coreSchemaId, coreSchema)
