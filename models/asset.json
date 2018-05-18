@@ -10,18 +10,22 @@
   "properties": {
     "id": {
       "title": "ID",
+      "description": "Unique identifier.",
       "type": "string"
     },
     "symbol": {
       "title": "Symbol",
+      "description": "Three or four letter symbol.",
       "type": "string"
     },
     "name": {
       "title": "Name",
+      "description": "Official name.",
       "type": "string"
     },
     "type": {
       "title": "Type",
+      "description": "Type of asset, eq. coin or token.",
       "type": "string",
       "enum": [
         "coin",
@@ -35,12 +39,13 @@
       "format": "date"
     },
     "web": {
+      "title": "Web links",
+      "description": "Webpages links.",
       "$ref": "#/definitions/links"
     },
-    "mineable": {
-      "type": "boolean"
-    },
     "denominations": {
+      "title": "Denominations",
+      "description": "Units and subunits of the asset amount.",
       "type": "object",
       "properties": {
         "plural": {

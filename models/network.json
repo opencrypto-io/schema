@@ -25,6 +25,9 @@
     "proof_type": {
       "title": "Proof Type",
       "type": "string"
+    },
+    "mineable": {
+      "type": "boolean"
     }
   }
 }
