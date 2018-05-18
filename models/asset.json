@@ -114,7 +114,10 @@
       }
     },
     "networks": {
-      "$ref": "https://schema.opencrypto.io/models/network#"
+      "type": "array",
+      "items": {
+        "$ref": "https://schema.opencrypto.io/models/network#"
+      }
     },
     "rt_data": {
       "type": "object",
@@ -222,7 +225,14 @@
           "type": "string"
         },
         "role": {
-          "type": "string"
+          "type": "array",
+          "items": {
+            "type": "string",
+            "enum": [
+              "founder",
+              "leader"
+            ]
+          }
         },
         "webids": {
           "$ref": "#/definitions/webids"

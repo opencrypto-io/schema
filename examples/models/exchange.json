@@ -6,6 +6,8 @@
   ],
   "web": "https://www.bitfinex.com/",
   "markets": [
-    "ethusd"
+    {
+      "id": "bitfinex-eth-usd"
+    }
   ]
 }

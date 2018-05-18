@@ -32,7 +32,7 @@
     "markets": {
       "type": "array",
       "items": {
-        "type": "string"
+        "$ref": "https://schema.opencrypto.io/models/market#"
       }
     }
   },

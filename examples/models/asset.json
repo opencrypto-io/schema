@@ -1,10 +1,42 @@
 {
-  "name": "Bitcoin",
+  "id": "bitcoin",
   "symbol": "BTC",
+  "name": "Bitcoin",
+  "type": "coin",
+  "start_date": "2008-08-18",
+  "web": [
+    "https://bitcoin.org/"
+  ],
+  "denominations": {
+    "plural": "bitcoins",
+    "symbol": "₿",
+    "subunits": [
+      {
+        "unit": 1e-3,
+        "name": "millibitcoin"
+      },
+      {
+        "unit": 1e-8,
+        "name": "satoshi"
+      }
+    ]
+  },
+  "team": [
+    {
+      "name": "Satoshi Nakamoto",
+      "role": [ "founder" ]
+    }
+  ],
   "networks": [
     {
       "id": "main",
-      "type": "main"
+      "type": "main",
+      "name": "mainnet"
+    },
+    {
+      "id": "test",
+      "type": "test",
+      "name": "testnet"
     }
   ]
 }
