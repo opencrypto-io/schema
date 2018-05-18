@@ -27,6 +27,17 @@
       "role": [ "founder" ]
     }
   ],
+  "history": [
+    {
+      "date": "2008-08-18",
+      "title": "Domain 'Bitcoin.org' registered"
+    },
+    {
+      "date": "2008-10-31",
+      "title": "Satoshi Nakamoto published Bitcoin whitepaper",
+      "description": "A link to a paper authored by Satoshi Nakamoto titled 'Bitcoin: A Peer-to-Peer Electronic Cash System' was posted to a cryptography mailing list."
+    }
+  ],
   "networks": [
     {
       "id": "main",

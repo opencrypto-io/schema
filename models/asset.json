@@ -119,6 +119,24 @@
         "$ref": "https://schema.opencrypto.io/models/network#"
       }
     },
+    "history": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "date": {
+            "type": "string",
+            "format": "date"
+          },
+          "title": {
+            "type": "string"
+          },
+          "description": {
+            "type": "string"
+          }
+        }
+      }
+    },
     "rt_data": {
       "type": "object",
       "properties": {
