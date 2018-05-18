@@ -1,0 +1,71 @@
+{
+  "$schema": "http://json-schema.org/draft-06/schema#",
+  "$id": "https://schema.opencrypto.io/models/core#",
+  "title": "Core",
+  "definitions": {
+    "webids": {
+      "type": "object"
+    },
+    "links": {
+      "oneof": [
+        {
+          "type": "string",
+          "format": "url"
+        },
+        {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "format": "url"
+          }
+        }
+      ]
+    },
+    "person": {
+      "type": "object",
+      "properties": {
+        "name": {
+          "type": "string"
+        },
+        "role": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "enum": [
+              "founder",
+              "leader"
+            ]
+          }
+        },
+        "webids": {
+          "$ref": "#/definitions/webids"
+        }
+      }
+    },
+    "file": {
+      "type": "object",
+      "properties": {
+        "type": {
+          "type": "string"
+        },
+        "data": {
+          "type": "string",
+          "media": {
+            "binaryEncoding": "base64"
+          }
+        }
+      }
+    },
+    "images": {
+      "type": "object",
+      "properties": {
+        "logo_square": {
+          "$ref": "#/definitions/file"
+        },
+        "logo_full": {
+          "$ref": "#/definitions/file"
+        }
+      }
+    }
+  }
+}

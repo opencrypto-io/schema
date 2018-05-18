@@ -22,35 +22,21 @@
       }
     },
     "web": {
-      "$ref": "#/definitions/links"
+      "$ref": "https://schema.opencrypto.io/models/core#/definitions/links"
     },
     "api": {
       "url": {
-        "$ref": "#/definitions/links"
+        "$ref": "https://schema.opencrypto.io/models/core#/definitions/links"
       }
+    },
+    "images": {
+      "$ref": "https://schema.opencrypto.io/models/core#/definitions/images"
     },
     "markets": {
       "type": "array",
       "items": {
         "$ref": "https://schema.opencrypto.io/models/market#"
       }
-    }
-  },
-  "definitions": {
-    "links": {
-      "oneof": [
-        {
-          "type": "string",
-          "format": "url"
-        },
-        {
-          "type": "array",
-          "items": {
-            "type": "string",
-            "format": "url"
-          }
-        }
-      ]
     }
   }
 }
