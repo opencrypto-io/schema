@@ -4,7 +4,12 @@
   "title": "Core",
   "definitions": {
     "webids": {
-      "type": "object"
+      "type": "object",
+      "patternProperties:": {
+        "[a-z0-9-]+(:[a-z0-9])?$": {
+          "type": "string"
+        }
+      }
     },
     "links": {
       "oneof": [
@@ -65,6 +70,87 @@
         "logo_full": {
           "$ref": "#/definitions/file"
         }
+      }
+    },
+    "team": {
+      "type": "array",
+      "items": {
+        "$ref": "#/definitions/person"
+      }
+    },
+    "whitepaper": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "title": {
+            "type": "string"
+          },
+          "url": {
+            "type": "string",
+            "format": "url"
+          }
+        }
+      }
+    },
+    "history": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "date": {
+            "type": "string",
+            "format": "date"
+          },
+          "title": {
+            "type": "string"
+          },
+          "description": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "price": {
+      "type": "string",
+      "pattern": "^[0-9-\\.]+ [A-Z0-9]{2,4}$"
+    },
+    "resources": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "title": {
+            "type": "string"
+          },
+          "url": {
+            "type": "string",
+            "format": "url"
+          }
+        }
+      }
+    },
+    "contacts": {
+      "type": "object",
+      "patternProperties": {
+        "^email(:.+)?$": {
+          "type": "string",
+          "format": "email"
+        },
+        "^phone(:.+)?$": {
+          "type": "string",
+          "format": "phone"
+        },
+        "^location(:.+)?$": {
+          "type": "string"
+        }
+      }
+    },
+    "tags": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "pattern": "^[a-z0-9-]+(:[a-z0-9-]+)?$"
       }
     }
   }

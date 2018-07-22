@@ -26,8 +26,27 @@
       "title": "Proof Type",
       "type": "string"
     },
+    "algorithm": {
+      "type": "string"
+    },
     "mineable": {
       "type": "boolean"
+    },
+    "target_block_time": {
+      "name": "Target block time (in seconds)",
+      "type": "number"
+    },
+    "maximum_block_size": {
+      "name": "Maximum block size (in bytes)",
+      "type": "number"
+    },
+    "tools": {
+      "type": "object",
+      "properties": {
+        "explorer": {
+          "$ref": "https://schema.opencrypto.io/models/core#/definitions/links"
+        }
+      }
     }
   }
 }

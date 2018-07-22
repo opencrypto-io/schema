@@ -1,0 +1,64 @@
+{
+  "$schema": "http://json-schema.org/draft-06/schema#",
+  "$id": "https://schema.opencrypto.io/models/project#",
+  "title": "Project",
+  "description": "Cryptocurrency project",
+  "type": "object",
+  "required": [
+    "name"
+  ],
+  "properties": {
+    "id": {
+      "title": "ID",
+      "type": "string"
+    },
+    "name": {
+      "title": "Name",
+      "type": "string"
+    },
+    "start_date": {
+      "title": "Start Date",
+      "description": "The day when the project began to be first published.",
+      "type": "string",
+      "format": "date"
+    },
+    "web": {
+      "title": "Web links",
+      "description": "Webpages links.",
+      "$ref": "https://schema.opencrypto.io/models/core#/definitions/links"
+    },
+    "assets": {
+      "type": "array",
+      "items": {
+        "$ref": "https://schema.opencrypto.io/models/asset#/"
+      }
+    },
+    "team": {
+      "$ref": "https://schema.opencrypto.io/models/core#/definitions/team"
+    },
+    "contacts": {
+      "$ref": "https://schema.opencrypto.io/models/core#/definitions/contacts"
+    },
+    "whitepapers": {
+      "$ref": "https://schema.opencrypto.io/models/core#/definitions/whitepapers"
+    },
+    "history": {
+      "$ref": "https://schema.opencrypto.io/models/core#/definitions/history"
+    },
+    "images": {
+      "$ref": "https://schema.opencrypto.io/models/core#/definitions/images"
+    },
+    "webids": {
+      "$ref": "https://schema.opencrypto.io/models/core#/definitions/webids"
+    },
+    "resources": {
+      "$ref": "https://schema.opencrypto.io/models/core#/definitions/resources"
+    },
+    "partners": {
+      "$ref": "https://schema.opencrypto.io/models/core#/definitions/resources"
+    },
+    "tags": {
+      "$ref": "https://schema.opencrypto.io/models/core#/definitions/tags"
+    }
+  }
+}

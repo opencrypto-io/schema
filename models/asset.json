@@ -2,7 +2,7 @@
   "$schema": "http://json-schema.org/draft-06/schema#",
   "$id": "https://schema.opencrypto.io/models/asset#",
   "title": "Asset",
-  "description": "Cryptocurrency - digital asset (coin or token).",
+  "description": "Cryptocurrency - digital asset (blockchain or token).",
   "type": "object",
   "required": [
     "name"
@@ -25,23 +25,78 @@
     },
     "type": {
       "title": "Type",
-      "description": "Type of asset, eq. coin or token.",
+      "description": "Type of asset, eq. blockchain or token.",
       "type": "string",
       "enum": [
-        "coin",
+        "blockchain",
         "token"
       ]
     },
-    "start_date": {
-      "title": "Start Date",
-      "description": "The day when the project began to be first published.",
-      "type": "string",
-      "format": "date"
+    "token_properties": {
+      "type": "object",
+      "title": "Token properties",
+      "properties": {
+        "platform": {
+          "type": "string"
+        },
+        "contract_address": {
+          "type": "string"
+        },
+        "decimals": {
+          "type": "number"
+        }
+      }
     },
-    "web": {
-      "title": "Web links",
-      "description": "Webpages links.",
-      "$ref": "https://schema.opencrypto.io/models/core#/definitions/links"
+    "networks": {
+      "title": "Networks",
+      "type": "object",
+      "patternProperties": {
+        "^[a-z0-9-]+$": {
+          "$ref": "https://schema.opencrypto.io/models/network#/"
+        }
+      }
+    },
+    "max_supply": {
+      "type": "number"
+    },
+    "first_distribution": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "title": {
+            "type": "string"
+          },
+          "amount": {
+            "type": "number"
+          }
+        }
+      }
+    },
+    "ico_properties": {
+      "type": "object",
+      "properties": {
+        "start_date": {
+          "type": "string",
+          "format": "date"
+        },
+        "end_date": {
+          "type": "string",
+          "format": "date"
+        },
+        "total_cap": {
+          "type": "number"
+        },
+        "ico_price": {
+          "$ref": "https://schema.opencrypto.io/models/core#/definitions/price"
+        },
+        "raised": {
+          "$ref": "https://schema.opencrypto.io/models/core#/definitions/price"
+        },
+        "country": {
+          "type": "string"
+        }
+      }
     },
     "denominations": {
       "title": "Denominations",
@@ -70,64 +125,40 @@
         }
       }
     },
-    "team": {
-      "type": "array",
-      "items": {
-        "$ref": "https://schema.opencrypto.io/models/core#/definitions/person"
-      }
-    },
-    "whitepaper": {
+    "start_date": {
+      "title": "Start Date",
+      "description": "The day when the assets began to be first activated.",
       "type": "string",
-      "format": "url"
+      "format": "date"
+    },
+    "web": {
+      "title": "Web links",
+      "description": "Webpages links.",
+      "$ref": "https://schema.opencrypto.io/models/core#/definitions/links"
+    },
+    "team": {
+      "$ref": "https://schema.opencrypto.io/models/core#/definitions/team"
+    },
+    "whitepapers": {
+      "$ref": "https://schema.opencrypto.io/models/core#/definitions/whitepaper"
+    },
+    "history": {
+      "$ref": "https://schema.opencrypto.io/models/core#/definitions/history"
+    },
+    "images": {
+      "$ref": "https://schema.opencrypto.io/models/core#/definitions/images"
     },
     "webids": {
       "$ref": "https://schema.opencrypto.io/models/core#/definitions/webids"
     },
     "resources": {
-      "type": "object",
-      "properties": {
-        "message_board": {
-          "$ref": "https://schema.opencrypto.io/models/core#/definitions/links"
-        },
-        "announcement": {
-          "$ref": "https://schema.opencrypto.io/models/core#/definitions/links"
-        }
-      }
+      "$ref": "https://schema.opencrypto.io/models/core#/definitions/resources"
     },
-    "tools": {
-      "type": "object",
-      "properties": {
-        "explorer": {
-          "$ref": "https://schema.opencrypto.io/models/core#/definitions/links"
-        }
-      }
+    "partners": {
+      "$ref": "https://schema.opencrypto.io/models/core#/definitions/resources"
     },
-    "images": {
-      "$ref": "https://schema.opencrypto.io/models/core#/definitions/images"
-    },
-    "networks": {
-      "type": "array",
-      "items": {
-        "$ref": "https://schema.opencrypto.io/models/network#"
-      }
-    },
-    "history": {
-      "type": "array",
-      "items": {
-        "type": "object",
-        "properties": {
-          "date": {
-            "type": "string",
-            "format": "date"
-          },
-          "title": {
-            "type": "string"
-          },
-          "description": {
-            "type": "string"
-          }
-        }
-      }
+    "tags": {
+      "$ref": "https://schema.opencrypto.io/models/core#/definitions/tags"
     },
     "rt_data": {
       "type": "object",

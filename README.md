@@ -27,9 +27,9 @@ npm install opencrypto-schema
 
 And use it inside your script:
 ```js
-var Schema = require('opencrypto-schema')
 
 // now you can access schemas by dot notation:
+var Schema = require('opencrypto-schema')
 var assetSchema = Schema.models.asset
 
 // or you can do it more simpler:
