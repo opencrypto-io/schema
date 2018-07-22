@@ -1,4 +1,4 @@
-# Opencrypto Schema v0-draft
+# Opencrypto Schema v1
 
 Schemas for structured cryptocurrency-related data in [JSON Schema](http://json-schema.org/) standart.
 
