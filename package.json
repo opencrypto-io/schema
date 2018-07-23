@@ -7,7 +7,7 @@
     "example": "examples"
   },
   "scripts": {
-    "test": "mocha"
+    "test": "mocha && standard"
   },
   "repository": {
     "type": "git",
@@ -24,12 +24,11 @@
   },
   "homepage": "https://github.com/opencrypto-io/schema#readme",
   "devDependencies": {
-    "djv": "^2.0.0",
+    "ajv": "^6.5.2",
     "mocha": "^5.2.0",
     "pre-commit": "^1.2.2",
-    "request": "^2.86.0"
+    "request": "^2.86.0",
+    "standard": "^11.0.1"
   },
-  "dependencies": {
-    "ajv": "^6.5.2"
-  }
+  "dependencies": {}
 }
