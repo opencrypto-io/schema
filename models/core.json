@@ -78,7 +78,7 @@
         "$ref": "#/definitions/person"
       }
     },
-    "whitepaper": {
+    "whitepapers": {
       "type": "array",
       "items": {
         "type": "object",
