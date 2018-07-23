@@ -140,7 +140,7 @@
       "$ref": "https://schema.opencrypto.io/models/core#/definitions/team"
     },
     "whitepapers": {
-      "$ref": "https://schema.opencrypto.io/models/core#/definitions/whitepaper"
+      "$ref": "https://schema.opencrypto.io/models/core#/definitions/whitepapers"
     },
     "history": {
       "$ref": "https://schema.opencrypto.io/models/core#/definitions/history"
