@@ -26,11 +26,7 @@
   "devDependencies": {
     "djv": "^2.0.0",
     "mocha": "^5.1.1",
-    "pre-commit": "^1.2.2",
     "request": "^2.86.0"
   },
-  "dependencies": {},
-  "pre-commit": {
-    "mocha"
-  }
+  "dependencies": {}
 }
