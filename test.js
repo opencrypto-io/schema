@@ -1,10 +1,10 @@
 const request = require('request')
-const djv = require('djv')
+//const djv = require('djv')
+const Ajv = require('ajv')
 const assert = require('assert')
 
 const CryptoSchema = require('.')
-const coreSchemaId = 'http://json-schema.org/draft-06/schema#'
-var coreSchema = null
+const MetaSchema = require('ajv/lib/refs/json-schema-draft-06.json')
 
 var cats = [ 'models' ]
 
@@ -15,7 +15,10 @@ function walk(root, example = false) {
       Object.keys(c).forEach((ki) => {
         it(ki, function() {
 
-          let env = new djv({
+          let env = new Ajv()
+          env.addMetaSchema(MetaSchema)
+
+          /*let env = new djv({
             version: 'draft-06',
             //errorHandler: () => { "console.log(this.data); r" }
             errorHandler(errorType) {
@@ -36,14 +39,14 @@ function walk(root, example = false) {
               };`
             }
 
-          })
+          })*/
           let schemaId = null
 
           if (example) {
 
-            env.addSchema(CryptoSchema.models.core.$id, CryptoSchema.models.core)
-            env.addSchema(CryptoSchema.models.asset.$id, CryptoSchema.models.asset)
-            env.addSchema(CryptoSchema.models.network.$id, CryptoSchema.models.network)
+            env.addSchema(CryptoSchema.models.core, CryptoSchema.models.core.$id)
+            env.addSchema(CryptoSchema.models.asset, CryptoSchema.models.asset.$id)
+            env.addSchema(CryptoSchema.models.network, CryptoSchema.models.network.$id)
 
             Object.keys(CryptoSchema[ci]).forEach(ccp => {
               if (ccp === 'core') {
@@ -51,18 +54,15 @@ function walk(root, example = false) {
               }
               let s = Object.assign({}, CryptoSchema[ci][ccp])
               //s.additionalProperties = false
-              env.addSchema(s.$id, s)
+              env.addSchema(s, s.$id)
             })
             schemaId = CryptoSchema[ci][ki].$id
 
-          } else {
-            env.addSchema(coreSchemaId, coreSchema)
-            schemaId = coreSchemaId
           }
 
-          let res = env.validate(schemaId, c[ki])
-          if (res) {
-            throw new Error('Validation error: ' + JSON.stringify(res))
+          let res = env.validate(c[ki], schemaId)
+          if (!res) {
+            throw new Error('Validation error: ' + JSON.stringify(env.errors))
           }
         })
       })
@@ -71,16 +71,6 @@ function walk(root, example = false) {
 }
 
 describe('opencrypto-schema tests', function() {
-
-  before(function(done) {
-    request({
-      url: "http://json-schema.org/draft-06/schema#",
-      json: true
-    }, (err, resp, body) => {
-      coreSchema = body
-      done()
-    })
-  })
 
   describe('testing schemas', function() {
     walk(CryptoSchema)
