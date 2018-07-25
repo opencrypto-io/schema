@@ -1,4 +1,6 @@
-# Opencrypto Schema v0-draft
+# Opencrypto Schema v0.9-beta
+
+[![Build Status](https://travis-ci.org/opencrypto-io/schema.svg?branch=master)](https://travis-ci.org/opencrypto-io/schema)
 
 Schemas for structured cryptocurrency-related data in [JSON Schema](http://json-schema.org/) standart.
 

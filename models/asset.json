@@ -49,11 +49,9 @@
     },
     "networks": {
       "title": "Networks",
-      "type": "object",
-      "patternProperties": {
-        "^[a-z0-9-]+$": {
-          "$ref": "https://schema.opencrypto.io/models/network#/"
-        }
+      "type": "array",
+      "items": {
+        "$ref": "https://schema.opencrypto.io/models/network#/"
       }
     },
     "max_supply": {
@@ -140,7 +138,7 @@
       "$ref": "https://schema.opencrypto.io/models/core#/definitions/team"
     },
     "whitepapers": {
-      "$ref": "https://schema.opencrypto.io/models/core#/definitions/whitepaper"
+      "$ref": "https://schema.opencrypto.io/models/core#/definitions/whitepapers"
     },
     "history": {
       "$ref": "https://schema.opencrypto.io/models/core#/definitions/history"
