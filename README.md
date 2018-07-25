@@ -1,4 +1,4 @@
-# Opencrypto Schema v1
+# Opencrypto Schema v0.9-beta
 
 [![Build Status](https://travis-ci.org/opencrypto-io/schema.svg?branch=master)](https://travis-ci.org/opencrypto-io/schema)
 

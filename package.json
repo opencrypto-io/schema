@@ -1,6 +1,6 @@
 {
   "name": "opencrypto-schema",
-  "version": "1.0.0",
+  "version": "0.9.0",
   "description": "Schemas for structured cryptocurrency-related data",
   "main": "index.js",
   "directories": {
