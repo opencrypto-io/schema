@@ -33,6 +33,18 @@
         "$ref": "https://schema.opencrypto.io/models/asset#/"
       }
     },
+    "exchanges": {
+      "type": "array",
+      "items": {
+        "$ref": "https://schema.opencrypto.io/models/exchange#/"
+      }
+    },
+    "clients": {
+      "type": "array",
+      "items": {
+        "$ref": "https://schema.opencrypto.io/models/client#/"
+      }
+    },
     "team": {
       "$ref": "https://schema.opencrypto.io/models/core#/definitions/team"
     },

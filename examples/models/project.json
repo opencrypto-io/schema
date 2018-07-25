@@ -129,5 +129,14 @@
       "title": "Review AAZZZ",
       "url": "http://example.xyz"
     }
+  ],
+  "exchanges": [
+    {
+      "id": "bitjap",
+      "name": "Bitjap",
+      "countries": [
+        "JP"
+      ]
+    }
   ]
 }
