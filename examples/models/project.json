@@ -11,8 +11,8 @@
       "symbol": "BTC",
       "name": "Bitcoin",
       "type": "blockchain",
-      "networks": {
-        "main": {
+      "networks": [
+        {
           "id": "main",
           "type": "main",
           "name": "mainnet",
@@ -20,7 +20,7 @@
           "algorithm": "SHA256",
           "mineable": true,
           "maximum_block_size": 8388608,
-          "target_block_time": 15,
+          "target_block_time": 10,
           "tools": {
             "explorer": [
               "https://www.blockchain.com/explorer",
@@ -28,12 +28,12 @@
             ]
           }
         },
-        "test": {
+        {
           "id": "test",
           "type": "test",
           "name": "testnet"
         }
-      },
+      ],
       "max_supply": 21000000,
       "first_distribution": [
         {

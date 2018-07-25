@@ -3,8 +3,8 @@
   "symbol": "BTC",
   "name": "Bitcoin",
   "type": "blockchain",
-  "networks": {
-    "main": {
+  "networks": [
+    {
       "id": "main",
       "type": "main",
       "name": "mainnet",
@@ -20,12 +20,12 @@
         ]
       }
     },
-    "test": {
+    {
       "id": "test",
       "type": "test",
       "name": "testnet"
     }
-  },
+  ],
   "max_supply": 21000000,
   "first_distribution": [
     {
