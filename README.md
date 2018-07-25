@@ -8,6 +8,20 @@ Schemas for structured cryptocurrency-related data in [JSON Schema](http://json-
 
 [Schema Explorer](https://schema.opencrypto.io/)
 
+## Schemas
+
+```
+├── Core             
+└── Project
+    ├── Asset
+    │   └── Network
+    │       └── Block
+    │           └── Transaction
+    ├── Client
+    └── Exchange
+        └── Market
+```
+
 ## Usage
 
 ### Hosted version (standalone)
