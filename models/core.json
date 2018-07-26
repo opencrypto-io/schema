@@ -33,14 +33,7 @@
           "type": "string"
         },
         "role": {
-          "type": "array",
-          "items": {
-            "type": "string",
-            "enum": [
-              "founder",
-              "leader"
-            ]
-          }
+          "type": "string"
         },
         "webids": {
           "$ref": "#/definitions/webids"
@@ -107,6 +100,11 @@
           },
           "description": {
             "type": "string"
+          },
+          "url": {
+            "links": {
+              "$ref": "#/definitions/links"
+            }
           }
         }
       }

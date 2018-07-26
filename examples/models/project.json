@@ -79,7 +79,7 @@
   "team": [
     {
       "name": "Satoshi Nakamoto",
-      "role": [ "founder" ]
+      "role": "founder"
     }
   ],
   "contacts": {

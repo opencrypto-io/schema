@@ -13,16 +13,6 @@
       "description": "Unique identifier.",
       "type": "string"
     },
-    "symbol": {
-      "title": "Symbol",
-      "description": "Three or four letter symbol.",
-      "type": "string"
-    },
-    "name": {
-      "title": "Name",
-      "description": "Official name.",
-      "type": "string"
-    },
     "type": {
       "title": "Type",
       "description": "Type of asset, eq. blockchain or token.",
@@ -31,6 +21,16 @@
         "blockchain",
         "token"
       ]
+    },
+    "name": {
+      "title": "Name",
+      "description": "Official name.",
+      "type": "string"
+    },
+    "symbol": {
+      "title": "Symbol",
+      "description": "Three or four letter symbol.",
+      "type": "string"
     },
     "token_properties": {
       "type": "object",
