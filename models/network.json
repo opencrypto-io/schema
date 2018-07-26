@@ -47,6 +47,9 @@
           "$ref": "https://schema.opencrypto.io/models/core#/definitions/links"
         }
       }
+    },
+    "images": {
+      "$ref": "https://schema.opencrypto.io/models/core#/definitions/images"
     }
   }
 }
