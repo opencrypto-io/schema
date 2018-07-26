@@ -41,12 +41,7 @@
       "type": "number"
     },
     "tools": {
-      "type": "object",
-      "properties": {
-        "explorer": {
-          "$ref": "https://schema.opencrypto.io/models/core#/definitions/links"
-        }
-      }
+      "$ref": "https://schema.opencrypto.io/models/core#/definitions/tools"
     },
     "images": {
       "$ref": "https://schema.opencrypto.io/models/core#/definitions/images"

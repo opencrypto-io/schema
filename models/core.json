@@ -160,9 +160,16 @@
           "title": {
             "type": "string"
           },
-          "url": {
+          "type": {
             "type": "string",
-            "format": "url"
+            "enum": [
+              "explorer",
+              "faucet",
+              "other"
+            ]
+          },
+          "url": {
+            "$ref": "#/definitions/links"
           }
         }
       }
