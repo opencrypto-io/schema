@@ -5,7 +5,8 @@
   "description": "Cryptocurrency - digital asset (blockchain or token).",
   "type": "object",
   "required": [
-    "name"
+    "name",
+    "type"
   ],
   "properties": {
     "id": {
