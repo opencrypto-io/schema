@@ -8,7 +8,9 @@ const MetaSchema = require('ajv/lib/refs/json-schema-draft-06.json')
 var cats = [ 'models' ]
 
 function checkSchema (c, ci, ki, example) {
-  let env = new Ajv()
+  let env = new Ajv({
+    // unknownFormats: []
+  })
   env.addMetaSchema(MetaSchema)
   env.addSchema(CryptoSchema.models.core, CryptoSchema.models.core.$id)
 
