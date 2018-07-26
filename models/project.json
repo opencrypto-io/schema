@@ -71,6 +71,9 @@
     },
     "tags": {
       "$ref": "https://schema.opencrypto.io/models/core#/definitions/tags"
+    },
+    "tools": {
+      "$ref": "https://schema.opencrypto.io/models/core#/definitions/tools"
     }
   }
 }

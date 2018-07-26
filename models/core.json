@@ -71,6 +71,9 @@
         "$ref": "#/definitions/person"
       }
     },
+    "team_url": {
+      "$ref": "#/definitions/links"
+    },
     "whitepapers": {
       "type": "array",
       "items": {
@@ -148,6 +151,19 @@
       "items": {
         "type": "string",
         "pattern": "^[a-z0-9-]+(:[a-z0-9-]+)?$"
+      }
+    },
+    "tools": {
+      "type": "array",
+      "items": {
+        "properties": {
+          "title": {
+            "type": "string"
+          },
+          "url": {
+            "$ref": "#/definitions/links"
+          }
+        }
       }
     }
   }
