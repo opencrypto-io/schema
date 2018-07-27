@@ -36,6 +36,9 @@
     "token_properties": {
       "type": "object",
       "title": "Token properties",
+      "required": [
+        "platform"
+      ],
       "properties": {
         "platform": {
           "type": "string"
