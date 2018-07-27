@@ -48,6 +48,9 @@
     "team": {
       "$ref": "https://schema.opencrypto.io/models/core#/definitions/team"
     },
+    "team_url": {
+      "$ref": "https://schema.opencrypto.io/models/core#/definitions/links"
+    },
     "contacts": {
       "$ref": "https://schema.opencrypto.io/models/core#/definitions/contacts"
     },
@@ -71,6 +74,9 @@
     },
     "tags": {
       "$ref": "https://schema.opencrypto.io/models/core#/definitions/tags"
+    },
+    "tools": {
+      "$ref": "https://schema.opencrypto.io/models/core#/definitions/tools"
     }
   }
 }

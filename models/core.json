@@ -5,8 +5,9 @@
   "definitions": {
     "webids": {
       "type": "object",
-      "patternProperties:": {
-        "[a-z0-9-]+(:[a-z0-9])?$": {
+      "opencrypto-validation": "webid",
+      "patternProperties": {
+        "^[a-z0-9-]{2,20}(\\/[a-z0-9-]{2,20})?$": {
           "type": "string"
         }
       }
@@ -33,17 +34,13 @@
           "type": "string"
         },
         "role": {
-          "type": "array",
-          "items": {
-            "type": "string",
-            "enum": [
-              "founder",
-              "leader"
-            ]
-          }
+          "type": "string"
         },
         "webids": {
           "$ref": "#/definitions/webids"
+        },
+        "photo": {
+          "$ref": "#/definitions/links"
         }
       }
     },
@@ -107,6 +104,11 @@
           },
           "description": {
             "type": "string"
+          },
+          "url": {
+            "links": {
+              "$ref": "#/definitions/links"
+            }
           }
         }
       }
@@ -150,6 +152,27 @@
       "items": {
         "type": "string",
         "pattern": "^[a-z0-9-]+(:[a-z0-9-]+)?$"
+      }
+    },
+    "tools": {
+      "type": "array",
+      "items": {
+        "properties": {
+          "title": {
+            "type": "string"
+          },
+          "type": {
+            "type": "string",
+            "enum": [
+              "explorer",
+              "faucet",
+              "other"
+            ]
+          },
+          "url": {
+            "$ref": "#/definitions/links"
+          }
+        }
       }
     }
   }

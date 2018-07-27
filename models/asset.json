@@ -5,22 +5,13 @@
   "description": "Cryptocurrency - digital asset (blockchain or token).",
   "type": "object",
   "required": [
-    "name"
+    "name",
+    "type"
   ],
   "properties": {
     "id": {
       "title": "ID",
       "description": "Unique identifier.",
-      "type": "string"
-    },
-    "symbol": {
-      "title": "Symbol",
-      "description": "Three or four letter symbol.",
-      "type": "string"
-    },
-    "name": {
-      "title": "Name",
-      "description": "Official name.",
       "type": "string"
     },
     "type": {
@@ -32,9 +23,22 @@
         "token"
       ]
     },
+    "name": {
+      "title": "Name",
+      "description": "Official name.",
+      "type": "string"
+    },
+    "symbol": {
+      "title": "Symbol",
+      "description": "Three or four letter symbol.",
+      "type": "string"
+    },
     "token_properties": {
       "type": "object",
       "title": "Token properties",
+      "required": [
+        "platform"
+      ],
       "properties": {
         "platform": {
           "type": "string"
@@ -136,6 +140,9 @@
     },
     "team": {
       "$ref": "https://schema.opencrypto.io/models/core#/definitions/team"
+    },
+    "team_url": {
+      "$ref": "https://schema.opencrypto.io/models/core#/definitions/links"
     },
     "whitepapers": {
       "$ref": "https://schema.opencrypto.io/models/core#/definitions/whitepapers"
