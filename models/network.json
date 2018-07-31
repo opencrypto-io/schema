@@ -33,18 +33,26 @@
       "type": "boolean"
     },
     "target_block_time": {
-      "name": "Target block time (in seconds)",
+      "title": "Target block time (in seconds)",
       "type": "number"
     },
     "maximum_block_size": {
-      "name": "Maximum block size (in bytes)",
+      "title": "Maximum block size (in bytes)",
       "type": "number"
+    },
+    "web": {
+      "title": "Web links",
+      "description": "Webpages links.",
+      "$ref": "https://schema.opencrypto.io/models/core#/definitions/links"
     },
     "tools": {
       "$ref": "https://schema.opencrypto.io/models/core#/definitions/tools"
     },
     "images": {
       "$ref": "https://schema.opencrypto.io/models/core#/definitions/images"
+    },
+    "webids": {
+      "$ref": "https://schema.opencrypto.io/models/core#/definitions/webids"
     }
   }
 }
