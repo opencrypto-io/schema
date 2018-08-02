@@ -7,6 +7,8 @@
     "example": "examples"
   },
   "scripts": {
+    "build": "node build.js",
+    "build-append": "git add build",
     "test": "mocha && standard"
   },
   "repository": {
@@ -23,6 +25,11 @@
     "url": "https://github.com/opencrypto-io/schema/issues"
   },
   "homepage": "https://github.com/opencrypto-io/schema#readme",
+  "pre-commit": [
+    "test",
+    "build",
+    "build-append"
+  ],
   "devDependencies": {
     "ajv": "^6.5.2",
     "jmespath": "^0.15.0",

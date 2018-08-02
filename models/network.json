@@ -41,8 +41,6 @@
       "type": "number"
     },
     "web": {
-      "title": "Web links",
-      "description": "Webpages links.",
       "$ref": "https://schema.opencrypto.io/models/core#/definitions/links"
     },
     "tools": {

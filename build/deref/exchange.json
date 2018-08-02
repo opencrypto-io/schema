@@ -22,6 +22,8 @@
       }
     },
     "web": {
+      "title": "Web links",
+      "description": "Webpages links.",
       "oneof": [
         {
           "type": "string",
@@ -38,6 +40,8 @@
     },
     "api": {
       "url": {
+        "title": "Web links",
+        "description": "Webpages links.",
         "oneof": [
           {
             "type": "string",
@@ -55,6 +59,7 @@
     },
     "images": {
       "type": "object",
+      "opencrypto-generated": true,
       "properties": {
         "logo_square": {
           "type": "object",

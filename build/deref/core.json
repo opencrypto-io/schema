@@ -13,6 +13,8 @@
       }
     },
     "links": {
+      "title": "Web links",
+      "description": "Webpages links.",
       "oneof": [
         {
           "type": "string",
@@ -46,19 +48,8 @@
           }
         },
         "photo": {
-          "oneof": [
-            {
-              "type": "string",
-              "format": "url"
-            },
-            {
-              "type": "array",
-              "items": {
-                "type": "string",
-                "format": "url"
-              }
-            }
-          ]
+          "type": "string",
+          "format": "url"
         }
       }
     },
@@ -78,6 +69,7 @@
     },
     "images": {
       "type": "object",
+      "opencrypto-generated": true,
       "properties": {
         "logo_square": {
           "type": "object",
@@ -130,19 +122,8 @@
             }
           },
           "photo": {
-            "oneof": [
-              {
-                "type": "string",
-                "format": "url"
-              },
-              {
-                "type": "array",
-                "items": {
-                  "type": "string",
-                  "format": "url"
-                }
-              }
-            ]
+            "type": "string",
+            "format": "url"
           }
         }
       }
@@ -178,21 +159,8 @@
             "type": "string"
           },
           "url": {
-            "links": {
-              "oneof": [
-                {
-                  "type": "string",
-                  "format": "url"
-                },
-                {
-                  "type": "array",
-                  "items": {
-                    "type": "string",
-                    "format": "url"
-                  }
-                }
-              ]
-            }
+            "type": "string",
+            "format": "url"
           }
         }
       }
@@ -254,19 +222,8 @@
             ]
           },
           "url": {
-            "oneof": [
-              {
-                "type": "string",
-                "format": "url"
-              },
-              {
-                "type": "array",
-                "items": {
-                  "type": "string",
-                  "format": "url"
-                }
-              }
-            ]
+            "type": "string",
+            "format": "url"
           }
         }
       }

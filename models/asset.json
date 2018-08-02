@@ -134,15 +134,14 @@
       "format": "date"
     },
     "web": {
-      "title": "Web links",
-      "description": "Webpages links.",
       "$ref": "https://schema.opencrypto.io/models/core#/definitions/links"
     },
     "team": {
       "$ref": "https://schema.opencrypto.io/models/core#/definitions/team"
     },
     "team_url": {
-      "$ref": "https://schema.opencrypto.io/models/core#/definitions/links"
+      "type": "string",
+      "format": "url"
     },
     "whitepapers": {
       "$ref": "https://schema.opencrypto.io/models/core#/definitions/whitepapers"
@@ -167,6 +166,7 @@
     },
     "rt_data": {
       "type": "object",
+      "opencrypto-generated": true,
       "properties": {
         "price": {
           "type": "object",

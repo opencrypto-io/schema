@@ -10,7 +10,8 @@
   "properties": {
     "id": {
       "title": "ID",
-      "type": "string"
+      "type": "string",
+      "opencrypto-generated": true
     },
     "name": {
       "title": "Name",
@@ -23,6 +24,8 @@
       "format": "date"
     },
     "web": {
+      "title": "Web links",
+      "description": "Webpages links.",
       "oneof": [
         {
           "type": "string",
@@ -138,8 +141,6 @@
                   "type": "number"
                 },
                 "web": {
-                  "title": "Web links",
-                  "description": "Webpages links.",
                   "$ref": "opencrypto:core#/definitions/links"
                 },
                 "tools": {
@@ -232,6 +233,8 @@
             "format": "date"
           },
           "web": {
+            "title": "Web links",
+            "description": "Webpages links.",
             "oneof": [
               {
                 "type": "string",
@@ -253,19 +256,8 @@
             }
           },
           "team_url": {
-            "oneof": [
-              {
-                "type": "string",
-                "format": "url"
-              },
-              {
-                "type": "array",
-                "items": {
-                  "type": "string",
-                  "format": "url"
-                }
-              }
-            ]
+            "type": "string",
+            "format": "url"
           },
           "whitepapers": {
             "type": "array",
@@ -298,15 +290,15 @@
                   "type": "string"
                 },
                 "url": {
-                  "links": {
-                    "$ref": "opencrypto:core#/definitions/links"
-                  }
+                  "type": "string",
+                  "format": "url"
                 }
               }
             }
           },
           "images": {
             "type": "object",
+            "opencrypto-generated": true,
             "properties": {
               "logo_square": {
                 "$ref": "opencrypto:core#/definitions/file"
@@ -364,6 +356,7 @@
           },
           "rt_data": {
             "type": "object",
+            "opencrypto-generated": true,
             "properties": {
               "price": {
                 "type": "object",
@@ -464,6 +457,8 @@
             }
           },
           "web": {
+            "title": "Web links",
+            "description": "Webpages links.",
             "oneof": [
               {
                 "type": "string",
@@ -480,6 +475,8 @@
           },
           "api": {
             "url": {
+              "title": "Web links",
+              "description": "Webpages links.",
               "oneof": [
                 {
                   "type": "string",
@@ -497,6 +494,7 @@
           },
           "images": {
             "type": "object",
+            "opencrypto-generated": true,
             "properties": {
               "logo_square": {
                 "$ref": "opencrypto:core#/definitions/file"
@@ -552,25 +550,15 @@
             "$ref": "opencrypto:core#/definitions/webids"
           },
           "photo": {
-            "$ref": "opencrypto:core#/definitions/links"
+            "type": "string",
+            "format": "url"
           }
         }
       }
     },
     "team_url": {
-      "oneof": [
-        {
-          "type": "string",
-          "format": "url"
-        },
-        {
-          "type": "array",
-          "items": {
-            "type": "string",
-            "format": "url"
-          }
-        }
-      ]
+      "type": "string",
+      "format": "url"
     },
     "contacts": {
       "type": "object",
@@ -618,27 +606,15 @@
             "type": "string"
           },
           "url": {
-            "links": {
-              "oneof": [
-                {
-                  "type": "string",
-                  "format": "url"
-                },
-                {
-                  "type": "array",
-                  "items": {
-                    "type": "string",
-                    "format": "url"
-                  }
-                }
-              ]
-            }
+            "type": "string",
+            "format": "url"
           }
         }
       }
     },
     "images": {
       "type": "object",
+      "opencrypto-generated": true,
       "properties": {
         "logo_square": {
           "type": "object",
@@ -732,19 +708,8 @@
             ]
           },
           "url": {
-            "oneof": [
-              {
-                "type": "string",
-                "format": "url"
-              },
-              {
-                "type": "array",
-                "items": {
-                  "type": "string",
-                  "format": "url"
-                }
-              }
-            ]
+            "type": "string",
+            "format": "url"
           }
         }
       }

@@ -10,7 +10,8 @@
   "properties": {
     "id": {
       "title": "ID",
-      "type": "string"
+      "type": "string",
+      "opencrypto-generated": true
     },
     "name": {
       "title": "Name",
@@ -23,8 +24,6 @@
       "format": "date"
     },
     "web": {
-      "title": "Web links",
-      "description": "Webpages links.",
       "$ref": "https://schema.opencrypto.io/models/core#/definitions/links"
     },
     "assets": {
@@ -49,7 +48,8 @@
       "$ref": "https://schema.opencrypto.io/models/core#/definitions/team"
     },
     "team_url": {
-      "$ref": "https://schema.opencrypto.io/models/core#/definitions/links"
+      "type": "string",
+      "format": "url"
     },
     "contacts": {
       "$ref": "https://schema.opencrypto.io/models/core#/definitions/contacts"

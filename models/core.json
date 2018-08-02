@@ -13,6 +13,8 @@
       }
     },
     "links": {
+      "title": "Web links",
+      "description": "Webpages links.",
       "oneof": [
         {
           "type": "string",
@@ -40,7 +42,8 @@
           "$ref": "#/definitions/webids"
         },
         "photo": {
-          "$ref": "#/definitions/links"
+          "type": "string",
+          "format": "url"
         }
       }
     },
@@ -60,6 +63,7 @@
     },
     "images": {
       "type": "object",
+      "opencrypto-generated": true,
       "properties": {
         "logo_square": {
           "$ref": "#/definitions/file"
@@ -106,9 +110,8 @@
             "type": "string"
           },
           "url": {
-            "links": {
-              "$ref": "#/definitions/links"
-            }
+            "type": "string",
+            "format": "url"
           }
         }
       }
@@ -170,7 +173,8 @@
             ]
           },
           "url": {
-            "$ref": "#/definitions/links"
+            "type": "string",
+            "format": "url"
           }
         }
       }
