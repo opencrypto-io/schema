@@ -1,0 +1,19 @@
+{
+  "$schema": "http://json-schema.org/draft-06/schema#",
+  "$id": "https://schema.opencrypto.io/models/client#",
+  "title": "Client",
+  "description": "Client for digital asset. It can be full-node or thin client in form of wallet.",
+  "type": "object",
+  "properties": {
+    "id": {
+      "type": "string",
+      "title": "ID",
+      "description": "Unique identifier of the digital asset client."
+    },
+    "name": {
+      "title": "Name",
+      "type": "string",
+      "description": "Name of client."
+    }
+  }
+}

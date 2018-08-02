@@ -1,0 +1,488 @@
+{
+  "$schema": "http://json-schema.org/draft-06/schema#",
+  "$id": "https://schema.opencrypto.io/models/asset#",
+  "title": "Asset",
+  "description": "Cryptocurrency - digital asset (blockchain or token).",
+  "type": "object",
+  "required": [
+    "name",
+    "type"
+  ],
+  "properties": {
+    "id": {
+      "title": "ID",
+      "description": "Unique identifier.",
+      "type": "string"
+    },
+    "type": {
+      "title": "Type",
+      "description": "Type of asset, eq. blockchain or token.",
+      "type": "string",
+      "enum": [
+        "blockchain",
+        "token"
+      ]
+    },
+    "name": {
+      "title": "Name",
+      "description": "Official name.",
+      "type": "string"
+    },
+    "symbol": {
+      "title": "Symbol",
+      "description": "Three or four letter symbol.",
+      "type": "string"
+    },
+    "token_properties": {
+      "type": "object",
+      "title": "Token properties",
+      "required": [
+        "platform"
+      ],
+      "properties": {
+        "platform": {
+          "type": "string"
+        },
+        "contract_address": {
+          "type": "string"
+        },
+        "decimals": {
+          "type": "number"
+        }
+      }
+    },
+    "networks": {
+      "title": "Networks",
+      "type": "array",
+      "items": {
+        "$schema": "http://json-schema.org/draft-06/schema#",
+        "$id": "https://schema.opencrypto.io/models/network#",
+        "title": "Network",
+        "description": "Ledger (blockchain) of digital asset.",
+        "type": "object",
+        "properties": {
+          "id": {
+            "title": "ID",
+            "type": "string"
+          },
+          "name": {
+            "title": "Name",
+            "type": "string"
+          },
+          "type": {
+            "title": "Type",
+            "description": "Type of Network",
+            "type": "string",
+            "enum": [
+              "main",
+              "test"
+            ]
+          },
+          "proof_type": {
+            "title": "Proof Type",
+            "type": "string"
+          },
+          "algorithm": {
+            "type": "string"
+          },
+          "mineable": {
+            "type": "boolean"
+          },
+          "target_block_time": {
+            "title": "Target block time (in seconds)",
+            "type": "number"
+          },
+          "maximum_block_size": {
+            "title": "Maximum block size (in bytes)",
+            "type": "number"
+          },
+          "web": {
+            "oneof": [
+              {
+                "type": "string",
+                "format": "url"
+              },
+              {
+                "type": "array",
+                "items": {
+                  "type": "string",
+                  "format": "url"
+                }
+              }
+            ]
+          },
+          "tools": {
+            "type": "array",
+            "items": {
+              "properties": {
+                "title": {
+                  "type": "string"
+                },
+                "type": {
+                  "type": "string",
+                  "enum": [
+                    "explorer",
+                    "faucet",
+                    "other"
+                  ]
+                },
+                "url": {
+                  "$ref": "opencrypto:core#/definitions/links"
+                }
+              }
+            }
+          },
+          "images": {
+            "type": "object",
+            "properties": {
+              "logo_square": {
+                "$ref": "opencrypto:core#/definitions/file"
+              },
+              "logo_full": {
+                "$ref": "opencrypto:core#/definitions/file"
+              }
+            }
+          },
+          "webids": {
+            "type": "object",
+            "opencrypto-validation": "webid",
+            "patternProperties": {
+              "^[a-z0-9-]{2,20}(\\/[a-z0-9-]{2,20})?$": {
+                "type": "string"
+              }
+            }
+          }
+        }
+      }
+    },
+    "max_supply": {
+      "type": "number"
+    },
+    "first_distribution": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "title": {
+            "type": "string"
+          },
+          "amount": {
+            "type": "number"
+          }
+        }
+      }
+    },
+    "ico_properties": {
+      "type": "object",
+      "properties": {
+        "start_date": {
+          "type": "string",
+          "format": "date"
+        },
+        "end_date": {
+          "type": "string",
+          "format": "date"
+        },
+        "total_cap": {
+          "type": "number"
+        },
+        "ico_price": {
+          "type": "string",
+          "pattern": "^[0-9-\\.]+ [A-Z0-9]{2,4}$"
+        },
+        "raised": {
+          "type": "string",
+          "pattern": "^[0-9-\\.]+ [A-Z0-9]{2,4}$"
+        },
+        "country": {
+          "type": "string"
+        }
+      }
+    },
+    "denominations": {
+      "title": "Denominations",
+      "description": "Units and subunits of the asset amount.",
+      "type": "object",
+      "properties": {
+        "plural": {
+          "type": "string"
+        },
+        "symbol": {
+          "type": "string"
+        },
+        "subunits": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "unit": {
+                "type": "number"
+              },
+              "name": {
+                "type": "string"
+              }
+            }
+          }
+        }
+      }
+    },
+    "start_date": {
+      "title": "Start Date",
+      "description": "The day when the assets began to be first activated.",
+      "type": "string",
+      "format": "date"
+    },
+    "web": {
+      "oneof": [
+        {
+          "type": "string",
+          "format": "url"
+        },
+        {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "format": "url"
+          }
+        }
+      ]
+    },
+    "team": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string"
+          },
+          "role": {
+            "type": "string"
+          },
+          "webids": {
+            "$ref": "opencrypto:core#/definitions/webids"
+          },
+          "photo": {
+            "$ref": "opencrypto:core#/definitions/links"
+          }
+        }
+      }
+    },
+    "team_url": {
+      "oneof": [
+        {
+          "type": "string",
+          "format": "url"
+        },
+        {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "format": "url"
+          }
+        }
+      ]
+    },
+    "whitepapers": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "title": {
+            "type": "string"
+          },
+          "url": {
+            "type": "string",
+            "format": "url"
+          }
+        }
+      }
+    },
+    "history": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "date": {
+            "type": "string",
+            "format": "date"
+          },
+          "title": {
+            "type": "string"
+          },
+          "description": {
+            "type": "string"
+          },
+          "url": {
+            "links": {
+              "oneof": [
+                {
+                  "type": "string",
+                  "format": "url"
+                },
+                {
+                  "type": "array",
+                  "items": {
+                    "type": "string",
+                    "format": "url"
+                  }
+                }
+              ]
+            }
+          }
+        }
+      }
+    },
+    "images": {
+      "type": "object",
+      "properties": {
+        "logo_square": {
+          "type": "object",
+          "properties": {
+            "type": {
+              "type": "string"
+            },
+            "data": {
+              "type": "string",
+              "media": {
+                "binaryEncoding": "base64"
+              }
+            }
+          }
+        },
+        "logo_full": {
+          "type": "object",
+          "properties": {
+            "type": {
+              "type": "string"
+            },
+            "data": {
+              "type": "string",
+              "media": {
+                "binaryEncoding": "base64"
+              }
+            }
+          }
+        }
+      }
+    },
+    "webids": {
+      "type": "object",
+      "opencrypto-validation": "webid",
+      "patternProperties": {
+        "^[a-z0-9-]{2,20}(\\/[a-z0-9-]{2,20})?$": {
+          "type": "string"
+        }
+      }
+    },
+    "resources": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "title": {
+            "type": "string"
+          },
+          "url": {
+            "type": "string",
+            "format": "url"
+          }
+        }
+      }
+    },
+    "partners": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "title": {
+            "type": "string"
+          },
+          "url": {
+            "type": "string",
+            "format": "url"
+          }
+        }
+      }
+    },
+    "tags": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "pattern": "^[a-z0-9-]+(:[a-z0-9-]+)?$"
+      }
+    },
+    "rt_data": {
+      "type": "object",
+      "properties": {
+        "price": {
+          "type": "object",
+          "properties": {
+            "usd": {
+              "type": "number"
+            },
+            "btc": {
+              "type": "number"
+            }
+          }
+        },
+        "prices": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "value": {
+                "type": "number"
+              },
+              "bid": {
+                "type": "number"
+              },
+              "ask": {
+                "type": "number"
+              },
+              "base": {
+                "type": "string"
+              },
+              "source": {
+                "type": "string"
+              },
+              "time": {
+                "type": "string"
+              }
+            }
+          }
+        },
+        "marketcap": {
+          "type": "object",
+          "properties": {
+            "usd": {
+              "type": "number"
+            },
+            "btc": {
+              "type": "number"
+            }
+          }
+        },
+        "marketcaps": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "value": {
+                "type": "number"
+              },
+              "base": {
+                "type": "string"
+              },
+              "source": {
+                "type": "string"
+              },
+              "time": {
+                "type": "string"
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

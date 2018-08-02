@@ -1,0 +1,96 @@
+{
+  "$schema": "http://json-schema.org/draft-06/schema#",
+  "$id": "https://schema.opencrypto.io/models/exchange#",
+  "title": "Exchange",
+  "type": "object",
+  "required": [
+    "name"
+  ],
+  "properties": {
+    "id": {
+      "type": "string"
+    },
+    "name": {
+      "title": "Name",
+      "type": "string"
+    },
+    "countries": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "pattern": "^(\\w){2}$"
+      }
+    },
+    "web": {
+      "oneof": [
+        {
+          "type": "string",
+          "format": "url"
+        },
+        {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "format": "url"
+          }
+        }
+      ]
+    },
+    "api": {
+      "url": {
+        "oneof": [
+          {
+            "type": "string",
+            "format": "url"
+          },
+          {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "format": "url"
+            }
+          }
+        ]
+      }
+    },
+    "images": {
+      "type": "object",
+      "properties": {
+        "logo_square": {
+          "type": "object",
+          "properties": {
+            "type": {
+              "type": "string"
+            },
+            "data": {
+              "type": "string",
+              "media": {
+                "binaryEncoding": "base64"
+              }
+            }
+          }
+        },
+        "logo_full": {
+          "type": "object",
+          "properties": {
+            "type": {
+              "type": "string"
+            },
+            "data": {
+              "type": "string",
+              "media": {
+                "binaryEncoding": "base64"
+              }
+            }
+          }
+        }
+      }
+    },
+    "markets": {
+      "type": "array",
+      "items": {
+        "$ref": "opencrypto:market#"
+      }
+    }
+  }
+}

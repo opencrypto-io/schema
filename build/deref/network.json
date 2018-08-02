@@ -1,0 +1,134 @@
+{
+  "$schema": "http://json-schema.org/draft-06/schema#",
+  "$id": "https://schema.opencrypto.io/models/network#",
+  "title": "Network",
+  "description": "Ledger (blockchain) of digital asset.",
+  "type": "object",
+  "properties": {
+    "id": {
+      "title": "ID",
+      "type": "string"
+    },
+    "name": {
+      "title": "Name",
+      "type": "string"
+    },
+    "type": {
+      "title": "Type",
+      "description": "Type of Network",
+      "type": "string",
+      "enum": [
+        "main",
+        "test"
+      ]
+    },
+    "proof_type": {
+      "title": "Proof Type",
+      "type": "string"
+    },
+    "algorithm": {
+      "type": "string"
+    },
+    "mineable": {
+      "type": "boolean"
+    },
+    "target_block_time": {
+      "title": "Target block time (in seconds)",
+      "type": "number"
+    },
+    "maximum_block_size": {
+      "title": "Maximum block size (in bytes)",
+      "type": "number"
+    },
+    "web": {
+      "oneof": [
+        {
+          "type": "string",
+          "format": "url"
+        },
+        {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "format": "url"
+          }
+        }
+      ]
+    },
+    "tools": {
+      "type": "array",
+      "items": {
+        "properties": {
+          "title": {
+            "type": "string"
+          },
+          "type": {
+            "type": "string",
+            "enum": [
+              "explorer",
+              "faucet",
+              "other"
+            ]
+          },
+          "url": {
+            "oneof": [
+              {
+                "type": "string",
+                "format": "url"
+              },
+              {
+                "type": "array",
+                "items": {
+                  "type": "string",
+                  "format": "url"
+                }
+              }
+            ]
+          }
+        }
+      }
+    },
+    "images": {
+      "type": "object",
+      "properties": {
+        "logo_square": {
+          "type": "object",
+          "properties": {
+            "type": {
+              "type": "string"
+            },
+            "data": {
+              "type": "string",
+              "media": {
+                "binaryEncoding": "base64"
+              }
+            }
+          }
+        },
+        "logo_full": {
+          "type": "object",
+          "properties": {
+            "type": {
+              "type": "string"
+            },
+            "data": {
+              "type": "string",
+              "media": {
+                "binaryEncoding": "base64"
+              }
+            }
+          }
+        }
+      }
+    },
+    "webids": {
+      "type": "object",
+      "opencrypto-validation": "webid",
+      "patternProperties": {
+        "^[a-z0-9-]{2,20}(\\/[a-z0-9-]{2,20})?$": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

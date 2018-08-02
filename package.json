@@ -25,6 +25,8 @@
   "homepage": "https://github.com/opencrypto-io/schema#readme",
   "devDependencies": {
     "ajv": "^6.5.2",
+    "jmespath": "^0.15.0",
+    "json-schema-deref": "^0.4.4",
     "mocha": "^5.2.0",
     "pre-commit": "^1.2.2",
     "request": "^2.86.0",
