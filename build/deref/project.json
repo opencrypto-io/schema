@@ -26,19 +26,11 @@
     "web": {
       "title": "Web links",
       "description": "Webpages links.",
-      "oneof": [
-        {
-          "type": "string",
-          "format": "url"
-        },
-        {
-          "type": "array",
-          "items": {
-            "type": "string",
-            "format": "url"
-          }
-        }
-      ]
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "url"
+      }
     },
     "assets": {
       "type": "array",
@@ -235,19 +227,11 @@
           "web": {
             "title": "Web links",
             "description": "Webpages links.",
-            "oneof": [
-              {
-                "type": "string",
-                "format": "url"
-              },
-              {
-                "type": "array",
-                "items": {
-                  "type": "string",
-                  "format": "url"
-                }
-              }
-            ]
+            "type": "array",
+            "items": {
+              "type": "string",
+              "format": "url"
+            }
           },
           "team": {
             "type": "array",
@@ -459,37 +443,21 @@
           "web": {
             "title": "Web links",
             "description": "Webpages links.",
-            "oneof": [
-              {
-                "type": "string",
-                "format": "url"
-              },
-              {
-                "type": "array",
-                "items": {
-                  "type": "string",
-                  "format": "url"
-                }
-              }
-            ]
+            "type": "array",
+            "items": {
+              "type": "string",
+              "format": "url"
+            }
           },
           "api": {
             "url": {
               "title": "Web links",
               "description": "Webpages links.",
-              "oneof": [
-                {
-                  "type": "string",
-                  "format": "url"
-                },
-                {
-                  "type": "array",
-                  "items": {
-                    "type": "string",
-                    "format": "url"
-                  }
-                }
-              ]
+              "type": "array",
+              "items": {
+                "type": "string",
+                "format": "url"
+              }
             }
           },
           "images": {

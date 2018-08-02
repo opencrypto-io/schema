@@ -43,19 +43,11 @@
     "web": {
       "title": "Web links",
       "description": "Webpages links.",
-      "oneof": [
-        {
-          "type": "string",
-          "format": "url"
-        },
-        {
-          "type": "array",
-          "items": {
-            "type": "string",
-            "format": "url"
-          }
-        }
-      ]
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "url"
+      }
     },
     "tools": {
       "type": "array",

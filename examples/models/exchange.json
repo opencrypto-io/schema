@@ -4,7 +4,9 @@
   "countries": [
     "HK"
   ],
-  "web": "https://www.bitfinex.com/",
+  "web": [
+    "https://www.bitfinex.com/"
+  ],
   "markets": [
     {
       "id": "bitfinex-eth-usd"

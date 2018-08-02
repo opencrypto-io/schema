@@ -15,19 +15,11 @@
     "links": {
       "title": "Web links",
       "description": "Webpages links.",
-      "oneof": [
-        {
-          "type": "string",
-          "format": "url"
-        },
-        {
-          "type": "array",
-          "items": {
-            "type": "string",
-            "format": "url"
-          }
-        }
-      ]
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "url"
+      }
     },
     "person": {
       "type": "object",
