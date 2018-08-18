@@ -201,6 +201,7 @@
     "tools": {
       "type": "array",
       "items": {
+        "type": "object",
         "properties": {
           "title": {
             "type": "string"
