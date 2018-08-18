@@ -52,8 +52,9 @@ async function build () {
     let schema = loadSchema(path.join(dir, m))
     q.push(async function () {
       let fullSchema = await derefSchema(schema)
-      fullSchema = await derefSchema(fullSchema)
-      fullSchema = await derefSchema(fullSchema)
+      for (let i = 0; i <= 5; i++) {
+        fullSchema = await derefSchema(fullSchema)
+      }
       let finalPath = path.join(outputDir, 'deref', m)
       console.log('Writing:', finalPath)
       fs.writeFileSync(finalPath, JSON.stringify(fullSchema, null, 2))
