@@ -59,8 +59,6 @@
       }
     },
     "networks": {
-      "title": "Networks",
-      "description": "Network of the asset.",
       "type": "array",
       "items": {
         "$ref": "https://schema.opencrypto.io/models/network#/"
@@ -180,8 +178,6 @@
     },
     "team": {
       "title": "Team",
-      "description": "The team of the project.",
-      "$ref": "https://schema.opencrypto.io/models/core#/definitions/team"
     },
     "team_url": {
       "title": "Team URL",
@@ -190,28 +186,18 @@
       "format": "url"
     },
     "whitepapers": {
-      "title": "Whitepapers",
-      "description": "Whitepapers of the project.",
       "$ref": "https://schema.opencrypto.io/models/core#/definitions/whitepapers"
     },
     "history": {
-      "title": "History",
-      "description": "History of the project, important events, happenings, facts.",
       "$ref": "https://schema.opencrypto.io/models/core#/definitions/history"
     },
     "images": {
-      "title": "Images",
-      "description": "Images of the logo (format .svg)",
       "$ref": "https://schema.opencrypto.io/models/core#/definitions/images"
     },
     "webids": {
-      "title": "WebIDs",
-      "desctiption": "Webs related to the project.",
       "$ref": "https://schema.opencrypto.io/models/core#/definitions/webids"
     },
     "resources": {
-      "title": "Resources",
-      "description": "Resources where other information about the project could be found.",
       "$ref": "https://schema.opencrypto.io/models/core#/definitions/resources"
     },
     "partners": {
@@ -220,8 +206,6 @@
       "$ref": "https://schema.opencrypto.io/models/core#/definitions/resources"
     },
     "tags": {
-      "title": "Tags",
-      "description": "Tags that could describe the project.",
       "$ref": "https://schema.opencrypto.io/models/core#/definitions/tags"
     },
     "rt_data": {
