@@ -177,7 +177,7 @@
       "$ref": "https://schema.opencrypto.io/models/core#/definitions/links"
     },
     "team": {
-      "title": "Team",
+      "$ref": "https://schema.opencrypto.io/models/core#/definitions/team"
     },
     "team_url": {
       "title": "Team URL",
