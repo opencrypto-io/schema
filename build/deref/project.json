@@ -96,6 +96,33 @@
               }
             }
           },
+          "forked": {
+            "type": "boolean",
+            "title": "Is forked",
+            "description": "Indicator if this asset was forked from another asset."
+          },
+          "fork_properties": {
+            "type": "object",
+            "title": "Fork properties",
+            "properties": {
+              "parent": {
+                "title": "Parent asset",
+                "description": "Asset from which was this asset forked.",
+                "type": "string"
+              },
+              "block": {
+                "title": "Block number",
+                "description": "Number of first block which differs from parent.",
+                "type": "number"
+              },
+              "time": {
+                "title": "Fork timestamp",
+                "description": "Date and time of first block.",
+                "type": "string",
+                "format": "date-time"
+              }
+            }
+          },
           "networks": {
             "type": "array",
             "items": {

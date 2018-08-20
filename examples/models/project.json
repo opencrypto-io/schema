@@ -78,6 +78,18 @@
         "contract_address": "0x00000000..",
         "decimals": 18
       }
+    },
+    {
+      "id": "ethereum-classic",
+      "name": "Ethereum Classic",
+      "symbol": "ETC",
+      "type": "blockchain",
+      "forked": true,
+      "fork_properties": {
+        "parent": "ethereum",
+        "block": 1920000,
+        "time": "2016-07-20T13:20:39Z"
+      }
     }
   ],
   "team": [
