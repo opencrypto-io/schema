@@ -11,7 +11,7 @@
   "properties": {
     "id": {
       "title": "ID",
-      "description": "Unique identifier.",
+      "description": "Unique identifier (to be written in small letters - for internal usage only).",
       "type": "string"
     },
     "type": {
@@ -25,77 +25,105 @@
     },
     "name": {
       "title": "Name",
-      "description": "Official name.",
+      "description": "The official name of the asset.",
       "type": "string"
     },
     "symbol": {
       "title": "Symbol",
-      "description": "Three or four letter symbol.",
+      "description": "One to nine characters (to be written in capital letters).",
       "type": "string"
     },
     "token_properties": {
       "type": "object",
       "title": "Token properties",
+      "description": "Properties of token. Valid only for tokens.",
       "required": [
         "platform"
       ],
       "properties": {
         "platform": {
+          "title": "Properties",
+          "description": "Blockchain where the asset is being run.",
           "type": "string"
         },
         "contract_address": {
+          "title": "Contract address",
+          "description": "Contract address of the token.",
           "type": "string"
         },
         "decimals": {
+          "title": "Decimals",
+          "description": "The number of digits that come after the decimal place when displaying token values on screen (format number).",
           "type": "number"
         }
       }
     },
     "networks": {
-      "title": "Networks",
       "type": "array",
       "items": {
         "$ref": "https://schema.opencrypto.io/models/network#/"
       }
     },
     "max_supply": {
+      "title": "Max supply",
+      "description": "Maximum size of coins that will ever exist for a crypto currency (format number).",
       "type": "number"
     },
     "first_distribution": {
+      "title": "First distribution",
+      "description": "Amount and type of coins that were released before mining.",
       "type": "array",
       "items": {
         "type": "object",
         "properties": {
           "title": {
+            "title": "Title",
+            "description": "The kind of the first distribution, eg. Premined / ICO parts / nothing, can be empty.",
             "type": "string"
           },
           "amount": {
+            "title": "Amount",
+            "desctiption": "Number of coins in that part (format number).",
             "type": "number"
           }
         }
       }
     },
     "ico_properties": {
+      "title": "ICO properties",
+      "description": "Information regarding to ICO (if there is).",
       "type": "object",
       "properties": {
         "start_date": {
+          "title": "Start date",
+          "description": "The date when ICO has started (format YYYY/MM/DD).",
           "type": "string",
           "format": "date"
         },
         "end_date": {
+          "title": "End date",
+          "description": "The date when ICO has ended (format YYYY/MM/DD).",
           "type": "string",
           "format": "date"
         },
         "total_cap": {
+          "title": "Total cap",
+          "description": "The total amount of the coins for ICO (format number).",
           "type": "number"
         },
         "ico_price": {
+          "title": "ICO price",
+          "description": "The amount that was charged for one coin during the ICO.",
           "$ref": "https://schema.opencrypto.io/models/core#/definitions/price"
         },
         "raised": {
+          "title": "Raised",
+          "description": "The amount that was raised during the ICO.",
           "$ref": "https://schema.opencrypto.io/models/core#/definitions/price"
         },
         "country": {
+          "title": "Country",
+          "description": "Country where the ICO is settled.",
           "type": "string"
         }
       }
@@ -106,20 +134,30 @@
       "type": "object",
       "properties": {
         "plural": {
+          "title": "Plural",
+          "description": "The name of the denomination, in plural.",
           "type": "string"
         },
         "symbol": {
+          "title": "Symbol",
+          "description": "The symbol for the asset.",
           "type": "string"
         },
         "subunits": {
+          "title": "Subunits",
+          "description": "The subunits of the asset.",
           "type": "array",
           "items": {
             "type": "object",
             "properties": {
               "unit": {
+                "title": "Unit",
+                "description": "The subunits of the asset (format number).",
                 "type": "number"
               },
               "name": {
+                "title": "Name",
+                "description": "Name of the denomination (eg. satoshi / lites / photons / litoshis ...).",
                 "type": "string"
               }
             }
@@ -129,17 +167,21 @@
     },
     "start_date": {
       "title": "Start Date",
-      "description": "The day when the assets began to be first activated.",
+      "description": "The day when the assets began to be first activated (format YYYY/MM/DD).",
       "type": "string",
       "format": "date"
     },
     "web": {
+      "title": "Web",
+      "desctiption": "Official web page of the project (format https://).",
       "$ref": "https://schema.opencrypto.io/models/core#/definitions/links"
     },
     "team": {
       "$ref": "https://schema.opencrypto.io/models/core#/definitions/team"
     },
     "team_url": {
+      "title": "Team URL",
+      "description": "URL of the team (format https://).",
       "type": "string",
       "format": "url"
     },
@@ -159,6 +201,8 @@
       "$ref": "https://schema.opencrypto.io/models/core#/definitions/resources"
     },
     "partners": {
+      "title": "Partners",
+      "description": "Partners of the project.",
       "$ref": "https://schema.opencrypto.io/models/core#/definitions/resources"
     },
     "tags": {
