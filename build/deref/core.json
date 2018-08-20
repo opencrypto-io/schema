@@ -4,6 +4,8 @@
   "title": "Core",
   "definitions": {
     "webids": {
+      "title": "WebIDs",
+      "description": "Webs related to the project.",
       "type": "object",
       "opencrypto-validation": "webid",
       "patternProperties": {
@@ -25,12 +27,18 @@
       "type": "object",
       "properties": {
         "name": {
+          "title": "Name",
+          "desctiption": "Name and the surname of the team member.",
           "type": "string"
         },
         "role": {
+          "title": "Role",
+          "description": "Role in the team.",
           "type": "string"
         },
         "webids": {
+          "title": "WebIDs",
+          "description": "Webs related to the project.",
           "type": "object",
           "opencrypto-validation": "webid",
           "patternProperties": {
@@ -40,6 +48,8 @@
           }
         },
         "photo": {
+          "title": "Photo",
+          "description": "Photo of the team member (format https://).",
           "type": "string",
           "format": "url"
         }
@@ -60,6 +70,8 @@
       }
     },
     "images": {
+      "title": "Images",
+      "desctiption": "Images of the logo.",
       "type": "object",
       "opencrypto-generated": true,
       "properties": {
@@ -94,17 +106,25 @@
       }
     },
     "team": {
+      "title": "team",
+      "description": "The team of the project.",
       "type": "array",
       "items": {
         "type": "object",
         "properties": {
           "name": {
+            "title": "Name",
+            "desctiption": "Name and the surname of the team member.",
             "type": "string"
           },
           "role": {
+            "title": "Role",
+            "description": "Role in the team.",
             "type": "string"
           },
           "webids": {
+            "title": "WebIDs",
+            "description": "Webs related to the project.",
             "type": "object",
             "opencrypto-validation": "webid",
             "patternProperties": {
@@ -114,6 +134,8 @@
             }
           },
           "photo": {
+            "title": "Photo",
+            "description": "Photo of the team member (format https://).",
             "type": "string",
             "format": "url"
           }
@@ -121,14 +143,20 @@
       }
     },
     "whitepapers": {
+      "title": "Whitepapers",
+      "description": "Whitepapers of the project.",
       "type": "array",
       "items": {
         "type": "object",
         "properties": {
           "title": {
+            "title": "Title",
+            "description": "Name of the whitepaper.",
             "type": "string"
           },
           "url": {
+            "title": "URL",
+            "description": "URL link to the whitepaper in .pdf format (format https://).",
             "type": "string",
             "format": "url"
           }
@@ -136,21 +164,31 @@
       }
     },
     "history": {
+      "title": "History",
+      "description": "History of the project, important events, happenings, facts.",
       "type": "array",
       "items": {
         "type": "object",
         "properties": {
           "date": {
+            "title": "Date",
+            "description": "The date of the event (format YYYY/MM/DD).",
             "type": "string",
             "format": "date"
           },
           "title": {
+            "title": "Title",
+            "description": "Title of the event.",
             "type": "string"
           },
           "description": {
+            "title": "Description",
+            "description": "The short description of the event.",
             "type": "string"
           },
           "url": {
+            "title": "URL",
+            "description": "URL of the link with event information (format https://).",
             "type": "string",
             "format": "url"
           }
@@ -162,14 +200,20 @@
       "pattern": "^[0-9-\\.]+ [A-Z0-9]{2,4}$"
     },
     "resources": {
+      "title": "Resources",
+      "description": "Resources where other information about the project could be found.",
       "type": "array",
       "items": {
         "type": "object",
         "properties": {
           "title": {
+            "title": "Title",
+            "description": "Name of the resources.",
             "type": "string"
           },
           "url": {
+            "title": "URL",
+            "description": "URL of the resources (format https://).",
             "type": "string",
             "format": "url"
           }
@@ -177,21 +221,31 @@
       }
     },
     "contacts": {
+      "title": "Contacts",
+      "description": "Contacts of the project.",
       "type": "object",
       "patternProperties": {
         "^email(:.+)?$": {
+          "title": "E-mail",
+          "description": "Official e-mail (format xxx@xxx.xxx).",
           "type": "string",
           "format": "email"
         },
         "^phone(:.+)?$": {
+          "title": "Phone",
+          "description": "Official phone number (format +number).",
           "type": "string"
         },
         "^location(:.+)?$": {
+          "title": "Location",
+          "description": "Location of the project headquaters.",
           "type": "string"
         }
       }
     },
     "tags": {
+      "title": "Tags",
+      "description": "Tags that could describe the project.",
       "type": "array",
       "items": {
         "type": "string",
@@ -199,6 +253,8 @@
       }
     },
     "tools": {
+      "title": "Tools",
+      "description": "Tools for the asset network.",
       "type": "array",
       "items": {
         "type": "object",
@@ -207,6 +263,8 @@
             "type": "string"
           },
           "type": {
+            "title": "Type",
+            "desctiption": "Type of the tool (explorer, faucet, other).",
             "type": "string",
             "enum": [
               "explorer",
@@ -215,6 +273,8 @@
             ]
           },
           "url": {
+            "title": "URL",
+            "description": "URL of the tool (format https://).",
             "type": "string",
             "format": "url"
           }

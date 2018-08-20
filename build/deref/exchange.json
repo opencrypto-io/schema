@@ -2,19 +2,25 @@
   "$schema": "http://json-schema.org/draft-06/schema#",
   "$id": "https://schema.opencrypto.io/models/exchange#",
   "title": "Exchange",
+  "description": "Exchange run or developed by the project.",
   "type": "object",
   "required": [
     "name"
   ],
   "properties": {
     "id": {
+      "title": "ID",
+      "description": "Unique identifier (to be written in small letters - for internal usage only).",
       "type": "string"
     },
     "name": {
       "title": "Name",
+      "description": "Name of the exchange.",
       "type": "string"
     },
     "countries": {
+      "title": "Countries",
+      "description": "Country where the exchange is situated.",
       "type": "array",
       "items": {
         "type": "string",
@@ -42,6 +48,8 @@
       }
     },
     "images": {
+      "title": "Images",
+      "desctiption": "Images of the logo.",
       "type": "object",
       "opencrypto-generated": true,
       "properties": {

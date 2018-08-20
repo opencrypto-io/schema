@@ -7,15 +7,17 @@
   "properties": {
     "id": {
       "title": "ID",
+      "description": "Unique identifier (to be written in small letters - for internal usage only).",
       "type": "string"
     },
     "name": {
       "title": "Name",
+      "description": "Name of the network (eg. Mainnet, Testnet, Rinkeby).",
       "type": "string"
     },
     "type": {
       "title": "Type",
-      "description": "Type of Network",
+      "description": "Type of Network (main, test).",
       "type": "string",
       "enum": [
         "main",
@@ -24,20 +26,27 @@
     },
     "proof_type": {
       "title": "Proof Type",
+      "description": "Proof type of the network (eg. PoW, PoS, Pow+PoS).",
       "type": "string"
     },
     "algorithm": {
+      "title": "Algorithm",
+      "description": "Algorithm that runs the network (eg. Sha-256, Cryptonight).",
       "type": "string"
     },
     "mineable": {
+      "title": "Mineable",
+      "description": "Mineable of the network (true / false)",
       "type": "boolean"
     },
     "target_block_time": {
-      "title": "Target block time (in seconds)",
+      "title": "Target block time",
+      "description": "Target block time in seconds (fromat number).",
       "type": "number"
     },
     "maximum_block_size": {
-      "title": "Maximum block size (in bytes)",
+      "title": "Maximum block size",
+      "description": "Maximum block size in bytes (format number).",
       "type": "number"
     },
     "web": {
@@ -50,6 +59,8 @@
       }
     },
     "tools": {
+      "title": "Tools",
+      "description": "Tools for the asset network.",
       "type": "array",
       "items": {
         "type": "object",
@@ -58,6 +69,8 @@
             "type": "string"
           },
           "type": {
+            "title": "Type",
+            "desctiption": "Type of the tool (explorer, faucet, other).",
             "type": "string",
             "enum": [
               "explorer",
@@ -66,6 +79,8 @@
             ]
           },
           "url": {
+            "title": "URL",
+            "description": "URL of the tool (format https://).",
             "type": "string",
             "format": "url"
           }
@@ -73,6 +88,8 @@
       }
     },
     "images": {
+      "title": "Images",
+      "desctiption": "Images of the logo.",
       "type": "object",
       "opencrypto-generated": true,
       "properties": {
@@ -107,6 +124,8 @@
       }
     },
     "webids": {
+      "title": "WebIDs",
+      "description": "Webs related to the project.",
       "type": "object",
       "opencrypto-validation": "webid",
       "patternProperties": {
