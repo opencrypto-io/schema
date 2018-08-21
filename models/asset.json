@@ -76,7 +76,7 @@
           "description": "Block height where the fork was.",
           "type": "number"
         },
-      }
+      },
     },
     "networks": {
       "type": "array",
