@@ -21,17 +21,20 @@
       "enum": [
         "blockchain",
         "token"
-      ]
+      ],
+      "opencrypto-weight": 1
     },
     "name": {
       "title": "Name",
       "description": "The official name of the asset.",
-      "type": "string"
+      "type": "string",
+      "opencrypto-weight": 1
     },
     "symbol": {
       "title": "Symbol",
       "description": "One to nine characters (to be written in capital letters).",
-      "type": "string"
+      "type": "string",
+      "opencrypto-weight": 1
     },
     "token_properties": {
       "type": "object",
@@ -40,21 +43,26 @@
       "required": [
         "platform"
       ],
+      "opencrypto-weight": 1,
+      "opencrypto-weight-if": "root.type === 'token'",
       "properties": {
         "platform": {
           "title": "Properties",
           "description": "Blockchain where the asset is being run.",
-          "type": "string"
+          "type": "string",
+          "opencrypto-weight": 1
         },
         "contract_address": {
           "title": "Contract address",
           "description": "Contract address of the token.",
-          "type": "string"
+          "type": "string",
+          "opencrypto-weight": 1
         },
         "decimals": {
           "title": "Decimals",
           "description": "The number of digits that come after the decimal place when displaying token values on screen (format number).",
-          "type": "number"
+          "type": "number",
+          "opencrypto-weight": 1
         }
       }
     },
@@ -87,9 +95,12 @@
     },
     "networks": {
       "type": "array",
+      "title": "Networks",
       "items": {
         "$ref": "https://schema.opencrypto.io/models/network#/"
-      }
+      },
+      "opencrypto-weight": 1,
+      "opencrypto-weight-if": "root.type === 'blockchain'"
     },
     "max_supply": {
       "title": "Max supply",
@@ -159,33 +170,39 @@
       "title": "Denominations",
       "description": "Units and subunits of the asset amount.",
       "type": "object",
+      "opencrypto-weight": 1,
       "properties": {
         "plural": {
           "title": "Plural",
           "description": "The name of the denomination, in plural.",
-          "type": "string"
+          "type": "string",
+          "opencrypto-weight": 1
         },
         "symbol": {
           "title": "Symbol",
           "description": "The symbol for the asset.",
-          "type": "string"
+          "type": "string",
+          "opencrypto-weight": 0.5
         },
         "subunits": {
           "title": "Subunits",
           "description": "The subunits of the asset.",
           "type": "array",
+          "opencrypto-weight": 0.5,
           "items": {
             "type": "object",
             "properties": {
               "unit": {
                 "title": "Unit",
                 "description": "The subunits of the asset (format number).",
-                "type": "number"
+                "type": "number",
+                "opencrypto-weight": 1
               },
               "name": {
                 "title": "Name",
                 "description": "Name of the denomination (eg. satoshi / lites / photons / litoshis ...).",
-                "type": "string"
+                "type": "string",
+                "opencrypto-weight": 1
               }
             }
           }
@@ -196,7 +213,8 @@
       "title": "Start Date",
       "description": "The day when the assets began to be first activated (format YYYY/MM/DD).",
       "type": "string",
-      "format": "date"
+      "format": "date",
+      "opencrypto-weight": 1
     },
     "web": {
       "title": "Web",
@@ -219,7 +237,8 @@
       "$ref": "https://schema.opencrypto.io/models/core#/definitions/history"
     },
     "images": {
-      "$ref": "https://schema.opencrypto.io/models/core#/definitions/images"
+      "$ref": "https://schema.opencrypto.io/models/core#/definitions/images",
+      "opencrypto-weight": 1
     },
     "webids": {
       "$ref": "https://schema.opencrypto.io/models/core#/definitions/webids"

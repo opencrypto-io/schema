@@ -25,16 +25,19 @@
     },
     "person": {
       "type": "object",
+      "opencrypto-weight": 1,
       "properties": {
         "name": {
           "title": "Name",
           "desctiption": "Name and the surname of the team member.",
-          "type": "string"
+          "type": "string",
+          "opencrypto-weight": 1
         },
         "role": {
           "title": "Role",
           "description": "Role in the team.",
-          "type": "string"
+          "type": "string",
+          "opencrypto-weight": 1
         },
         "webids": {
           "title": "WebIDs",
@@ -51,7 +54,8 @@
           "title": "Photo",
           "description": "Photo of the team member (format https://).",
           "type": "string",
-          "format": "url"
+          "format": "url",
+          "opencrypto-weight": 0.5
         }
       }
     },
@@ -73,6 +77,7 @@
       "title": "Images",
       "desctiption": "Images of the logo.",
       "type": "object",
+      "opencrypto-weight": 1,
       "opencrypto-generated": true,
       "properties": {
         "logo_square": {
@@ -111,16 +116,19 @@
       "type": "array",
       "items": {
         "type": "object",
+        "opencrypto-weight": 1,
         "properties": {
           "name": {
             "title": "Name",
             "desctiption": "Name and the surname of the team member.",
-            "type": "string"
+            "type": "string",
+            "opencrypto-weight": 1
           },
           "role": {
             "title": "Role",
             "description": "Role in the team.",
-            "type": "string"
+            "type": "string",
+            "opencrypto-weight": 1
           },
           "webids": {
             "title": "WebIDs",
@@ -137,10 +145,12 @@
             "title": "Photo",
             "description": "Photo of the team member (format https://).",
             "type": "string",
-            "format": "url"
+            "format": "url",
+            "opencrypto-weight": 0.5
           }
         }
-      }
+      },
+      "opencrypto-weight": 1
     },
     "whitepapers": {
       "title": "Whitepapers",
@@ -152,13 +162,15 @@
           "title": {
             "title": "Title",
             "description": "Name of the whitepaper.",
-            "type": "string"
+            "type": "string",
+            "opencrypto-weight": 1
           },
           "url": {
             "title": "URL",
             "description": "URL link to the whitepaper in .pdf format (format https://).",
             "type": "string",
-            "format": "url"
+            "format": "url",
+            "opencrypto-weight": 1
           }
         }
       }
@@ -174,23 +186,27 @@
             "title": "Date",
             "description": "The date of the event (format YYYY/MM/DD).",
             "type": "string",
-            "format": "date"
+            "format": "date",
+            "opencrypto-weight": 1
           },
           "title": {
             "title": "Title",
             "description": "Title of the event.",
-            "type": "string"
+            "type": "string",
+            "opencrypto-weight": 1
           },
           "description": {
             "title": "Description",
             "description": "The short description of the event.",
-            "type": "string"
+            "type": "string",
+            "opencrypto-weight": 0.5
           },
           "url": {
             "title": "URL",
             "description": "URL of the link with event information (format https://).",
             "type": "string",
-            "format": "url"
+            "format": "url",
+            "opencrypto-weight": 0.5
           }
         }
       }

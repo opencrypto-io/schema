@@ -51,6 +51,7 @@
       "title": "Images",
       "desctiption": "Images of the logo.",
       "type": "object",
+      "opencrypto-weight": 1,
       "opencrypto-generated": true,
       "properties": {
         "logo_square": {
