@@ -58,6 +58,26 @@
         }
       }
     },
+    "forked_from": {
+      "type": "object",
+      "title": "Forked from",
+      "description": "The currency from which the asset was forked.",
+      "required": [
+        "platform"
+      ],
+      "properties": {
+        "platform": {
+          "title": "Platform",
+          "description": "Blockchain, currency from which the asset was forked.",
+          "type": "string"
+        },
+        "block_height": {
+          "title": "Block height",
+          "description": "Block height where the fork was.",
+          "type": "number"
+        },
+      }
+    },
     "networks": {
       "type": "array",
       "items": {
