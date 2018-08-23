@@ -111,7 +111,7 @@
       }
     },
     "team": {
-      "title": "team",
+      "title": "Team Members",
       "description": "The team of the project.",
       "type": "array",
       "items": {

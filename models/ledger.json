@@ -1,0 +1,99 @@
+{
+  "$schema": "http://json-schema.org/draft-06/schema#",
+  "$id": "https://schema.opencrypto.io/models/ledger#",
+  "title": "Ledger",
+  "description": "Ledger - blockchain or sidechain.",
+  "type": "object",
+  "required": [
+    "name",
+    "type"
+  ],
+  "properties": {
+    "id": {
+      "title": "ID",
+      "description": "Unique identifier (to be written in small letters - for internal usage only).",
+      "type": "string"
+    },
+    "pid": {
+      "title": "PID",
+      "description": "Project ID (generated).",
+      "type": "string",
+      "opencrypto-generated": true
+    },
+    "name": {
+      "title": "Name",
+      "description": "The official name of the ledger.",
+      "type": "string",
+      "opencrypto-weight": 1
+    },
+    "type": {
+      "title": "Type",
+      "type": "string",
+      "enum": [
+        "blockchain",
+        "sidechain",
+        "payment-channels"
+      ]
+    },
+    "forked": {
+      "type": "boolean",
+      "title": "Is forked",
+      "description": "Indicator if this asset was forked from another asset."
+    },
+    "fork_properties": {
+      "type": "object",
+      "title": "Fork properties",
+      "properties": {
+        "parent": {
+          "title": "Parent asset",
+          "description": "Asset from which was this asset forked.",
+          "type": "string"
+        },
+        "block": {
+          "title": "Block number",
+          "description": "Number of first block which differs from parent.",
+          "type": "number"
+        },
+        "time": {
+          "title": "Fork timestamp",
+          "description": "Date and time of first block.",
+          "type": "string",
+          "format": "date-time"
+        }
+      }
+    },
+    "web": {
+      "title": "Web",
+      "desctiption": "Official web page of the project (format https://).",
+      "$ref": "https://schema.opencrypto.io/models/core#/definitions/links"
+    },
+    "start_date": {
+      "title": "Start Date",
+      "description": "The day when the assets began to be first activated (format YYYY/MM/DD).",
+      "type": "string",
+      "format": "date",
+      "opencrypto-weight": 1
+    },
+    "networks": {
+      "type": "array",
+      "title": "Networks",
+      "items": {
+        "$ref": "https://schema.opencrypto.io/models/network#/"
+      },
+      "opencrypto-weight": 1
+    },
+    "history": {
+      "$ref": "https://schema.opencrypto.io/models/core#/definitions/history"
+    },
+    "images": {
+      "$ref": "https://schema.opencrypto.io/models/core#/definitions/images",
+      "opencrypto-weight": 1
+    },
+    "webids": {
+      "$ref": "https://schema.opencrypto.io/models/core#/definitions/webids"
+    },
+    "resources": {
+      "$ref": "https://schema.opencrypto.io/models/core#/definitions/resources"
+    }
+  }
+}

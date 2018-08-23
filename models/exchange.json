@@ -13,10 +13,21 @@
       "description": "Unique identifier (to be written in small letters - for internal usage only).",
       "type": "string"
     },
+    "pid": {
+      "title": "PID",
+      "description": "Project ID (generated).",
+      "type": "string",
+      "opencrypto-generated": true
+    },
     "name": {
       "title": "Name",
       "description": "Name of the exchange.",
-      "type": "string"
+      "type": "string",
+      "opencrypto-weight": 1
+    },
+    "web": {
+      "$ref": "https://schema.opencrypto.io/models/core#/definitions/links",
+      "opencrypto-weight": 1
     },
     "countries": {
       "title": "Countries",
@@ -25,10 +36,142 @@
       "items": {
         "type": "string",
         "pattern": "^(\\w){2}$"
+      },
+      "opencrypto-weight": 1
+    },
+    "decentralized": {
+      "title": "Decentralized",
+      "type": "boolean",
+      "opencrypto-weight": 1
+    },
+    "user_security": {
+      "title": "User security",
+      "type": "object",
+      "properties": {
+        "two_factor": {
+          "title": "Two-factor authentication",
+          "type": "boolean"
+        },
+        "email_confirmation": {
+          "title": "Email confirmations",
+          "type": "boolean"
+        }
+      },
+      "opencrypto-weight": 1
+    },
+    "fees": {
+      "title": "Fees",
+      "type": "object",
+      "properties": {
+        "trading": {
+          "title": "Trading",
+          "type": "object",
+          "properties": {
+            "percentage": {
+              "title": "Percentage",
+              "type": "boolean"
+            },
+            "tier_based": {
+              "title": "Tier based",
+              "type": "boolean"
+            },
+            "taker": {
+              "title": "Taker",
+              "type": "number"
+            },
+            "maker": {
+              "title": "Maker",
+              "type": "number"
+            }
+          }
+        },
+        "funding": {
+          "title": "Funding",
+          "type": "object",
+          "properties": {
+            "percentage": {
+              "title": "Percentage",
+              "type": "boolean"
+            },
+            "tier_based": {
+              "title": "Tier based",
+              "type": "boolean"
+            },
+            "withdraw": {
+              "title": "Withdrawal Fee",
+              "type": "object",
+              "patternProperties": {
+                "^.+$": {
+                  "type": "number"
+                }
+              }
+            },
+            "withdraw_minimum": {
+              "title": "Minimum Withdrawal",
+              "type": "object",
+              "patternProperties": {
+                "^.+$": {
+                  "type": "number"
+                }
+              }
+            },
+            "deposit": {
+              "title": "Deposit",
+              "type": "object",
+              "patternProperties": {
+                "^.+$": {
+                  "type": "number"
+                }
+              }
+            }
+          }
+        }
       }
     },
-    "web": {
-      "$ref": "https://schema.opencrypto.io/models/core#/definitions/links"
+    "apps": {
+      "title": "Applications",
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "title": "Name",
+            "type": "string"
+          },
+          "platform": {
+            "title": "Platform",
+            "type": "string",
+            "enum": [
+              "android",
+              "ios",
+              "macos",
+              "linux"
+            ],
+            "opencrypto-weight": 1
+          },
+          "web": {
+            "title": "Web",
+            "type": "string",
+            "format": "url",
+            "opencrypto-weight": 1
+          },
+          "market_id": {
+            "title": "Market ID",
+            "type": "string",
+            "opencrypto-weight": 1
+          },
+          "download_url": {
+            "title": "Download URL",
+            "description": "URL for download. Fill only if market_id is not available.",
+            "type": "string",
+            "format": "url",
+            "opencrypto-weight": 1,
+            "opencrypto-weight-if": "!root.market_id"
+          }
+        }
+      },
+      "opencrypto-weight": 1,
+      "opencrypto-weight-min": 0
     },
     "api": {
       "url": {
@@ -39,10 +182,21 @@
       "$ref": "https://schema.opencrypto.io/models/core#/definitions/images"
     },
     "markets": {
+      "title": "Markets",
       "type": "array",
       "items": {
         "$ref": "https://schema.opencrypto.io/models/market#"
-      }
+      },
+      "opencrypto-weight": 1
+    },
+    "history": {
+      "$ref": "https://schema.opencrypto.io/models/core#/definitions/history"
+    },
+    "webids": {
+      "$ref": "https://schema.opencrypto.io/models/core#/definitions/webids"
+    },
+    "resources": {
+      "$ref": "https://schema.opencrypto.io/models/core#/definitions/resources"
     }
   }
 }

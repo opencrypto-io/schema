@@ -36,13 +36,14 @@
         "format": "url"
       }
     },
-    "assets": {
+    "ledgers": {
+      "title": "Ledgers",
       "type": "array",
       "items": {
         "$schema": "http://json-schema.org/draft-06/schema#",
-        "$id": "https://schema.opencrypto.io/models/asset#",
-        "title": "Asset",
-        "description": "Cryptocurrency - digital asset (blockchain or token).",
+        "$id": "https://schema.opencrypto.io/models/ledger#",
+        "title": "Ledger",
+        "description": "Ledger - blockchain or sidechain.",
         "type": "object",
         "required": [
           "name",
@@ -54,57 +55,26 @@
             "description": "Unique identifier (to be written in small letters - for internal usage only).",
             "type": "string"
           },
-          "type": {
-            "title": "Type",
-            "description": "Type of asset, eq. blockchain or token.",
+          "pid": {
+            "title": "PID",
+            "description": "Project ID (generated).",
             "type": "string",
-            "enum": [
-              "blockchain",
-              "token"
-            ],
-            "opencrypto-weight": 1
+            "opencrypto-generated": true
           },
           "name": {
             "title": "Name",
-            "description": "The official name of the asset.",
+            "description": "The official name of the ledger.",
             "type": "string",
             "opencrypto-weight": 1
           },
-          "symbol": {
-            "title": "Symbol",
-            "description": "One to nine characters (to be written in capital letters).",
+          "type": {
+            "title": "Type",
             "type": "string",
-            "opencrypto-weight": 1
-          },
-          "token_properties": {
-            "type": "object",
-            "title": "Token properties",
-            "description": "Properties of token. Valid only for tokens.",
-            "required": [
-              "platform"
-            ],
-            "opencrypto-weight": 1,
-            "opencrypto-weight-if": "root.type === 'token'",
-            "properties": {
-              "platform": {
-                "title": "Properties",
-                "description": "Blockchain where the asset is being run.",
-                "type": "string",
-                "opencrypto-weight": 1
-              },
-              "contract_address": {
-                "title": "Contract address",
-                "description": "Contract address of the token.",
-                "type": "string",
-                "opencrypto-weight": 1
-              },
-              "decimals": {
-                "title": "Decimals",
-                "description": "The number of digits that come after the decimal place when displaying token values on screen (format number).",
-                "type": "number",
-                "opencrypto-weight": 1
-              }
-            }
+            "enum": [
+              "blockchain",
+              "sidechain",
+              "payment-channels"
+            ]
           },
           "forked": {
             "type": "boolean",
@@ -133,6 +103,22 @@
               }
             }
           },
+          "web": {
+            "title": "Web links",
+            "description": "Webpages links.",
+            "type": "array",
+            "items": {
+              "type": "string",
+              "format": "url"
+            }
+          },
+          "start_date": {
+            "title": "Start Date",
+            "description": "The day when the assets began to be first activated (format YYYY/MM/DD).",
+            "type": "string",
+            "format": "date",
+            "opencrypto-weight": 1
+          },
           "networks": {
             "type": "array",
             "title": "Networks",
@@ -147,6 +133,12 @@
                   "title": "ID",
                   "description": "Unique identifier (to be written in small letters - for internal usage only).",
                   "type": "string"
+                },
+                "pid": {
+                  "title": "PID",
+                  "description": "Project ID (generated).",
+                  "type": "string",
+                  "opencrypto-generated": true
                 },
                 "name": {
                   "title": "Name",
@@ -294,8 +286,183 @@
                 }
               }
             },
+            "opencrypto-weight": 1
+          },
+          "history": {
+            "title": "History",
+            "description": "History of the project, important events, happenings, facts.",
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "date": {
+                  "title": "Date",
+                  "description": "The date of the event (format YYYY/MM/DD).",
+                  "type": "string",
+                  "format": "date",
+                  "opencrypto-weight": 1
+                },
+                "title": {
+                  "title": "Title",
+                  "description": "Title of the event.",
+                  "type": "string",
+                  "opencrypto-weight": 1
+                },
+                "description": {
+                  "title": "Description",
+                  "description": "The short description of the event.",
+                  "type": "string",
+                  "opencrypto-weight": 0.5
+                },
+                "url": {
+                  "title": "URL",
+                  "description": "URL of the link with event information (format https://).",
+                  "type": "string",
+                  "format": "url",
+                  "opencrypto-weight": 0.5
+                }
+              }
+            }
+          },
+          "images": {
+            "title": "Images",
+            "desctiption": "Images of the logo.",
+            "type": "object",
             "opencrypto-weight": 1,
-            "opencrypto-weight-if": "root.type === 'blockchain'"
+            "opencrypto-generated": true,
+            "properties": {
+              "logo_square": {
+                "type": "object",
+                "properties": {
+                  "type": {
+                    "type": "string"
+                  },
+                  "data": {
+                    "type": "string",
+                    "media": {
+                      "binaryEncoding": "base64"
+                    }
+                  }
+                }
+              },
+              "logo_full": {
+                "type": "object",
+                "properties": {
+                  "type": {
+                    "type": "string"
+                  },
+                  "data": {
+                    "type": "string",
+                    "media": {
+                      "binaryEncoding": "base64"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "webids": {
+            "title": "WebIDs",
+            "description": "Webs related to the project.",
+            "type": "object",
+            "opencrypto-validation": "webid",
+            "patternProperties": {
+              "^[a-z0-9-]{2,20}(\\/[a-z0-9-]{2,20})?$": {
+                "type": "string"
+              }
+            }
+          },
+          "resources": {
+            "title": "Resources",
+            "description": "Resources where other information about the project could be found.",
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "title": {
+                  "title": "Title",
+                  "description": "Name of the resources.",
+                  "type": "string"
+                },
+                "url": {
+                  "title": "URL",
+                  "description": "URL of the resources (format https://).",
+                  "type": "string",
+                  "format": "url"
+                }
+              }
+            }
+          }
+        }
+      },
+      "opencrypto-weight": 1,
+      "opencrypto-weight-min": 0
+    },
+    "assets": {
+      "title": "Assets",
+      "type": "array",
+      "items": {
+        "$schema": "http://json-schema.org/draft-06/schema#",
+        "$id": "https://schema.opencrypto.io/models/asset#",
+        "title": "Asset",
+        "description": "Cryptocurrency - digital asset (native or token).",
+        "type": "object",
+        "required": [
+          "name",
+          "type",
+          "ledger"
+        ],
+        "properties": {
+          "id": {
+            "title": "ID",
+            "description": "Unique identifier (to be written in small letters - for internal usage only).",
+            "type": "string"
+          },
+          "pid": {
+            "title": "PID",
+            "description": "Project ID (generated).",
+            "type": "string",
+            "opencrypto-generated": true
+          },
+          "name": {
+            "title": "Name",
+            "description": "The official name of the asset.",
+            "type": "string",
+            "opencrypto-weight": 1
+          },
+          "type": {
+            "title": "Type",
+            "description": "Type of asset, eq. native or token.",
+            "type": "string",
+            "enum": [
+              "native",
+              "token"
+            ],
+            "opencrypto-weight": 1
+          },
+          "ledger": {
+            "title": "Ledger",
+            "description": "Ledger where the asset is being run.",
+            "type": "string"
+          },
+          "symbol": {
+            "title": "Symbol",
+            "description": "One to nine characters (to be written in capital letters).",
+            "type": "string",
+            "opencrypto-weight": 1
+          },
+          "contract_address": {
+            "title": "Contract address",
+            "description": "Contract address of the token.",
+            "type": "string",
+            "opencrypto-weight": 1,
+            "opencrypto-weight-if": "root.type === 'token'"
+          },
+          "decimals": {
+            "title": "Decimals",
+            "description": "The number of digits that come after the decimal place when displaying token values on screen (format number).",
+            "type": "number",
+            "opencrypto-weight": 1
           },
           "max_supply": {
             "title": "Max supply",
@@ -419,7 +586,7 @@
             }
           },
           "team": {
-            "title": "team",
+            "title": "Team Members",
             "description": "The team of the project.",
             "type": "array",
             "items": {
@@ -700,9 +867,11 @@
           }
         }
       },
-      "opencrypto-weight": 1
+      "opencrypto-weight": 1,
+      "opencrypto-weight-min": 0
     },
     "exchanges": {
+      "title": "Exchanges",
       "type": "array",
       "items": {
         "$schema": "http://json-schema.org/draft-06/schema#",
@@ -719,19 +888,17 @@
             "description": "Unique identifier (to be written in small letters - for internal usage only).",
             "type": "string"
           },
+          "pid": {
+            "title": "PID",
+            "description": "Project ID (generated).",
+            "type": "string",
+            "opencrypto-generated": true
+          },
           "name": {
             "title": "Name",
             "description": "Name of the exchange.",
-            "type": "string"
-          },
-          "countries": {
-            "title": "Countries",
-            "description": "Country where the exchange is situated.",
-            "type": "array",
-            "items": {
-              "type": "string",
-              "pattern": "^(\\w){2}$"
-            }
+            "type": "string",
+            "opencrypto-weight": 1
           },
           "web": {
             "title": "Web links",
@@ -741,6 +908,150 @@
               "type": "string",
               "format": "url"
             }
+          },
+          "countries": {
+            "title": "Countries",
+            "description": "Country where the exchange is situated.",
+            "type": "array",
+            "items": {
+              "type": "string",
+              "pattern": "^(\\w){2}$"
+            },
+            "opencrypto-weight": 1
+          },
+          "decentralized": {
+            "title": "Decentralized",
+            "type": "boolean",
+            "opencrypto-weight": 1
+          },
+          "user_security": {
+            "title": "User security",
+            "type": "object",
+            "properties": {
+              "two_factor": {
+                "title": "Two-factor authentication",
+                "type": "boolean"
+              },
+              "email_confirmation": {
+                "title": "Email confirmations",
+                "type": "boolean"
+              }
+            },
+            "opencrypto-weight": 1
+          },
+          "fees": {
+            "title": "Fees",
+            "type": "object",
+            "properties": {
+              "trading": {
+                "title": "Trading",
+                "type": "object",
+                "properties": {
+                  "percentage": {
+                    "title": "Percentage",
+                    "type": "boolean"
+                  },
+                  "tier_based": {
+                    "title": "Tier based",
+                    "type": "boolean"
+                  },
+                  "taker": {
+                    "title": "Taker",
+                    "type": "number"
+                  },
+                  "maker": {
+                    "title": "Maker",
+                    "type": "number"
+                  }
+                }
+              },
+              "funding": {
+                "title": "Funding",
+                "type": "object",
+                "properties": {
+                  "percentage": {
+                    "title": "Percentage",
+                    "type": "boolean"
+                  },
+                  "tier_based": {
+                    "title": "Tier based",
+                    "type": "boolean"
+                  },
+                  "withdraw": {
+                    "title": "Withdrawal Fee",
+                    "type": "object",
+                    "patternProperties": {
+                      "^.+$": {
+                        "type": "number"
+                      }
+                    }
+                  },
+                  "withdraw_minimum": {
+                    "title": "Minimum Withdrawal",
+                    "type": "object",
+                    "patternProperties": {
+                      "^.+$": {
+                        "type": "number"
+                      }
+                    }
+                  },
+                  "deposit": {
+                    "title": "Deposit",
+                    "type": "object",
+                    "patternProperties": {
+                      "^.+$": {
+                        "type": "number"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "apps": {
+            "title": "Applications",
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "name": {
+                  "title": "Name",
+                  "type": "string"
+                },
+                "platform": {
+                  "title": "Platform",
+                  "type": "string",
+                  "enum": [
+                    "android",
+                    "ios",
+                    "macos",
+                    "linux"
+                  ],
+                  "opencrypto-weight": 1
+                },
+                "web": {
+                  "title": "Web",
+                  "type": "string",
+                  "format": "url",
+                  "opencrypto-weight": 1
+                },
+                "market_id": {
+                  "title": "Market ID",
+                  "type": "string",
+                  "opencrypto-weight": 1
+                },
+                "download_url": {
+                  "title": "Download URL",
+                  "description": "URL for download. Fill only if market_id is not available.",
+                  "type": "string",
+                  "format": "url",
+                  "opencrypto-weight": 1,
+                  "opencrypto-weight-if": "!root.market_id"
+                }
+              }
+            },
+            "opencrypto-weight": 1,
+            "opencrypto-weight-min": 0
           },
           "api": {
             "url": {
@@ -791,15 +1102,88 @@
             }
           },
           "markets": {
+            "title": "Markets",
             "type": "array",
             "items": {
               "$ref": "opencrypto:market#"
+            },
+            "opencrypto-weight": 1
+          },
+          "history": {
+            "title": "History",
+            "description": "History of the project, important events, happenings, facts.",
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "date": {
+                  "title": "Date",
+                  "description": "The date of the event (format YYYY/MM/DD).",
+                  "type": "string",
+                  "format": "date",
+                  "opencrypto-weight": 1
+                },
+                "title": {
+                  "title": "Title",
+                  "description": "Title of the event.",
+                  "type": "string",
+                  "opencrypto-weight": 1
+                },
+                "description": {
+                  "title": "Description",
+                  "description": "The short description of the event.",
+                  "type": "string",
+                  "opencrypto-weight": 0.5
+                },
+                "url": {
+                  "title": "URL",
+                  "description": "URL of the link with event information (format https://).",
+                  "type": "string",
+                  "format": "url",
+                  "opencrypto-weight": 0.5
+                }
+              }
+            }
+          },
+          "webids": {
+            "title": "WebIDs",
+            "description": "Webs related to the project.",
+            "type": "object",
+            "opencrypto-validation": "webid",
+            "patternProperties": {
+              "^[a-z0-9-]{2,20}(\\/[a-z0-9-]{2,20})?$": {
+                "type": "string"
+              }
+            }
+          },
+          "resources": {
+            "title": "Resources",
+            "description": "Resources where other information about the project could be found.",
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "title": {
+                  "title": "Title",
+                  "description": "Name of the resources.",
+                  "type": "string"
+                },
+                "url": {
+                  "title": "URL",
+                  "description": "URL of the resources (format https://).",
+                  "type": "string",
+                  "format": "url"
+                }
+              }
             }
           }
         }
-      }
+      },
+      "opencrypto-weight": 1,
+      "opencrypto-weight-min": 0
     },
     "clients": {
+      "title": "Clients",
       "type": "array",
       "items": {
         "$schema": "http://json-schema.org/draft-06/schema#",
@@ -813,16 +1197,24 @@
             "title": "ID",
             "description": "Unique identifier of the digital asset client."
           },
+          "pid": {
+            "title": "PID",
+            "description": "Project ID (generated).",
+            "type": "string",
+            "opencrypto-generated": true
+          },
           "name": {
             "title": "Name",
             "type": "string",
             "description": "Name of client."
           }
         }
-      }
+      },
+      "opencrypto-weight": 1,
+      "opencrypto-weight-min": 0
     },
     "team": {
-      "title": "team",
+      "title": "Team Members",
       "description": "The team of the project.",
       "type": "array",
       "items": {
@@ -864,9 +1256,9 @@
       "opencrypto-weight": 1
     },
     "team_url": {
+      "title": "Team URL",
       "type": "string",
-      "format": "url",
-      "opencrypto-weight": 0.5
+      "format": "url"
     },
     "contacts": {
       "title": "Contacts",
