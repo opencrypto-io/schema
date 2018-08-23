@@ -2,11 +2,12 @@
   "$schema": "http://json-schema.org/draft-06/schema#",
   "$id": "https://schema.opencrypto.io/models/asset#",
   "title": "Asset",
-  "description": "Cryptocurrency - digital asset (blockchain or token).",
+  "description": "Cryptocurrency - digital asset (native or token).",
   "type": "object",
   "required": [
     "name",
-    "type"
+    "type",
+    "ledger"
   ],
   "properties": {
     "id": {
@@ -14,15 +15,11 @@
       "description": "Unique identifier (to be written in small letters - for internal usage only).",
       "type": "string"
     },
-    "type": {
-      "title": "Type",
-      "description": "Type of asset, eq. blockchain or token.",
+    "pid": {
+      "title": "PID",
+      "description": "Project ID (generated).",
       "type": "string",
-      "enum": [
-        "blockchain",
-        "token"
-      ],
-      "opencrypto-weight": 1
+      "opencrypto-generated": true
     },
     "name": {
       "title": "Name",
@@ -30,232 +27,39 @@
       "type": "string",
       "opencrypto-weight": 1
     },
+    "type": {
+      "title": "Type",
+      "description": "Type of asset, eq. native or token.",
+      "type": "string",
+      "enum": [
+        "native",
+        "token"
+      ],
+      "opencrypto-weight": 1
+    },
+    "ledger": {
+      "title": "Ledger",
+      "description": "Ledger where the asset is being run.",
+      "type": "string"
+    },
     "symbol": {
       "title": "Symbol",
       "description": "One to nine characters (to be written in capital letters).",
       "type": "string",
       "opencrypto-weight": 1
     },
-    "token_properties": {
-      "type": "object",
-      "title": "Token properties",
-      "description": "Properties of token. Valid only for tokens.",
-      "required": [
-        "platform"
-      ],
+    "contract_address": {
+      "title": "Contract address",
+      "description": "Contract address of the token.",
+      "type": "string",
       "opencrypto-weight": 1,
-      "opencrypto-weight-if": "root.type === 'token'",
-      "properties": {
-        "platform": {
-          "title": "Properties",
-          "description": "Blockchain where the asset is being run.",
-          "type": "string",
-          "opencrypto-weight": 1
-        },
-        "contract_address": {
-          "title": "Contract address",
-          "description": "Contract address of the token.",
-          "type": "string",
-          "opencrypto-weight": 1
-        },
-        "decimals": {
-          "title": "Decimals",
-          "description": "The number of digits that come after the decimal place when displaying token values on screen (format number).",
-          "type": "number",
-          "opencrypto-weight": 1
-        }
-      }
+      "opencrypto-weight-if": "root.type === 'token'"
     },
-    "forked": {
-      "type": "boolean",
-      "title": "Is forked",
-      "description": "Indicator if this asset was forked from another asset."
-    },
-    "fork_properties": {
-      "type": "object",
-      "title": "Fork properties",
-      "properties": {
-        "parent": {
-          "title": "Parent asset",
-          "description": "Asset from which was this asset forked.",
-          "type": "string"
-        },
-        "block": {
-          "title": "Block number",
-          "description": "Number of first block which differs from parent.",
-          "type": "number"
-        },
-        "time": {
-          "title": "Fork timestamp",
-          "description": "Date and time of first block.",
-          "type": "string",
-          "format": "date-time"
-        }
-      }
-    },
-    "networks": {
-      "type": "array",
-      "title": "Networks",
-      "items": {
-        "$schema": "http://json-schema.org/draft-06/schema#",
-        "$id": "https://schema.opencrypto.io/models/network#",
-        "title": "Network",
-        "description": "Ledger (blockchain) of digital asset.",
-        "type": "object",
-        "properties": {
-          "id": {
-            "title": "ID",
-            "description": "Unique identifier (to be written in small letters - for internal usage only).",
-            "type": "string"
-          },
-          "name": {
-            "title": "Name",
-            "description": "Name of the network (eg. Mainnet, Testnet, Rinkeby).",
-            "type": "string",
-            "opencrypto-weight": 1
-          },
-          "type": {
-            "title": "Type",
-            "description": "Type of Network (main, test).",
-            "type": "string",
-            "enum": [
-              "main",
-              "test"
-            ],
-            "opencrypto-weight": 1
-          },
-          "proof_type": {
-            "title": "Proof Type",
-            "description": "Proof type of the network (eg. PoW, PoS, Pow+PoS).",
-            "type": "string",
-            "opencrypto-weight": 1,
-            "opencrypto-weight-if": "root.type === 'main'"
-          },
-          "algorithm": {
-            "title": "Algorithm",
-            "description": "Algorithm that runs the network (eg. Sha-256, Cryptonight).",
-            "type": "string",
-            "opencrypto-weight": 1,
-            "opencrypto-weight-if": "root.type === 'main'"
-          },
-          "mineable": {
-            "title": "Mineable",
-            "description": "Mineable of the network (true / false)",
-            "type": "boolean",
-            "opencrypto-weight": 1,
-            "opencrypto-weight-if": "root.type === 'main'"
-          },
-          "target_block_time": {
-            "title": "Target block time",
-            "description": "Target block time in seconds (fromat number).",
-            "type": "number",
-            "opencrypto-weight": 1,
-            "opencrypto-weight-if": "root.type === 'main'"
-          },
-          "maximum_block_size": {
-            "title": "Maximum block size",
-            "description": "Maximum block size in bytes (format number).",
-            "type": "number",
-            "opencrypto-weight": 1,
-            "opencrypto-weight-if": "root.type === 'main'"
-          },
-          "start_date": {
-            "title": "Start date",
-            "description": "The date of start of network.",
-            "type": "string",
-            "format": "date",
-            "opencrypto-weight": 1
-          },
-          "web": {
-            "title": "Web links",
-            "description": "Webpages links.",
-            "type": "array",
-            "items": {
-              "type": "string",
-              "format": "url"
-            }
-          },
-          "tools": {
-            "title": "Tools",
-            "description": "Tools for the asset network.",
-            "type": "array",
-            "items": {
-              "type": "object",
-              "properties": {
-                "title": {
-                  "type": "string"
-                },
-                "type": {
-                  "title": "Type",
-                  "desctiption": "Type of the tool (explorer, faucet, other).",
-                  "type": "string",
-                  "enum": [
-                    "explorer",
-                    "faucet",
-                    "other"
-                  ]
-                },
-                "url": {
-                  "title": "URL",
-                  "description": "URL of the tool (format https://).",
-                  "type": "string",
-                  "format": "url"
-                }
-              }
-            }
-          },
-          "images": {
-            "title": "Images",
-            "desctiption": "Images of the logo.",
-            "type": "object",
-            "opencrypto-weight": 1,
-            "opencrypto-generated": true,
-            "properties": {
-              "logo_square": {
-                "type": "object",
-                "properties": {
-                  "type": {
-                    "type": "string"
-                  },
-                  "data": {
-                    "type": "string",
-                    "media": {
-                      "binaryEncoding": "base64"
-                    }
-                  }
-                }
-              },
-              "logo_full": {
-                "type": "object",
-                "properties": {
-                  "type": {
-                    "type": "string"
-                  },
-                  "data": {
-                    "type": "string",
-                    "media": {
-                      "binaryEncoding": "base64"
-                    }
-                  }
-                }
-              }
-            }
-          },
-          "webids": {
-            "title": "WebIDs",
-            "description": "Webs related to the project.",
-            "type": "object",
-            "opencrypto-validation": "webid",
-            "patternProperties": {
-              "^[a-z0-9-]{2,20}(\\/[a-z0-9-]{2,20})?$": {
-                "type": "string"
-              }
-            }
-          }
-        }
-      },
-      "opencrypto-weight": 1,
-      "opencrypto-weight-if": "root.type === 'blockchain'"
+    "decimals": {
+      "title": "Decimals",
+      "description": "The number of digits that come after the decimal place when displaying token values on screen (format number).",
+      "type": "number",
+      "opencrypto-weight": 1
     },
     "max_supply": {
       "title": "Max supply",
@@ -379,7 +183,7 @@
       }
     },
     "team": {
-      "title": "team",
+      "title": "Team Members",
       "description": "The team of the project.",
       "type": "array",
       "items": {

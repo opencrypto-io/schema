@@ -11,5 +11,27 @@
     {
       "id": "bitfinex-eth-usd"
     }
-  ]
+  ],
+  "decentralized": false,
+  "user_security": {
+    "two_factor": true,
+    "email_confirmation": true
+  },
+  "apps": [
+    {
+      "name": "Bitfinex iOS app",
+      "web": "https://www.bitfinex.com/app",
+      "market_id": "id1079033582",
+      "platform": "ios"
+    },
+    {
+      "name": "Bitfinex Android app",
+      "web": "https://www.bitfinex.com/app",
+      "market_id": "com.bitfinex.bfxapp",
+      "platform": "android"
+    }
+  ],
+  "webids": {
+    "twitter": "bitfinex"
+  }
 }

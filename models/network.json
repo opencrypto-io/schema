@@ -10,6 +10,12 @@
       "description": "Unique identifier (to be written in small letters - for internal usage only).",
       "type": "string"
     },
+    "pid": {
+      "title": "PID",
+      "description": "Project ID (generated).",
+      "type": "string",
+      "opencrypto-generated": true
+    },
     "name": {
       "title": "Name",
       "description": "Name of the network (eg. Mainnet, Testnet, Rinkeby).",

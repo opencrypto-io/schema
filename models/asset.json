@@ -2,11 +2,12 @@
   "$schema": "http://json-schema.org/draft-06/schema#",
   "$id": "https://schema.opencrypto.io/models/asset#",
   "title": "Asset",
-  "description": "Cryptocurrency - digital asset (blockchain or token).",
+  "description": "Cryptocurrency - digital asset (native or token).",
   "type": "object",
   "required": [
     "name",
-    "type"
+    "type",
+    "ledger"
   ],
   "properties": {
     "id": {
@@ -14,15 +15,11 @@
       "description": "Unique identifier (to be written in small letters - for internal usage only).",
       "type": "string"
     },
-    "type": {
-      "title": "Type",
-      "description": "Type of asset, eq. blockchain or token.",
+    "pid": {
+      "title": "PID",
+      "description": "Project ID (generated).",
       "type": "string",
-      "enum": [
-        "blockchain",
-        "token"
-      ],
-      "opencrypto-weight": 1
+      "opencrypto-generated": true
     },
     "name": {
       "title": "Name",
@@ -30,77 +27,39 @@
       "type": "string",
       "opencrypto-weight": 1
     },
+    "type": {
+      "title": "Type",
+      "description": "Type of asset, eq. native or token.",
+      "type": "string",
+      "enum": [
+        "native",
+        "token"
+      ],
+      "opencrypto-weight": 1
+    },
+    "ledger": {
+      "title": "Ledger",
+      "description": "Ledger where the asset is being run.",
+      "type": "string"
+    },
     "symbol": {
       "title": "Symbol",
       "description": "One to nine characters (to be written in capital letters).",
       "type": "string",
       "opencrypto-weight": 1
     },
-    "token_properties": {
-      "type": "object",
-      "title": "Token properties",
-      "description": "Properties of token. Valid only for tokens.",
-      "required": [
-        "platform"
-      ],
+    "contract_address": {
+      "title": "Contract address",
+      "description": "Contract address of the token.",
+      "type": "string",
       "opencrypto-weight": 1,
-      "opencrypto-weight-if": "root.type === 'token'",
-      "properties": {
-        "platform": {
-          "title": "Properties",
-          "description": "Blockchain where the asset is being run.",
-          "type": "string",
-          "opencrypto-weight": 1
-        },
-        "contract_address": {
-          "title": "Contract address",
-          "description": "Contract address of the token.",
-          "type": "string",
-          "opencrypto-weight": 1
-        },
-        "decimals": {
-          "title": "Decimals",
-          "description": "The number of digits that come after the decimal place when displaying token values on screen (format number).",
-          "type": "number",
-          "opencrypto-weight": 1
-        }
-      }
+      "opencrypto-weight-if": "root.type === 'token'"
     },
-    "forked": {
-      "type": "boolean",
-      "title": "Is forked",
-      "description": "Indicator if this asset was forked from another asset."
-    },
-    "fork_properties": {
-      "type": "object",
-      "title": "Fork properties",
-      "properties": {
-        "parent": {
-          "title": "Parent asset",
-          "description": "Asset from which was this asset forked.",
-          "type": "string"
-        },
-        "block": {
-          "title": "Block number",
-          "description": "Number of first block which differs from parent.",
-          "type": "number"
-        },
-        "time": {
-          "title": "Fork timestamp",
-          "description": "Date and time of first block.",
-          "type": "string",
-          "format": "date-time"
-        }
-      }
-    },
-    "networks": {
-      "type": "array",
-      "title": "Networks",
-      "items": {
-        "$ref": "https://schema.opencrypto.io/models/network#/"
-      },
-      "opencrypto-weight": 1,
-      "opencrypto-weight-if": "root.type === 'blockchain'"
+    "decimals": {
+      "title": "Decimals",
+      "description": "The number of digits that come after the decimal place when displaying token values on screen (format number).",
+      "type": "number",
+      "opencrypto-weight": 1
     },
     "max_supply": {
       "title": "Max supply",
