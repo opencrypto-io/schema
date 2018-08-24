@@ -10,6 +10,12 @@
       "title": "ID",
       "description": "Unique identifier of the digital asset client."
     },
+    "pid": {
+      "title": "PID",
+      "description": "Project ID (generated).",
+      "type": "string",
+      "opencrypto-generated": true
+    },
     "name": {
       "title": "Name",
       "type": "string",

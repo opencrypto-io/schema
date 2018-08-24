@@ -5,7 +5,7 @@
   "web": [
     "https://bitcoin.org/"
   ],
-  "assets": [
+  "ledgers": [
     {
       "id": "btc",
       "symbol": "BTC",
@@ -37,7 +37,28 @@
           "type": "test",
           "name": "testnet"
         }
-      ],
+      ]
+    },
+    {
+      "id": "ethereum-classic",
+      "name": "Ethereum Classic",
+      "symbol": "ETC",
+      "type": "blockchain",
+      "forked": true,
+      "fork_properties": {
+        "parent": "ethereum",
+        "block": 1920000,
+        "time": "2016-07-20T13:20:39Z"
+      }
+    }
+  ],
+  "assets": [
+    {
+      "id": "btc",
+      "symbol": "BTC",
+      "name": "Bitcoin",
+      "type": "native",
+      "ledger": "bitcoin",
       "max_supply": 21000000,
       "first_distribution": [
         {
@@ -73,11 +94,9 @@
       "name": "Bitcoin Gas",
       "symbol": "BGAS",
       "type": "token",
-      "token_properties": {
-        "platform": "ethereum",
-        "contract_address": "0x00000000..",
-        "decimals": 18
-      }
+      "ledger": "ethereum",
+      "contract_address": "0x00000000..",
+      "decimals": 18
     }
   ],
   "team": [

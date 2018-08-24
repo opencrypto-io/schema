@@ -4,6 +4,8 @@
   "title": "Core",
   "definitions": {
     "webids": {
+      "title": "WebIDs",
+      "description": "Webs related to the project.",
       "type": "object",
       "opencrypto-validation": "webid",
       "patternProperties": {
@@ -23,14 +25,23 @@
     },
     "person": {
       "type": "object",
+      "opencrypto-weight": 1,
       "properties": {
         "name": {
-          "type": "string"
+          "title": "Name",
+          "desctiption": "Name and the surname of the team member.",
+          "type": "string",
+          "opencrypto-weight": 1
         },
         "role": {
-          "type": "string"
+          "title": "Role",
+          "description": "Role in the team.",
+          "type": "string",
+          "opencrypto-weight": 1
         },
         "webids": {
+          "title": "WebIDs",
+          "description": "Webs related to the project.",
           "type": "object",
           "opencrypto-validation": "webid",
           "patternProperties": {
@@ -40,8 +51,11 @@
           }
         },
         "photo": {
+          "title": "Photo",
+          "description": "Photo of the team member (format https://).",
           "type": "string",
-          "format": "url"
+          "format": "url",
+          "opencrypto-weight": 0.5
         }
       }
     },
@@ -60,7 +74,10 @@
       }
     },
     "images": {
+      "title": "Images",
+      "desctiption": "Images of the logo.",
       "type": "object",
+      "opencrypto-weight": 1,
       "opencrypto-generated": true,
       "properties": {
         "logo_square": {
@@ -94,17 +111,28 @@
       }
     },
     "team": {
+      "title": "Team Members",
+      "description": "The team of the project.",
       "type": "array",
       "items": {
         "type": "object",
+        "opencrypto-weight": 1,
         "properties": {
           "name": {
-            "type": "string"
+            "title": "Name",
+            "desctiption": "Name and the surname of the team member.",
+            "type": "string",
+            "opencrypto-weight": 1
           },
           "role": {
-            "type": "string"
+            "title": "Role",
+            "description": "Role in the team.",
+            "type": "string",
+            "opencrypto-weight": 1
           },
           "webids": {
+            "title": "WebIDs",
+            "description": "Webs related to the project.",
             "type": "object",
             "opencrypto-validation": "webid",
             "patternProperties": {
@@ -114,45 +142,71 @@
             }
           },
           "photo": {
+            "title": "Photo",
+            "description": "Photo of the team member (format https://).",
             "type": "string",
-            "format": "url"
+            "format": "url",
+            "opencrypto-weight": 0.5
           }
         }
-      }
+      },
+      "opencrypto-weight": 1
     },
     "whitepapers": {
+      "title": "Whitepapers",
+      "description": "Whitepapers of the project.",
       "type": "array",
       "items": {
         "type": "object",
         "properties": {
           "title": {
-            "type": "string"
+            "title": "Title",
+            "description": "Name of the whitepaper.",
+            "type": "string",
+            "opencrypto-weight": 1
           },
           "url": {
+            "title": "URL",
+            "description": "URL link to the whitepaper in .pdf format (format https://).",
             "type": "string",
-            "format": "url"
+            "format": "url",
+            "opencrypto-weight": 1
           }
         }
       }
     },
     "history": {
+      "title": "History",
+      "description": "History of the project, important events, happenings, facts.",
       "type": "array",
       "items": {
         "type": "object",
         "properties": {
           "date": {
+            "title": "Date",
+            "description": "The date of the event (format YYYY/MM/DD).",
             "type": "string",
-            "format": "date"
+            "format": "date",
+            "opencrypto-weight": 1
           },
           "title": {
-            "type": "string"
+            "title": "Title",
+            "description": "Title of the event.",
+            "type": "string",
+            "opencrypto-weight": 1
           },
           "description": {
-            "type": "string"
+            "title": "Description",
+            "description": "The short description of the event.",
+            "type": "string",
+            "opencrypto-weight": 0.5
           },
           "url": {
+            "title": "URL",
+            "description": "URL of the link with event information (format https://).",
             "type": "string",
-            "format": "url"
+            "format": "url",
+            "opencrypto-weight": 0.5
           }
         }
       }
@@ -162,14 +216,20 @@
       "pattern": "^[0-9-\\.]+ [A-Z0-9]{2,4}$"
     },
     "resources": {
+      "title": "Resources",
+      "description": "Resources where other information about the project could be found.",
       "type": "array",
       "items": {
         "type": "object",
         "properties": {
           "title": {
+            "title": "Title",
+            "description": "Name of the resources.",
             "type": "string"
           },
           "url": {
+            "title": "URL",
+            "description": "URL of the resources (format https://).",
             "type": "string",
             "format": "url"
           }
@@ -177,21 +237,31 @@
       }
     },
     "contacts": {
+      "title": "Contacts",
+      "description": "Contacts of the project.",
       "type": "object",
       "patternProperties": {
         "^email(:.+)?$": {
+          "title": "E-mail",
+          "description": "Official e-mail (format xxx@xxx.xxx).",
           "type": "string",
           "format": "email"
         },
         "^phone(:.+)?$": {
+          "title": "Phone",
+          "description": "Official phone number (format +number).",
           "type": "string"
         },
         "^location(:.+)?$": {
+          "title": "Location",
+          "description": "Location of the project headquaters.",
           "type": "string"
         }
       }
     },
     "tags": {
+      "title": "Tags",
+      "description": "Tags that could describe the project.",
       "type": "array",
       "items": {
         "type": "string",
@@ -199,6 +269,8 @@
       }
     },
     "tools": {
+      "title": "Tools",
+      "description": "Tools for the asset network.",
       "type": "array",
       "items": {
         "type": "object",
@@ -207,6 +279,8 @@
             "type": "string"
           },
           "type": {
+            "title": "Type",
+            "desctiption": "Type of the tool (explorer, faucet, other).",
             "type": "string",
             "enum": [
               "explorer",
@@ -215,6 +289,8 @@
             ]
           },
           "url": {
+            "title": "URL",
+            "description": "URL of the tool (format https://).",
             "type": "string",
             "format": "url"
           }
