@@ -48,6 +48,15 @@
       "type": "string",
       "opencrypto-weight": 1
     },
+    "alt_symbols": {
+      "title": "Alternative symbols",
+      "description": "Alternative symbols for the asset",
+      "type": "array",
+      "items": {
+        "title": "Symbol",
+        "type": "string"
+      }
+    },
     "contract_address": {
       "title": "Contract address",
       "description": "Contract address of the token.",

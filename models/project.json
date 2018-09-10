@@ -20,6 +20,15 @@
       "type": "string",
       "opencrypto-weight": 1
     },
+    "alt_names": {
+      "title": "Alternative names",
+      "description": "Alternative names for the project",
+      "type": "array",
+      "items": {
+        "title": "Name",
+        "type": "string"
+      }
+    },
     "start_date": {
       "title": "Start Date",
       "description": "The day when the project began to be first published (format YYYY/MM/DD).",
