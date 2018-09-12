@@ -12,6 +12,7 @@
       "title": "ID",
       "description": "Unique identifier (to be written in small letters - for internal usage only).",
       "type": "string",
+      "pattern": "^[a-z0-9-]+$",
       "opencrypto-generated": true
     },
     "name": {

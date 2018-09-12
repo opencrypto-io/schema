@@ -12,6 +12,7 @@
       "title": "ID",
       "description": "Unique identifier (to be written in small letters - for internal usage only).",
       "type": "string",
+      "pattern": "^[a-z0-9-]+$",
       "opencrypto-generated": true
     },
     "name": {
@@ -62,7 +63,8 @@
           "id": {
             "title": "ID",
             "description": "Unique identifier (to be written in small letters - for internal usage only).",
-            "type": "string"
+            "type": "string",
+            "pattern": "^[a-z0-9-]+$"
           },
           "pid": {
             "title": "PID",
@@ -141,7 +143,8 @@
                 "id": {
                   "title": "ID",
                   "description": "Unique identifier (to be written in small letters - for internal usage only).",
-                  "type": "string"
+                  "type": "string",
+                  "pattern": "^[a-z0-9]+$"
                 },
                 "pid": {
                   "title": "PID",
@@ -425,7 +428,8 @@
           "id": {
             "title": "ID",
             "description": "Unique identifier (to be written in small letters - for internal usage only).",
-            "type": "string"
+            "type": "string",
+            "pattern": "^[a-z0-9-]+$"
           },
           "pid": {
             "title": "PID",
@@ -904,7 +908,8 @@
           "id": {
             "title": "ID",
             "description": "Unique identifier (to be written in small letters - for internal usage only).",
-            "type": "string"
+            "type": "string",
+            "pattern": "^[a-z0-9-]+$"
           },
           "pid": {
             "title": "PID",
@@ -1213,7 +1218,8 @@
           "id": {
             "type": "string",
             "title": "ID",
-            "description": "Unique identifier of the digital asset client."
+            "description": "Unique identifier of the digital asset client.",
+            "pattern": "^[a-z0-9-]+$"
           },
           "pid": {
             "title": "PID",

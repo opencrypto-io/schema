@@ -8,7 +8,8 @@
     "id": {
       "title": "ID",
       "description": "Unique identifier (to be written in small letters - for internal usage only).",
-      "type": "string"
+      "type": "string",
+      "pattern": "^[a-z0-9]+$"
     },
     "pid": {
       "title": "PID",
