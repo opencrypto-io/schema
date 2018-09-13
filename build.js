@@ -33,7 +33,6 @@ async function derefSchema (schema) {
           }
           return fn(null, targetSchema)
         }
-        //console.log(ref)
         return fn()
       }
     }, (err, fullSchema) => {

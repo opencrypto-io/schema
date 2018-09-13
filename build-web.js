@@ -15,4 +15,3 @@ fs.readdirSync(webappDir).forEach(f => {
   console.log(`Copying webapp file: ${f} => ${dest}`)
 })
 console.log('Done')
-
