@@ -784,8 +784,8 @@
             }
           },
           "partners": {
-            "title": "Resources",
-            "description": "Resources where other information about the project could be found.",
+            "title": "Partners",
+            "description": "Partners of the project.",
             "type": "array",
             "items": {
               "type": "object",
@@ -1436,8 +1436,8 @@
       }
     },
     "partners": {
-      "title": "Resources",
-      "description": "Resources where other information about the project could be found.",
+      "title": "Partners",
+      "description": "Partners of the project.",
       "type": "array",
       "items": {
         "type": "object",
