@@ -2,6 +2,7 @@ const deref = require('json-schema-deref')
 const fs = require('fs')
 const path = require('path')
 const jmespath = require('jmespath')
+const pkg = require('./package')
 
 const schemas = {}
 
@@ -98,6 +99,9 @@ async function build () {
     m.schema = sm
     m.example = JSON.parse(fs.readFileSync(path.join(examplesDir, 'models', `${mk}.json`)))
   })
+  map.meta = {
+    version: pkg.version
+  }
   console.log('Writing: %s', outputBundleFn)
   fs.writeFileSync(outputBundleFn, JSON.stringify(map, null, 2))
 
