@@ -1,0 +1,7 @@
+network: 'bitcoin:main'
+network_id: '523138'
+transactions_count: 2688
+transactions:
+  - ccc0a580a4d800e860856a1c66f225734b4659c60de857d33534195ecc57aa17
+  - 8c2832b520d974c8bd1a2a6a8c887d117dbe335cd4764ee9a883dbf4b82f70b4
+

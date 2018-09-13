@@ -1,0 +1,97 @@
+$schema: 'http://json-schema.org/draft-06/schema#'
+$id: 'https://schema.opencrypto.io/models/project#'
+title: Project
+description: Cryptocurrency project
+type: object
+required:
+  - name
+properties:
+  id:
+    title: ID
+    description: >-
+      Unique identifier (to be written in small letters - for internal usage
+      only).
+    type: string
+    pattern: '^[a-z0-9-]+$'
+    opencrypto-generated: true
+  name:
+    title: Name
+    description: The name of the project.
+    type: string
+    opencrypto-weight: 1
+  alt_names:
+    title: Alternative names
+    description: Alternative names for the project
+    type: array
+    items:
+      title: Name
+      type: string
+  start_date:
+    title: Start Date
+    description: The day when the project began to be first published (format YYYY/MM/DD).
+    type: string
+    format: date
+    opencrypto-weight: 1
+  web:
+    $ref: 'https://schema.opencrypto.io/models/core#/definitions/links'
+    opencrypto-weight: 1
+  ledgers:
+    title: Ledgers
+    type: array
+    items:
+      $ref: 'https://schema.opencrypto.io/models/ledger#/'
+    opencrypto-weight: 1
+    opencrypto-weight-min: 0
+  assets:
+    title: Assets
+    type: array
+    items:
+      $ref: 'https://schema.opencrypto.io/models/asset#/'
+    opencrypto-weight: 1
+    opencrypto-weight-min: 0
+  exchanges:
+    title: Exchanges
+    type: array
+    items:
+      $ref: 'https://schema.opencrypto.io/models/exchange#/'
+    opencrypto-weight: 1
+    opencrypto-weight-min: 0
+  clients:
+    title: Clients
+    type: array
+    items:
+      $ref: 'https://schema.opencrypto.io/models/client#/'
+    opencrypto-weight: 1
+    opencrypto-weight-min: 0
+  team:
+    $ref: 'https://schema.opencrypto.io/models/core#/definitions/team'
+    opencrypto-weight: 1
+  team_url:
+    title: Team URL
+    type: string
+    format: url
+  contacts:
+    $ref: 'https://schema.opencrypto.io/models/core#/definitions/contacts'
+    opencrypto-weight: 1
+  whitepapers:
+    $ref: 'https://schema.opencrypto.io/models/core#/definitions/whitepapers'
+    opencrypto-weight: 1
+  history:
+    $ref: 'https://schema.opencrypto.io/models/core#/definitions/history'
+    opencrypto-weight: 1
+  images:
+    $ref: 'https://schema.opencrypto.io/models/core#/definitions/images'
+    opencrypto-weight: 1
+  webids:
+    $ref: 'https://schema.opencrypto.io/models/core#/definitions/webids'
+    opencrypto-weight: 1
+  resources:
+    $ref: 'https://schema.opencrypto.io/models/core#/definitions/resources'
+  partners:
+    $ref: 'https://schema.opencrypto.io/models/core#/definitions/resources'
+  tags:
+    $ref: 'https://schema.opencrypto.io/models/core#/definitions/tags'
+    opencrypto-weight: 1
+  tools:
+    $ref: 'https://schema.opencrypto.io/models/core#/definitions/tools'
+

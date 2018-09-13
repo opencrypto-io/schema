@@ -1,0 +1,168 @@
+{
+  "id": "bitcoin",
+  "name": "Bitcoin",
+  "alt_names": [
+    "BitCoin"
+  ],
+  "start_date": "2008-08-18",
+  "web": [
+    "https://bitcoin.org/"
+  ],
+  "ledgers": [
+    {
+      "id": "btc",
+      "symbol": "BTC",
+      "name": "Bitcoin",
+      "type": "blockchain",
+      "networks": [
+        {
+          "id": "main",
+          "type": "main",
+          "name": "mainnet",
+          "proof_type": "PoW",
+          "algorithm": "SHA256",
+          "mineable": true,
+          "maximum_block_size": 8388608,
+          "target_block_time": 15,
+          "tools": [
+            {
+              "type": "explorer",
+              "url": "https://www.blockchain.com/explorer"
+            },
+            {
+              "type": "explorer",
+              "url": "https://live.blockcypher.com/btc/"
+            }
+          ]
+        },
+        {
+          "id": "test",
+          "type": "test",
+          "name": "testnet"
+        }
+      ]
+    },
+    {
+      "id": "ethereum-classic",
+      "name": "Ethereum Classic",
+      "symbol": "ETC",
+      "type": "blockchain",
+      "forked": true,
+      "fork_properties": {
+        "parent": "ethereum",
+        "block": 1920000,
+        "time": "2016-07-20T13:20:39Z"
+      }
+    }
+  ],
+  "assets": [
+    {
+      "id": "btc",
+      "symbol": "BTC",
+      "name": "Bitcoin",
+      "type": "native",
+      "ledger": "bitcoin",
+      "max_supply": 21000000,
+      "first_distribution": [
+        {
+          "title": "Satoshi Nakamoto",
+          "amount": 10000
+        }
+      ],
+      "ico_properties": {
+        "start_date": "2018-01-12",
+        "end_date": "2018-01-31",
+        "total_cap": 21000000,
+        "ico_price": "0.1 ETH",
+        "raised": "1000000 ETH",
+        "country": "Japan"
+      },
+      "denominations": {
+        "plural": "bitcoins",
+        "symbol": "₿",
+        "subunits": [
+          {
+            "unit": 0.001,
+            "name": "millibitcoin"
+          },
+          {
+            "unit": 1e-8,
+            "name": "satoshi"
+          }
+        ]
+      }
+    },
+    {
+      "id": "bgas",
+      "name": "Bitcoin Gas",
+      "symbol": "BGAS",
+      "type": "token",
+      "ledger": "ethereum",
+      "contract_address": "0x00000000..",
+      "decimals": 18
+    }
+  ],
+  "team": [
+    {
+      "name": "Satoshi Nakamoto",
+      "role": "founder"
+    }
+  ],
+  "contacts": {
+    "phone": "+53855349695964",
+    "email": "neco@neco.cz",
+    "location:hq": "Prague, Czech Republic",
+    "location:node": "London, United Kingdom"
+  },
+  "whitepapers": [
+    {
+      "title": "Bitcoin: A Peer-to-Peer Electronic Cash System",
+      "url": "https://bitcoin.org/bitcoin.pdf"
+    }
+  ],
+  "tags": [
+    "freedom",
+    "technology:private",
+    "case:currency",
+    "case:store-of-value"
+  ],
+  "webids": {
+    "facebook": "bitcoin",
+    "cardanocom": "bitcoin",
+    "git_repository:github": "bitcoin-core",
+    "forum:bitcointalk": "bitcoin",
+    "forum": "http://bitcoin.forum"
+  },
+  "partners": [
+    {
+      "name": "Venture Capital Ltd.",
+      "url": "http://vnc.dd"
+    }
+  ],
+  "history": [
+    {
+      "date": "2008-08-18",
+      "title": "Domain 'Bitcoin.org' registered"
+    },
+    {
+      "date": "2008-10-31",
+      "title": "Satoshi Nakamoto published Bitcoin whitepaper",
+      "description": "A link to a paper authored by Satoshi Nakamoto titled 'Bitcoin: A Peer-to-Peer Electronic Cash System' was posted to a cryptography mailing list."
+    }
+  ],
+  "resources": [
+    {
+      "title": "Review AAZZZ",
+      "url": "http://example.xyz"
+    }
+  ],
+  "exchanges": [
+    {
+      "id": "bitjap",
+      "name": "Bitjap",
+      "countries": [
+        "JP"
+      ]
+    }
+  ]
+}

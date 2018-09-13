@@ -1,0 +1,15 @@
+{
+  "id": "bitfinex-btc-usd",
+  "exchange": "bitfinex",
+  "start_date": "2017-01-10",
+  "assets": [
+    {
+      "type": "crypto",
+      "asset": "bitcoin"
+    },
+    {
+      "type": "crypto",
+      "asset": "tether"
+    }
+  ]
+}

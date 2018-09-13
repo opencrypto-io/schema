@@ -1,0 +1,25 @@
+id: btc
+symbol: BTC
+name: Bitcoin
+type: native
+ledger: bitcoin
+max_supply: 21000000
+first_distribution:
+  - title: Satoshi Nakamoto
+    amount: 10000
+ico_properties:
+  start_date: '2018-01-12'
+  end_date: '2018-01-31'
+  total_cap: 21000000
+  ico_price: 0.1 ETH
+  raised: 1000000 ETH
+  country: Japan
+denominations:
+  plural: bitcoins
+  symbol: ₿
+  subunits:
+    - unit: 0.001
+      name: millibitcoin
+    - unit: 1.e-8
+      name: satoshi
+
