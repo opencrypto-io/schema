@@ -33,7 +33,7 @@ async function derefSchema (schema) {
           }
           return fn(null, targetSchema)
         }
-        console.log(ref)
+        //console.log(ref)
         return fn()
       }
     }, (err, fullSchema) => {
@@ -46,6 +46,7 @@ async function derefSchema (schema) {
 }
 
 async function build () {
+  let schemas = {}
   let q = []
   fs.readdirSync(dir).forEach(m => {
     // if (m != 'project.json') { return null }
@@ -58,6 +59,7 @@ async function build () {
       let finalPath = path.join(outputDir, 'deref', m)
       console.log('Writing:', finalPath)
       fs.writeFileSync(finalPath, JSON.stringify(fullSchema, null, 2))
+      schemas[m.match(/^(.+)\.json$/)[1]] = fullSchema
     }())
     // let fullSchema = await derefSchema(schema)
     // console.log(fullSchema)
@@ -65,6 +67,26 @@ async function build () {
   })
 
   await Promise.all(q)
+
+  // copy map
+  const map = require('./map.json')
+  const outputMapFn = path.join(outputDir, 'map.json')
+  const models = {}
+  Object.keys(map.models).forEach(mk => {
+    let m = map.models[mk]
+    let sm = schemas[mk]
+    m.id = mk
+    m.name = sm.title
+    m.description = sm.description
+    models[mk] = m
+  })
+
+  console.log('Writing: %s', outputMapFn)
+  fs.writeFileSync(outputMapFn, JSON.stringify(map, null, 2))
+
+  // done
+  console.log('Done')
+
   process.exit()
 }
 

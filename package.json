@@ -9,6 +9,8 @@
   "scripts": {
     "build": "node build.js",
     "build-append": "git add build",
+    "build-web": "node build-web",
+    "build-all": "npm run-script build && npm run-script build-web && cp -R build dist/build && cp -R examples dist/examples",
     "test": "mocha && standard"
   },
   "repository": {
@@ -37,7 +39,8 @@
     "mocha": "^5.2.0",
     "pre-commit": "^1.2.2",
     "request": "^2.86.0",
-    "standard": "^11.0.1"
+    "standard": "^11.0.1",
+    "opencrypto-schema-explorer": "git+https://github.com/opencrypto-io/schema-explorer.git"
   },
   "dependencies": {}
 }

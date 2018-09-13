@@ -1,6 +1,9 @@
 {
   "id": "bitcoin",
   "name": "Bitcoin",
+  "alt_names": [
+    "BitCoin"
+  ],
   "start_date": "2008-08-18",
   "web": [
     "https://bitcoin.org/"

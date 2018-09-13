@@ -1,0 +1,29 @@
+{
+  "models": {
+    "project": {},
+    "ledger": {
+      "parent": "project"
+    },
+    "network": {
+      "parent": "ledger"
+    },
+    "block": {
+      "parent": "network"
+    },
+    "transaction": {
+      "parent": "block"
+    },
+    "asset": {
+      "parent": "project"
+    },
+    "client": {
+      "parent": "project"
+    },
+    "exchange": {
+      "parent": "project"
+    },
+    "market": {
+      "parent": "exchange"
+    }
+  }
+}

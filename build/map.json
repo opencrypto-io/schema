@@ -1,0 +1,56 @@
+{
+  "models": {
+    "project": {
+      "id": "project",
+      "name": "Project",
+      "description": "Cryptocurrency project"
+    },
+    "ledger": {
+      "parent": "project",
+      "id": "ledger",
+      "name": "Ledger",
+      "description": "Ledger - blockchain or sidechain."
+    },
+    "network": {
+      "parent": "ledger",
+      "id": "network",
+      "name": "Network",
+      "description": "Ledger (blockchain) of digital asset."
+    },
+    "block": {
+      "parent": "network",
+      "id": "block",
+      "name": "Block",
+      "description": "Block produced by network (blockchain) of digital asset."
+    },
+    "transaction": {
+      "parent": "block",
+      "id": "transaction",
+      "name": "Transaction"
+    },
+    "asset": {
+      "parent": "project",
+      "id": "asset",
+      "name": "Asset",
+      "description": "Cryptocurrency - digital asset (native or token)."
+    },
+    "client": {
+      "parent": "project",
+      "id": "client",
+      "name": "Client",
+      "description": "Client for digital asset. It can be full-node or thin client in form of wallet."
+    },
+    "exchange": {
+      "parent": "project",
+      "id": "exchange",
+      "name": "Exchange",
+      "description": "Exchange run or developed by the project."
+    },
+    "market": {
+      "parent": "exchange",
+      "id": "market",
+      "name": "Market",
+      "description": "Specific pairing (market) on exchange."
+    }
+  }
+}
