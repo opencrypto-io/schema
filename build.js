@@ -7,6 +7,7 @@ const schemas = {}
 
 const dir = './models'
 const outputDir = './build'
+const examplesDir = './examples'
 
 function loadSchema (fn) {
   if (!schemas[fn]) {
@@ -67,21 +68,38 @@ async function build () {
 
   await Promise.all(q)
 
-  // copy map
   const map = require('./map.json')
+
+  function getPath (type, path = []) {
+    if (map.models[type].parent) {
+      return getPath(map.models[type].parent, path.concat([ type ]))
+    }
+    return path.concat([ type ])
+  }
+
+  // extend + copy map
   const outputMapFn = path.join(outputDir, 'map.json')
-  const models = {}
   Object.keys(map.models).forEach(mk => {
     let m = map.models[mk]
     let sm = schemas[mk]
     m.id = mk
     m.name = sm.title
     m.description = sm.description
-    models[mk] = m
+    m.path = getPath(mk).reverse()
   })
-
   console.log('Writing: %s', outputMapFn)
   fs.writeFileSync(outputMapFn, JSON.stringify(map, null, 2))
+
+  // build bundle
+  const outputBundleFn = path.join(outputDir, 'bundle.json')
+  Object.keys(map.models).forEach(mk => {
+    let m = map.models[mk]
+    let sm = schemas[mk]
+    m.schema = sm
+    m.example = JSON.parse(fs.readFileSync(path.join(examplesDir, 'models', `${mk}.json`)))
+  })
+  console.log('Writing: %s', outputBundleFn)
+  fs.writeFileSync(outputBundleFn, JSON.stringify(map, null, 2))
 
   // done
   console.log('Done')
