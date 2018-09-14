@@ -147,6 +147,48 @@
               }
             }
           }
+        },
+        "logo_black_white": {
+          "type": "object",
+          "properties": {
+            "type": {
+              "type": "string"
+            },
+            "data": {
+              "type": "string",
+              "media": {
+                "binaryEncoding": "base64"
+              }
+            }
+          }
+        },
+        "logo_alternative": {
+          "type": "object",
+          "properties": {
+            "type": {
+              "type": "string"
+            },
+            "data": {
+              "type": "string",
+              "media": {
+                "binaryEncoding": "base64"
+              }
+            }
+          }
+        },
+        "logo_square_text": {
+          "type": "object",
+          "properties": {
+            "type": {
+              "type": "string"
+            },
+            "data": {
+              "type": "string",
+              "media": {
+                "binaryEncoding": "base64"
+              }
+            }
+          }
         }
       }
     },

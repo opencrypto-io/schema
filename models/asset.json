@@ -92,6 +92,11 @@
             "title": "Amount",
             "desctiption": "Number of coins in that part (format number).",
             "type": "number"
+          },
+          "amount": {
+            "title": "Percent",
+            "desctiption": "Percent of coins in that part (format number).",
+            "type": "number"
           }
         }
       }

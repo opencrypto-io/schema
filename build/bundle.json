@@ -41,7 +41,7 @@
           },
           "start_date": {
             "title": "Start Date",
-            "description": "The day when the project began to be first published (format YYYY/MM/DD).",
+            "description": "The day when the project began to be first published (format YYYY-MM-DD).",
             "type": "string",
             "format": "date",
             "opencrypto-weight": 1
@@ -291,6 +291,48 @@
                                 }
                               }
                             }
+                          },
+                          "logo_black_white": {
+                            "type": "object",
+                            "properties": {
+                              "type": {
+                                "type": "string"
+                              },
+                              "data": {
+                                "type": "string",
+                                "media": {
+                                  "binaryEncoding": "base64"
+                                }
+                              }
+                            }
+                          },
+                          "logo_alternative": {
+                            "type": "object",
+                            "properties": {
+                              "type": {
+                                "type": "string"
+                              },
+                              "data": {
+                                "type": "string",
+                                "media": {
+                                  "binaryEncoding": "base64"
+                                }
+                              }
+                            }
+                          },
+                          "logo_square_text": {
+                            "type": "object",
+                            "properties": {
+                              "type": {
+                                "type": "string"
+                              },
+                              "data": {
+                                "type": "string",
+                                "media": {
+                                  "binaryEncoding": "base64"
+                                }
+                              }
+                            }
                           }
                         }
                       },
@@ -318,10 +360,16 @@
                     "properties": {
                       "date": {
                         "title": "Date",
-                        "description": "The date of the event (format YYYY/MM/DD).",
+                        "description": "The date of the event (format: YYYY-MM-DD).",
                         "type": "string",
                         "format": "date",
                         "opencrypto-weight": 1
+                      },
+                      "date_approx": {
+                        "title": "Approximate date",
+                        "description": "Approximate date of the event, for example '2013' or '2013-01' or '2013-Q1'.",
+                        "type": "string",
+                        "pattern": "^[0-9]{4}(-Q[1-4]|-[0-9]{2}|)$"
                       },
                       "title": {
                         "title": "Title",
@@ -367,6 +415,48 @@
                       }
                     },
                     "logo_full": {
+                      "type": "object",
+                      "properties": {
+                        "type": {
+                          "type": "string"
+                        },
+                        "data": {
+                          "type": "string",
+                          "media": {
+                            "binaryEncoding": "base64"
+                          }
+                        }
+                      }
+                    },
+                    "logo_black_white": {
+                      "type": "object",
+                      "properties": {
+                        "type": {
+                          "type": "string"
+                        },
+                        "data": {
+                          "type": "string",
+                          "media": {
+                            "binaryEncoding": "base64"
+                          }
+                        }
+                      }
+                    },
+                    "logo_alternative": {
+                      "type": "object",
+                      "properties": {
+                        "type": {
+                          "type": "string"
+                        },
+                        "data": {
+                          "type": "string",
+                          "media": {
+                            "binaryEncoding": "base64"
+                          }
+                        }
+                      }
+                    },
+                    "logo_square_text": {
                       "type": "object",
                       "properties": {
                         "type": {
@@ -513,8 +603,8 @@
                         "type": "string"
                       },
                       "amount": {
-                        "title": "Amount",
-                        "desctiption": "Number of coins in that part (format number).",
+                        "title": "Percent",
+                        "desctiption": "Percent of coins in that part (format number).",
                         "type": "number"
                       }
                     }
@@ -696,10 +786,16 @@
                     "properties": {
                       "date": {
                         "title": "Date",
-                        "description": "The date of the event (format YYYY/MM/DD).",
+                        "description": "The date of the event (format: YYYY-MM-DD).",
                         "type": "string",
                         "format": "date",
                         "opencrypto-weight": 1
+                      },
+                      "date_approx": {
+                        "title": "Approximate date",
+                        "description": "Approximate date of the event, for example '2013' or '2013-01' or '2013-Q1'.",
+                        "type": "string",
+                        "pattern": "^[0-9]{4}(-Q[1-4]|-[0-9]{2}|)$"
                       },
                       "title": {
                         "title": "Title",
@@ -745,6 +841,48 @@
                       }
                     },
                     "logo_full": {
+                      "type": "object",
+                      "properties": {
+                        "type": {
+                          "type": "string"
+                        },
+                        "data": {
+                          "type": "string",
+                          "media": {
+                            "binaryEncoding": "base64"
+                          }
+                        }
+                      }
+                    },
+                    "logo_black_white": {
+                      "type": "object",
+                      "properties": {
+                        "type": {
+                          "type": "string"
+                        },
+                        "data": {
+                          "type": "string",
+                          "media": {
+                            "binaryEncoding": "base64"
+                          }
+                        }
+                      }
+                    },
+                    "logo_alternative": {
+                      "type": "object",
+                      "properties": {
+                        "type": {
+                          "type": "string"
+                        },
+                        "data": {
+                          "type": "string",
+                          "media": {
+                            "binaryEncoding": "base64"
+                          }
+                        }
+                      }
+                    },
+                    "logo_square_text": {
                       "type": "object",
                       "properties": {
                         "type": {
@@ -1130,6 +1268,48 @@
                           }
                         }
                       }
+                    },
+                    "logo_black_white": {
+                      "type": "object",
+                      "properties": {
+                        "type": {
+                          "type": "string"
+                        },
+                        "data": {
+                          "type": "string",
+                          "media": {
+                            "binaryEncoding": "base64"
+                          }
+                        }
+                      }
+                    },
+                    "logo_alternative": {
+                      "type": "object",
+                      "properties": {
+                        "type": {
+                          "type": "string"
+                        },
+                        "data": {
+                          "type": "string",
+                          "media": {
+                            "binaryEncoding": "base64"
+                          }
+                        }
+                      }
+                    },
+                    "logo_square_text": {
+                      "type": "object",
+                      "properties": {
+                        "type": {
+                          "type": "string"
+                        },
+                        "data": {
+                          "type": "string",
+                          "media": {
+                            "binaryEncoding": "base64"
+                          }
+                        }
+                      }
                     }
                   }
                 },
@@ -1150,10 +1330,16 @@
                     "properties": {
                       "date": {
                         "title": "Date",
-                        "description": "The date of the event (format YYYY/MM/DD).",
+                        "description": "The date of the event (format: YYYY-MM-DD).",
                         "type": "string",
                         "format": "date",
                         "opencrypto-weight": 1
+                      },
+                      "date_approx": {
+                        "title": "Approximate date",
+                        "description": "Approximate date of the event, for example '2013' or '2013-01' or '2013-Q1'.",
+                        "type": "string",
+                        "pattern": "^[0-9]{4}(-Q[1-4]|-[0-9]{2}|)$"
                       },
                       "title": {
                         "title": "Title",
@@ -1348,10 +1534,16 @@
               "properties": {
                 "date": {
                   "title": "Date",
-                  "description": "The date of the event (format YYYY/MM/DD).",
+                  "description": "The date of the event (format: YYYY-MM-DD).",
                   "type": "string",
                   "format": "date",
                   "opencrypto-weight": 1
+                },
+                "date_approx": {
+                  "title": "Approximate date",
+                  "description": "Approximate date of the event, for example '2013' or '2013-01' or '2013-Q1'.",
+                  "type": "string",
+                  "pattern": "^[0-9]{4}(-Q[1-4]|-[0-9]{2}|)$"
                 },
                 "title": {
                   "title": "Title",
@@ -1397,6 +1589,48 @@
                 }
               },
               "logo_full": {
+                "type": "object",
+                "properties": {
+                  "type": {
+                    "type": "string"
+                  },
+                  "data": {
+                    "type": "string",
+                    "media": {
+                      "binaryEncoding": "base64"
+                    }
+                  }
+                }
+              },
+              "logo_black_white": {
+                "type": "object",
+                "properties": {
+                  "type": {
+                    "type": "string"
+                  },
+                  "data": {
+                    "type": "string",
+                    "media": {
+                      "binaryEncoding": "base64"
+                    }
+                  }
+                }
+              },
+              "logo_alternative": {
+                "type": "object",
+                "properties": {
+                  "type": {
+                    "type": "string"
+                  },
+                  "data": {
+                    "type": "string",
+                    "media": {
+                      "binaryEncoding": "base64"
+                    }
+                  }
+                }
+              },
+              "logo_square_text": {
                 "type": "object",
                 "properties": {
                   "type": {
@@ -1574,6 +1808,10 @@
               {
                 "title": "Satoshi Nakamoto",
                 "amount": 10000
+              },
+              {
+                "title": "Charlie Lee",
+                "amount": 25
               }
             ],
             "ico_properties": {
@@ -1655,6 +1893,14 @@
             "date": "2008-10-31",
             "title": "Satoshi Nakamoto published Bitcoin whitepaper",
             "description": "A link to a paper authored by Satoshi Nakamoto titled 'Bitcoin: A Peer-to-Peer Electronic Cash System' was posted to a cryptography mailing list."
+          },
+          {
+            "date_approx": "2013",
+            "title": "Approx date test"
+          },
+          {
+            "date_approx": "2013-Q1",
+            "title": "Approx date test vol.2"
           }
         ],
         "resources": [
@@ -1916,6 +2162,48 @@
                           }
                         }
                       }
+                    },
+                    "logo_black_white": {
+                      "type": "object",
+                      "properties": {
+                        "type": {
+                          "type": "string"
+                        },
+                        "data": {
+                          "type": "string",
+                          "media": {
+                            "binaryEncoding": "base64"
+                          }
+                        }
+                      }
+                    },
+                    "logo_alternative": {
+                      "type": "object",
+                      "properties": {
+                        "type": {
+                          "type": "string"
+                        },
+                        "data": {
+                          "type": "string",
+                          "media": {
+                            "binaryEncoding": "base64"
+                          }
+                        }
+                      }
+                    },
+                    "logo_square_text": {
+                      "type": "object",
+                      "properties": {
+                        "type": {
+                          "type": "string"
+                        },
+                        "data": {
+                          "type": "string",
+                          "media": {
+                            "binaryEncoding": "base64"
+                          }
+                        }
+                      }
                     }
                   }
                 },
@@ -1943,10 +2231,16 @@
               "properties": {
                 "date": {
                   "title": "Date",
-                  "description": "The date of the event (format YYYY/MM/DD).",
+                  "description": "The date of the event (format: YYYY-MM-DD).",
                   "type": "string",
                   "format": "date",
                   "opencrypto-weight": 1
+                },
+                "date_approx": {
+                  "title": "Approximate date",
+                  "description": "Approximate date of the event, for example '2013' or '2013-01' or '2013-Q1'.",
+                  "type": "string",
+                  "pattern": "^[0-9]{4}(-Q[1-4]|-[0-9]{2}|)$"
                 },
                 "title": {
                   "title": "Title",
@@ -1992,6 +2286,48 @@
                 }
               },
               "logo_full": {
+                "type": "object",
+                "properties": {
+                  "type": {
+                    "type": "string"
+                  },
+                  "data": {
+                    "type": "string",
+                    "media": {
+                      "binaryEncoding": "base64"
+                    }
+                  }
+                }
+              },
+              "logo_black_white": {
+                "type": "object",
+                "properties": {
+                  "type": {
+                    "type": "string"
+                  },
+                  "data": {
+                    "type": "string",
+                    "media": {
+                      "binaryEncoding": "base64"
+                    }
+                  }
+                }
+              },
+              "logo_alternative": {
+                "type": "object",
+                "properties": {
+                  "type": {
+                    "type": "string"
+                  },
+                  "data": {
+                    "type": "string",
+                    "media": {
+                      "binaryEncoding": "base64"
+                    }
+                  }
+                }
+              },
+              "logo_square_text": {
                 "type": "object",
                 "properties": {
                   "type": {
@@ -2222,6 +2558,48 @@
                 }
               },
               "logo_full": {
+                "type": "object",
+                "properties": {
+                  "type": {
+                    "type": "string"
+                  },
+                  "data": {
+                    "type": "string",
+                    "media": {
+                      "binaryEncoding": "base64"
+                    }
+                  }
+                }
+              },
+              "logo_black_white": {
+                "type": "object",
+                "properties": {
+                  "type": {
+                    "type": "string"
+                  },
+                  "data": {
+                    "type": "string",
+                    "media": {
+                      "binaryEncoding": "base64"
+                    }
+                  }
+                }
+              },
+              "logo_alternative": {
+                "type": "object",
+                "properties": {
+                  "type": {
+                    "type": "string"
+                  },
+                  "data": {
+                    "type": "string",
+                    "media": {
+                      "binaryEncoding": "base64"
+                    }
+                  }
+                }
+              },
+              "logo_square_text": {
                 "type": "object",
                 "properties": {
                   "type": {
@@ -2503,8 +2881,8 @@
                   "type": "string"
                 },
                 "amount": {
-                  "title": "Amount",
-                  "desctiption": "Number of coins in that part (format number).",
+                  "title": "Percent",
+                  "desctiption": "Percent of coins in that part (format number).",
                   "type": "number"
                 }
               }
@@ -2686,10 +3064,16 @@
               "properties": {
                 "date": {
                   "title": "Date",
-                  "description": "The date of the event (format YYYY/MM/DD).",
+                  "description": "The date of the event (format: YYYY-MM-DD).",
                   "type": "string",
                   "format": "date",
                   "opencrypto-weight": 1
+                },
+                "date_approx": {
+                  "title": "Approximate date",
+                  "description": "Approximate date of the event, for example '2013' or '2013-01' or '2013-Q1'.",
+                  "type": "string",
+                  "pattern": "^[0-9]{4}(-Q[1-4]|-[0-9]{2}|)$"
                 },
                 "title": {
                   "title": "Title",
@@ -2735,6 +3119,48 @@
                 }
               },
               "logo_full": {
+                "type": "object",
+                "properties": {
+                  "type": {
+                    "type": "string"
+                  },
+                  "data": {
+                    "type": "string",
+                    "media": {
+                      "binaryEncoding": "base64"
+                    }
+                  }
+                }
+              },
+              "logo_black_white": {
+                "type": "object",
+                "properties": {
+                  "type": {
+                    "type": "string"
+                  },
+                  "data": {
+                    "type": "string",
+                    "media": {
+                      "binaryEncoding": "base64"
+                    }
+                  }
+                }
+              },
+              "logo_alternative": {
+                "type": "object",
+                "properties": {
+                  "type": {
+                    "type": "string"
+                  },
+                  "data": {
+                    "type": "string",
+                    "media": {
+                      "binaryEncoding": "base64"
+                    }
+                  }
+                }
+              },
+              "logo_square_text": {
                 "type": "object",
                 "properties": {
                   "type": {
@@ -3199,6 +3625,48 @@
                     }
                   }
                 }
+              },
+              "logo_black_white": {
+                "type": "object",
+                "properties": {
+                  "type": {
+                    "type": "string"
+                  },
+                  "data": {
+                    "type": "string",
+                    "media": {
+                      "binaryEncoding": "base64"
+                    }
+                  }
+                }
+              },
+              "logo_alternative": {
+                "type": "object",
+                "properties": {
+                  "type": {
+                    "type": "string"
+                  },
+                  "data": {
+                    "type": "string",
+                    "media": {
+                      "binaryEncoding": "base64"
+                    }
+                  }
+                }
+              },
+              "logo_square_text": {
+                "type": "object",
+                "properties": {
+                  "type": {
+                    "type": "string"
+                  },
+                  "data": {
+                    "type": "string",
+                    "media": {
+                      "binaryEncoding": "base64"
+                    }
+                  }
+                }
               }
             }
           },
@@ -3219,10 +3687,16 @@
               "properties": {
                 "date": {
                   "title": "Date",
-                  "description": "The date of the event (format YYYY/MM/DD).",
+                  "description": "The date of the event (format: YYYY-MM-DD).",
                   "type": "string",
                   "format": "date",
                   "opencrypto-weight": 1
+                },
+                "date_approx": {
+                  "title": "Approximate date",
+                  "description": "Approximate date of the event, for example '2013' or '2013-01' or '2013-Q1'.",
+                  "type": "string",
+                  "pattern": "^[0-9]{4}(-Q[1-4]|-[0-9]{2}|)$"
                 },
                 "title": {
                   "title": "Title",
