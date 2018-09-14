@@ -20,4 +20,9 @@ properties:
     title: Name
     type: string
     description: Name of client.
-
+  history:
+    $ref: 'https://schema.opencrypto.io/models/core#/definitions/history'
+  webids:
+    $ref: 'https://schema.opencrypto.io/models/core#/definitions/webids'
+  resources:
+    $ref: 'https://schema.opencrypto.io/models/core#/definitions/resources'
