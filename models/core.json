@@ -86,6 +86,24 @@
           "description": "Logo of the project (full logo, format .svg).",
           "$ref": "#/definitions/file",
           "opencrypto-weight": 1
+        },
+        "logo_black_white": {
+          "title": "Logo black and white",
+          "description": "Logo of the project in black and white (full logo, format .svg),",
+          "$ref": "#/definitions/file",
+          "opencrypto-weight": 0.5
+        },
+        "logo_alternative": {
+          "title": "Alternative logo",
+          "description": "Alternative logo of the project (format .svg)",
+          "$ref": "#/definitions/file",
+          "opencrypto-weight": 0.5
+        },
+        "logo_square_text": {
+          "title": "Logo square with text",
+          "description": "Logo of the project, square logo with text under (format .svg)",
+          "$ref": "#/definitions/file",
+          "opencrypto-weight": 0.5
         }
       }
     },
