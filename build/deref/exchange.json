@@ -26,6 +26,12 @@
       "type": "string",
       "opencrypto-weight": 1
     },
+    "description": {
+      "title": "Description",
+      "description": "The short description of the exchange.",
+      "type": "string",
+      "opencrypto-weight": 1
+    },
     "web": {
       "title": "Web links",
       "description": "Webpages links.",

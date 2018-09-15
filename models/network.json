@@ -23,6 +23,12 @@
       "type": "string",
       "opencrypto-weight": 1
     },
+    "description": {
+      "title": "Description",
+      "description": "The short description of the network.",
+      "type": "string",
+      "opencrypto-weight": 1
+    },
     "type": {
       "title": "Type",
       "description": "Type of Network (main, test).",

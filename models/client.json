@@ -21,6 +21,11 @@
       "title": "Name",
       "type": "string",
       "description": "Name of client."
+    },
+    "description": {
+      "title": "Description",
+      "description": "The short description of the client.",
+      "type": "string"
     }
   }
 }

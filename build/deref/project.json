@@ -30,6 +30,12 @@
         "type": "string"
       }
     },
+    "description": {
+      "title": "Description",
+      "description": "The short description of the project.",
+      "type": "string",
+      "opencrypto-weight": 1
+    },
     "start_date": {
       "title": "Start Date",
       "description": "The day when the project began to be first published (format YYYY-MM-DD).",
@@ -75,6 +81,12 @@
           "name": {
             "title": "Name",
             "description": "The official name of the ledger.",
+            "type": "string",
+            "opencrypto-weight": 1
+          },
+          "description": {
+            "title": "Description",
+            "description": "The short description of the ledger.",
             "type": "string",
             "opencrypto-weight": 1
           },
@@ -155,6 +167,12 @@
                 "name": {
                   "title": "Name",
                   "description": "Name of the network (eg. Mainnet, Testnet, Rinkeby).",
+                  "type": "string",
+                  "opencrypto-weight": 1
+                },
+                "description": {
+                  "title": "Description",
+                  "description": "The short description of the network.",
                   "type": "string",
                   "opencrypto-weight": 1
                 },
@@ -533,9 +551,15 @@
             "type": "string",
             "opencrypto-weight": 1
           },
+          "description": {
+            "title": "Description",
+            "description": "The short description of the asset.",
+            "type": "string",
+            "opencrypto-weight": 1
+          },
           "type": {
             "title": "Type",
-            "description": "Type of asset, eq. native or token.",
+            "description": "Type of asset, eq. 'native' or 'token'.",
             "type": "string",
             "enum": [
               "native",
@@ -562,6 +586,11 @@
               "title": "Symbol",
               "type": "string"
             }
+          },
+          "token_standard": {
+            "title": "Token standard",
+            "description": "Standard of the token, for example 'ERC-20'.",
+            "type": "string"
           },
           "contract_address": {
             "title": "Contract address",
@@ -594,6 +623,11 @@
                   "type": "string"
                 },
                 "amount": {
+                  "title": "Amount",
+                  "desctiption": "Number of coins in that part (format number).",
+                  "type": "number"
+                },
+                "percent": {
                   "title": "Percent",
                   "desctiption": "Percent of coins in that part (format number).",
                   "type": "number"
@@ -1061,6 +1095,12 @@
             "type": "string",
             "opencrypto-weight": 1
           },
+          "description": {
+            "title": "Description",
+            "description": "The short description of the exchange.",
+            "type": "string",
+            "opencrypto-weight": 1
+          },
           "web": {
             "title": "Web links",
             "description": "Webpages links.",
@@ -1417,6 +1457,11 @@
             "title": "Name",
             "type": "string",
             "description": "Name of client."
+          },
+          "description": {
+            "title": "Description",
+            "description": "The short description of the client.",
+            "type": "string"
           }
         }
       },
