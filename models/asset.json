@@ -202,7 +202,7 @@
                 "title": "Symbol",
                 "desctiption": "The symbol for the unit of the asset.",
                 "type": "string"
-              },
+              }
             }
           }
         }
