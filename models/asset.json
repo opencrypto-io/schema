@@ -197,7 +197,12 @@
                 "description": "Name of the denomination (eg. satoshi / lites / photons / litoshis ...).",
                 "type": "string",
                 "opencrypto-weight": 1
-              }
+              },
+              "symbol": {
+                "title": "Symbol",
+                "desctiption": "The symbol for the unit of the asset.",
+                "type": "string"
+              },
             }
           }
         }
