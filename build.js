@@ -15,7 +15,11 @@ function loadSchema (fn) {
     let raw = fs.readFileSync(fn).toString()
     raw = raw.replace(/"\$ref": "https:\/\/schema.opencrypto.io\/models\/([^#]+)/g, '"$ref": "opencrypto:$1')
     raw = raw.replace(/"\$ref": "#\/definitions\//g, '"$ref": "opencrypto:core#/definitions/')
-    schemas[fn] = JSON.parse(raw)
+    try {
+      schemas[fn] = JSON.parse(raw)
+    } catch (e) {
+      throw new Error(`JSON parse error in file ${fn}: ${e}`)
+    }
   }
   return schemas[fn]
 }

@@ -28,9 +28,15 @@
       "type": "string",
       "opencrypto-weight": 1
     },
+    "description": {
+      "title": "Description",
+      "description": "The short description of the asset.",
+      "type": "string",
+      "opencrypto-weight": 1
+    },
     "type": {
       "title": "Type",
-      "description": "Type of asset, eq. native or token.",
+      "description": "Type of asset, eq. 'native' or 'token'.",
       "type": "string",
       "enum": [
         "native",
@@ -57,6 +63,11 @@
         "title": "Symbol",
         "type": "string"
       }
+    },
+    "token_standard": {
+      "title": "Token standard",
+      "description": "Standard of the token, for example 'ERC-20'.",
+      "type": "string"
     },
     "contract_address": {
       "title": "Contract address",
@@ -91,6 +102,11 @@
           "amount": {
             "title": "Amount",
             "desctiption": "Number of coins in that part (format number).",
+            "type": "number"
+          },
+          "percent": {
+            "title": "Percent",
+            "desctiption": "Percent of coins in that part (format number).",
             "type": "number"
           }
         }
