@@ -86,6 +86,24 @@
           "description": "Logo of the project (full logo, format .svg).",
           "$ref": "#/definitions/file",
           "opencrypto-weight": 1
+        },
+        "logo_black_white": {
+          "title": "Logo black and white",
+          "description": "Logo of the project in black and white (full logo, format .svg),",
+          "$ref": "#/definitions/file",
+          "opencrypto-weight": 0.5
+        },
+        "logo_alternative": {
+          "title": "Alternative logo",
+          "description": "Alternative logo of the project (format .svg)",
+          "$ref": "#/definitions/file",
+          "opencrypto-weight": 0.5
+        },
+        "logo_square_text": {
+          "title": "Logo square with text",
+          "description": "Logo of the project, square logo with text under (format .svg)",
+          "$ref": "#/definitions/file",
+          "opencrypto-weight": 0.5
         }
       }
     },
@@ -130,10 +148,16 @@
         "properties": {
           "date": {
             "title": "Date",
-            "description": "The date of the event (format YYYY/MM/DD).",
+            "description": "The date of the event (format: YYYY-MM-DD).",
             "type": "string",
             "format": "date",
             "opencrypto-weight": 1
+          },
+          "date_approx": {
+            "title": "Approximate date",
+            "description": "Approximate date of the event, for example '2013' or '2013-01' or '2013-Q1'.",
+            "type": "string",
+            "pattern": "^[0-9]{4}(-Q[1-4]|-[0-9]{2}|)$"
           },
           "title": {
             "title": "Title",

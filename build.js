@@ -19,7 +19,11 @@ function loadSchema (fn, noDeref = false) {
     let raw = fs.readFileSync(fn).toString()
     raw = raw.replace(/\$ref: 'https:\/\/schema.opencrypto.io\/models\/([^#]+)/g, "$ref: 'opencrypto:$1")
     raw = raw.replace(/\$ref: '#\/definitions\//g, "$ref: 'opencrypto:core#/definitions/")
-    schemas[fn] = yaml.safeLoad(raw)
+    try {
+      schemas[fn] = yaml.safeLoad(raw)
+    } catch (e) {
+      throw new Error(`JSON parse error in file ${fn}: ${e}`)
+    }
   }
   return schemas[fn]
 }

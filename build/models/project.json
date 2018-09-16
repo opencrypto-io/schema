@@ -30,9 +30,15 @@
         "type": "string"
       }
     },
+    "description": {
+      "title": "Description",
+      "description": "The short description of the project.",
+      "type": "string",
+      "opencrypto-weight": 1
+    },
     "start_date": {
       "title": "Start Date",
-      "description": "The day when the project began to be first published (format YYYY/MM/DD).",
+      "description": "The day when the project began to be first published (format YYYY-MM-DD).",
       "type": "string",
       "format": "date",
       "opencrypto-weight": 1

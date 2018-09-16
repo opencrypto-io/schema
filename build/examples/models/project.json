@@ -67,6 +67,10 @@
         {
           "title": "Satoshi Nakamoto",
           "amount": 10000
+        },
+        {
+          "title": "Charlie Lee",
+          "amount": 25
         }
       ],
       "ico_properties": {
@@ -148,6 +152,14 @@
       "date": "2008-10-31",
       "title": "Satoshi Nakamoto published Bitcoin whitepaper",
       "description": "A link to a paper authored by Satoshi Nakamoto titled 'Bitcoin: A Peer-to-Peer Electronic Cash System' was posted to a cryptography mailing list."
+    },
+    {
+      "date_approx": "2013",
+      "title": "Approx date test"
+    },
+    {
+      "date_approx": "2013-Q1",
+      "title": "Approx date test vol.2"
     }
   ],
   "resources": [
