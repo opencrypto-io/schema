@@ -42,5 +42,7 @@
     "standard": "^11.0.1",
     "opencrypto-schema-explorer": "git+https://github.com/opencrypto-io/schema-explorer.git"
   },
-  "dependencies": {}
+  "dependencies": {
+    "js-yaml": "^3.12.0"
+  }
 }

@@ -46,6 +46,8 @@ assets:
     first_distribution:
       - title: Satoshi Nakamoto
         amount: 10000
+      - title: Charlie Lee
+        amount: 25
     ico_properties:
       start_date: '2018-01-12'
       end_date: '2018-01-31'
@@ -102,6 +104,10 @@ history:
       A link to a paper authored by Satoshi Nakamoto titled 'Bitcoin: A
       Peer-to-Peer Electronic Cash System' was posted to a cryptography mailing
       list.
+  - date_approx: '2013'
+    title: Approx date test
+  - date_approx: 2013-Q1
+    title: Approx date test vol.2
 resources:
   - title: Review AAZZZ
     url: 'http://example.xyz'

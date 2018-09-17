@@ -25,9 +25,21 @@ properties:
     description: The official name of the asset.
     type: string
     opencrypto-weight: 1
+  alt_names:
+    title: Alternative names
+    description: Alternative names for the asset.
+    type: array
+    items:
+      title: Name
+      type: string
+  description:
+    title: Description
+    description: The short description of the asset.
+    type: string
+    opencrypto-weight: 1
   type:
     title: Type
-    description: 'Type of asset, eq. native or token.'
+    description: 'Type of asset, eq. ''native'' or ''token''.'
     type: string
     enum:
       - native
@@ -49,6 +61,10 @@ properties:
     items:
       title: Symbol
       type: string
+  token_standard:
+    title: Token standard
+    description: 'Standard of the token, for example ''ERC-20''.'
+    type: string
   contract_address:
     title: Contract address
     description: Contract address of the token.
@@ -84,6 +100,10 @@ properties:
         amount:
           title: Amount
           desctiption: Number of coins in that part (format number).
+          type: number
+        percent:
+          title: Percent
+          desctiption: Percent of coins in that part (format number).
           type: number
   ico_properties:
     title: ICO properties
@@ -152,6 +172,10 @@ properties:
                 litoshis ...).
               type: string
               opencrypto-weight: 1
+            symbol:
+              title: Symbol
+              desctiption: The symbol for the unit of the asset.
+              type: string
   start_date:
     title: Start Date
     description: The day when the assets began to be first activated (format YYYY/MM/DD).

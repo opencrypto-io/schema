@@ -24,6 +24,11 @@ properties:
     description: The official name of the ledger.
     type: string
     opencrypto-weight: 1
+  description:
+    title: Description
+    description: The short description of the ledger.
+    type: string
+    opencrypto-weight: 1
   type:
     title: Type
     type: string
