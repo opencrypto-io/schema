@@ -1,1 +1,3 @@
 build/** -diff
+models/**/*.yaml -diff linguist-detectable=true
+examples/**/*.yaml -diff linguist-detectable=true

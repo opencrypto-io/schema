@@ -1,0 +1,213 @@
+$schema: 'http://json-schema.org/draft-06/schema#'
+$id: 'https://schema.opencrypto.io/models/core#'
+title: Core
+definitions:
+  webids:
+    title: WebIDs
+    description: Webs related to the project.
+    type: object
+    opencrypto-validation: webid
+    patternProperties:
+      '^[a-z0-9-]{2,20}(\/[a-z0-9-]{2,20})?$':
+        type: string
+  links:
+    title: Web links
+    description: Webpages links.
+    type: array
+    items:
+      type: string
+      format: url
+  person:
+    type: object
+    opencrypto-weight: 1
+    properties:
+      name:
+        title: Name
+        desctiption: Name and the surname of the team member.
+        type: string
+        opencrypto-weight: 1
+      role:
+        title: Role
+        description: Role in the team.
+        type: string
+        opencrypto-weight: 1
+      webids:
+        title: WebIDs
+        desctiption: Web URLs of the team member.
+        $ref: '#/definitions/webids'
+        opencrypto-weight: 1
+      photo:
+        title: Photo
+        description: 'Photo of the team member (format https://).'
+        type: string
+        format: url
+        opencrypto-weight: 0.5
+  file:
+    type: object
+    properties:
+      type:
+        type: string
+      data:
+        type: string
+        media:
+          binaryEncoding: base64
+  images:
+    title: Images
+    desctiption: Images of the logo.
+    type: object
+    opencrypto-weight: 1
+    opencrypto-generated: true
+    properties:
+      logo_square:
+        title: Logo square
+        description: 'Logo of the project (square, format .svg).'
+        $ref: '#/definitions/file'
+        opencrypto-weight: 1
+      logo_full:
+        title: Logo full
+        description: 'Logo of the project (full logo, format .svg).'
+        $ref: '#/definitions/file'
+        opencrypto-weight: 1
+      logo_black_white:
+        title: Logo black and white
+        description: 'Logo of the project in black and white (full logo, format .svg),'
+        $ref: '#/definitions/file'
+        opencrypto-weight: 0.5
+      logo_alternative:
+        title: Alternative logo
+        description: Alternative logo of the project (format .svg)
+        $ref: '#/definitions/file'
+        opencrypto-weight: 0.5
+      logo_square_text:
+        title: Logo square with text
+        description: 'Logo of the project, square logo with text under (format .svg)'
+        $ref: '#/definitions/file'
+        opencrypto-weight: 0.5
+  team:
+    title: Team Members
+    description: The team of the project.
+    type: array
+    items:
+      $ref: '#/definitions/person'
+    opencrypto-weight: 1
+  whitepapers:
+    title: Whitepapers
+    description: Whitepapers of the project.
+    type: array
+    items:
+      type: object
+      properties:
+        title:
+          title: Title
+          description: Name of the whitepaper.
+          type: string
+          opencrypto-weight: 1
+        url:
+          title: URL
+          description: 'URL link to the whitepaper in .pdf format (format https://).'
+          type: string
+          format: url
+          opencrypto-weight: 1
+  history:
+    title: History
+    description: 'History of the project, important events, happenings, facts.'
+    type: array
+    items:
+      type: object
+      properties:
+        date:
+          title: Date
+          description: 'The date of the event (format: YYYY-MM-DD).'
+          type: string
+          format: date
+          opencrypto-weight: 1
+        date_approx:
+          title: Approximate date
+          description: >-
+            Approximate date of the event, for example '2013' or '2013-01' or
+            '2013-Q1'.
+          type: string
+          pattern: '^[0-9]{4}(-Q[1-4]|-[0-9]{2}|)$'
+        title:
+          title: Title
+          description: Title of the event.
+          type: string
+          opencrypto-weight: 1
+        description:
+          title: Description
+          description: The short description of the event.
+          type: string
+          opencrypto-weight: 0.5
+        url:
+          title: URL
+          description: 'URL of the link with event information (format https://).'
+          type: string
+          format: url
+          opencrypto-weight: 0.5
+  price:
+    type: string
+    pattern: '^[0-9-\.]+ [A-Z0-9]{2,4}$'
+  resources:
+    title: Resources
+    description: Resources where other information about the project could be found.
+    type: array
+    items:
+      type: object
+      properties:
+        title:
+          title: Title
+          description: Name of the resources.
+          type: string
+        url:
+          title: URL
+          description: 'URL of the resources (format https://).'
+          type: string
+          format: url
+  contacts:
+    title: Contacts
+    description: Contacts of the project.
+    type: object
+    patternProperties:
+      '^email(:.+)?$':
+        title: E-mail
+        description: Official e-mail (format xxx@xxx.xxx).
+        type: string
+        format: email
+      '^phone(:.+)?$':
+        title: Phone
+        description: Official phone number (format +number).
+        type: string
+      '^location(:.+)?$':
+        title: Location
+        description: Location of the project headquaters.
+        type: string
+  tags:
+    title: Tags
+    description: Tags that could describe the project.
+    type: array
+    items:
+      type: string
+      pattern: '^[a-z0-9-]+(:[a-z0-9-]+)?$'
+  tools:
+    title: Tools
+    description: Tools for the asset network.
+    type: array
+    items:
+      type: object
+      properties:
+        title:
+          type: string
+        type:
+          title: Type
+          desctiption: 'Type of the tool (explorer, faucet, other).'
+          type: string
+          enum:
+            - explorer
+            - faucet
+            - other
+        url:
+          title: URL
+          description: 'URL of the tool (format https://).'
+          type: string
+          format: url
+

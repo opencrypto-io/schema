@@ -1,0 +1,22 @@
+id: btc
+symbol: BTC
+name: Bitcoin
+type: blockchain
+networks:
+  - id: main
+    type: main
+    name: mainnet
+    proof_type: PoW
+    algorithm: SHA256
+    mineable: true
+    maximum_block_size: 8388608
+    target_block_time: 15
+    tools:
+      - type: explorer
+        url: 'https://www.blockchain.com/explorer'
+      - type: explorer
+        url: 'https://live.blockcypher.com/btc/'
+  - id: test
+    type: test
+    name: testnet
+

@@ -1,15 +1,15 @@
 const path = require('path')
 const fs = require('fs')
-const dirs = ['models', 'examples/models']
+const dirs = ['build/models', 'build/examples/models']
 var output = {}
 dirs.forEach(d => {
   let target = null
   let splt = d.split('/')
-  if (splt.length > 1) {
-    output[splt[0]] = {}
-    target = output[splt[0]][splt[1]] = {}
+  if (splt.length > 2) {
+    output[splt[1]] = {}
+    target = output[splt[1]][splt[2]] = {}
   } else {
-    target = output[d] = {}
+    target = output[splt[1]] = {}
   }
   fs.readdirSync(path.join(__dirname, d)).forEach(f => {
     let pp = path.parse(f)

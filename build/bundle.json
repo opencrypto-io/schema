@@ -179,6 +179,15 @@
                         "type": "string",
                         "opencrypto-weight": 1
                       },
+                      "alt_names": {
+                        "title": "Alternative names",
+                        "description": "Alternative names for the project",
+                        "type": "array",
+                        "items": {
+                          "title": "Name",
+                          "type": "string"
+                        }
+                      },
                       "description": {
                         "title": "Description",
                         "description": "The short description of the network.",
@@ -560,6 +569,15 @@
                   "type": "string",
                   "opencrypto-weight": 1
                 },
+                "alt_names": {
+                  "title": "Alternative names",
+                  "description": "Alternative names for the asset.",
+                  "type": "array",
+                  "items": {
+                    "title": "Name",
+                    "type": "string"
+                  }
+                },
                 "description": {
                   "title": "Description",
                   "description": "The short description of the asset.",
@@ -718,6 +736,11 @@
                             "description": "Name of the denomination (eg. satoshi / lites / photons / litoshis ...).",
                             "type": "string",
                             "opencrypto-weight": 1
+                          },
+                          "symbol": {
+                            "title": "Symbol",
+                            "desctiption": "The symbol for the unit of the asset.",
+                            "type": "string"
                           }
                         }
                       }
@@ -2089,6 +2112,15 @@
                   "type": "string",
                   "opencrypto-weight": 1
                 },
+                "alt_names": {
+                  "title": "Alternative names",
+                  "description": "Alternative names for the project",
+                  "type": "array",
+                  "items": {
+                    "title": "Name",
+                    "type": "string"
+                  }
+                },
                 "description": {
                   "title": "Description",
                   "description": "The short description of the network.",
@@ -2503,6 +2535,15 @@
             "type": "string",
             "opencrypto-weight": 1
           },
+          "alt_names": {
+            "title": "Alternative names",
+            "description": "Alternative names for the project",
+            "type": "array",
+            "items": {
+              "title": "Name",
+              "type": "string"
+            }
+          },
           "description": {
             "title": "Description",
             "description": "The short description of the network.",
@@ -2883,6 +2924,15 @@
             "type": "string",
             "opencrypto-weight": 1
           },
+          "alt_names": {
+            "title": "Alternative names",
+            "description": "Alternative names for the asset.",
+            "type": "array",
+            "items": {
+              "title": "Name",
+              "type": "string"
+            }
+          },
           "description": {
             "title": "Description",
             "description": "The short description of the asset.",
@@ -3041,6 +3091,11 @@
                       "description": "Name of the denomination (eg. satoshi / lites / photons / litoshis ...).",
                       "type": "string",
                       "opencrypto-weight": 1
+                    },
+                    "symbol": {
+                      "title": "Symbol",
+                      "desctiption": "The symbol for the unit of the asset.",
+                      "type": "string"
                     }
                   }
                 }

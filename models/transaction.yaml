@@ -1,0 +1,36 @@
+$schema: 'http://json-schema.org/draft-06/schema#'
+$id: 'https://schema.opencrypto.io/models/transaction#'
+title: Transaction
+type: object
+properties:
+  id:
+    type: string
+  txhash:
+    type: string
+  network:
+    type: string
+  inputs:
+    type: array
+    items:
+      $ref: '#/definitions/source'
+  outputs:
+    type: array
+    items:
+      $ref: '#/definitions/source'
+  broadcast_time:
+    type: string
+    format: date-time
+  confirmation_time:
+    type: string
+    format: date-time
+  confirmations:
+    type: number
+definitions:
+  source:
+    type: object
+    properties:
+      address:
+        type: string
+      amount:
+        type: number
+
