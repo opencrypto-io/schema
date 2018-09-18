@@ -3,6 +3,7 @@
   "$id": "https://schema.opencrypto.io/models/project#",
   "title": "Project",
   "description": "Cryptocurrency project",
+  "fa-icon": "landmark",
   "type": "object",
   "required": [
     "name"

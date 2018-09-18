@@ -12,6 +12,7 @@
         "$id": "https://schema.opencrypto.io/models/project#",
         "title": "Project",
         "description": "Cryptocurrency project",
+        "fa-icon": "landmark",
         "type": "object",
         "required": [
           "name"
@@ -69,6 +70,7 @@
               "$id": "https://schema.opencrypto.io/models/ledger#",
               "title": "Ledger",
               "description": "Ledger - blockchain or sidechain.",
+              "fa-icon": "database",
               "type": "object",
               "required": [
                 "name",
@@ -158,7 +160,8 @@
                     "$schema": "http://json-schema.org/draft-06/schema#",
                     "$id": "https://schema.opencrypto.io/models/network#",
                     "title": "Network",
-                    "description": "Ledger (blockchain) of digital asset.",
+                    "description": "A specific network of the ledger.",
+                    "fa-icon": "server",
                     "type": "object",
                     "properties": {
                       "id": {
@@ -544,6 +547,7 @@
               "$id": "https://schema.opencrypto.io/models/asset#",
               "title": "Asset",
               "description": "Cryptocurrency - digital asset (native or token).",
+              "fa-icon": "usd-square",
               "type": "object",
               "required": [
                 "name",
@@ -1104,6 +1108,7 @@
               "$id": "https://schema.opencrypto.io/models/exchange#",
               "title": "Exchange",
               "description": "Exchange run or developed by the project.",
+              "fa-icon": "random",
               "type": "object",
               "required": [
                 "name"
@@ -1471,6 +1476,7 @@
               "$id": "https://schema.opencrypto.io/models/client#",
               "title": "Client",
               "description": "Client for digital asset. It can be full-node or thin client in form of wallet.",
+              "fa-icon": "wallet",
               "type": "object",
               "properties": {
                 "id": {
@@ -2002,6 +2008,7 @@
         "$id": "https://schema.opencrypto.io/models/ledger#",
         "title": "Ledger",
         "description": "Ledger - blockchain or sidechain.",
+        "fa-icon": "database",
         "type": "object",
         "required": [
           "name",
@@ -2091,7 +2098,8 @@
               "$schema": "http://json-schema.org/draft-06/schema#",
               "$id": "https://schema.opencrypto.io/models/network#",
               "title": "Network",
-              "description": "Ledger (blockchain) of digital asset.",
+              "description": "A specific network of the ledger.",
+              "fa-icon": "server",
               "type": "object",
               "properties": {
                 "id": {
@@ -2504,7 +2512,7 @@
       "parent": "ledger",
       "id": "network",
       "name": "Network",
-      "description": "Ledger (blockchain) of digital asset.",
+      "description": "A specific network of the ledger.",
       "path": [
         "project",
         "ledger",
@@ -2514,7 +2522,8 @@
         "$schema": "http://json-schema.org/draft-06/schema#",
         "$id": "https://schema.opencrypto.io/models/network#",
         "title": "Network",
-        "description": "Ledger (blockchain) of digital asset.",
+        "description": "A specific network of the ledger.",
+        "fa-icon": "server",
         "type": "object",
         "properties": {
           "id": {
@@ -2770,6 +2779,7 @@
         "title": "Block",
         "description": "Block produced by network (blockchain) of digital asset.",
         "type": "object",
+        "fa-icon": "cube",
         "properties": {
           "id": {
             "type": "string"
@@ -2816,6 +2826,7 @@
         "$schema": "http://json-schema.org/draft-06/schema#",
         "$id": "https://schema.opencrypto.io/models/transaction#",
         "title": "Transaction",
+        "fa-icon": "atom-alt",
         "type": "object",
         "properties": {
           "id": {
@@ -2899,6 +2910,7 @@
         "$id": "https://schema.opencrypto.io/models/asset#",
         "title": "Asset",
         "description": "Cryptocurrency - digital asset (native or token).",
+        "fa-icon": "usd-square",
         "type": "object",
         "required": [
           "name",
@@ -3499,6 +3511,7 @@
         "$id": "https://schema.opencrypto.io/models/client#",
         "title": "Client",
         "description": "Client for digital asset. It can be full-node or thin client in form of wallet.",
+        "fa-icon": "wallet",
         "type": "object",
         "properties": {
           "id": {
@@ -3543,6 +3556,7 @@
         "$id": "https://schema.opencrypto.io/models/exchange#",
         "title": "Exchange",
         "description": "Exchange run or developed by the project.",
+        "fa-icon": "random",
         "type": "object",
         "required": [
           "name"
@@ -3952,6 +3966,7 @@
         "$id": "https://schema.opencrypto.io/models/market#",
         "title": "Market",
         "description": "Specific pairing (market) on exchange.",
+        "fa-icon": "layer-group",
         "type": "object",
         "required": [],
         "properties": {

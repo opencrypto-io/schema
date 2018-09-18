@@ -4,6 +4,7 @@ title: Client
 description: >-
   Client for digital asset. It can be full-node or thin client in form of
   wallet.
+fa-icon: wallet
 type: object
 properties:
   id:

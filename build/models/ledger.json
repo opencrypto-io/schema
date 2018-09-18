@@ -3,6 +3,7 @@
   "$id": "https://schema.opencrypto.io/models/ledger#",
   "title": "Ledger",
   "description": "Ledger - blockchain or sidechain.",
+  "fa-icon": "database",
   "type": "object",
   "required": [
     "name",

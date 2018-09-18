@@ -4,6 +4,7 @@
   "title": "Block",
   "description": "Block produced by network (blockchain) of digital asset.",
   "type": "object",
+  "fa-icon": "cube",
   "properties": {
     "id": {
       "type": "string"

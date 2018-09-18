@@ -1,7 +1,8 @@
 $schema: 'http://json-schema.org/draft-06/schema#'
 $id: 'https://schema.opencrypto.io/models/network#'
 title: Network
-description: Ledger (blockchain) of digital asset.
+description: A specific network of the ledger.
+fa-icon: server
 type: object
 properties:
   id:

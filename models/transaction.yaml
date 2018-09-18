@@ -1,6 +1,7 @@
 $schema: 'http://json-schema.org/draft-06/schema#'
 $id: 'https://schema.opencrypto.io/models/transaction#'
 title: Transaction
+fa-icon: atom-alt
 type: object
 properties:
   id:

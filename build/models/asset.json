@@ -3,6 +3,7 @@
   "$id": "https://schema.opencrypto.io/models/asset#",
   "title": "Asset",
   "description": "Cryptocurrency - digital asset (native or token).",
+  "fa-icon": "usd-square",
   "type": "object",
   "required": [
     "name",

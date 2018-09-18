@@ -22,7 +22,7 @@
       "parent": "ledger",
       "id": "network",
       "name": "Network",
-      "description": "Ledger (blockchain) of digital asset.",
+      "description": "A specific network of the ledger.",
       "path": [
         "project",
         "ledger",
