@@ -123,6 +123,41 @@ async function build () {
   console.log('Writing: %s', outputBundleFn)
   fs.writeFileSync(outputBundleFn, JSON.stringify(map, null, 2))
 
+  // make changelog
+  let changelog = []
+  let version = []
+  const changelogRaw = fs.readFileSync(path.join(__dirname, 'CHANGELOG.md')).toString()
+  const changelogFn = path.join(outputDir, 'changelog.json')
+  changelogRaw.split('\n').forEach(l => {
+    if (l.trim() === '' || l.trim() === '---') {
+      return null
+    }
+    let matchVersion = l.match(/^## (v[\d.]+)/)
+    let matchUnreleased = l.match(/^## (Unreleased)/)
+    if (matchVersion || matchUnreleased) {
+      let m = matchVersion || matchUnreleased
+      if (version[1]) {
+        changelog.push({ version: version[0], changes: version[1] })
+      }
+      version = [ m[1], [] ]
+    } else if (version[1]) {
+      if (l.match(/^\* /)) {
+        version[1].push(l.replace(/^\* /, '').trim())
+      } else {
+        const last = version[1].length - 1
+        if (last > 0) {
+          version[1][version[1].length - 1] += '\n' + l.trim()
+        }
+      }
+    }
+  })
+  if (version[1]) {
+    changelog.push({ version: version[0], changes: version[1] })
+  }
+
+  console.log('Writing %s', changelogFn)
+  fs.writeFileSync(changelogFn, JSON.stringify(changelog, null, 2))
+
   // done
   console.log('Done')
 
