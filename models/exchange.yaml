@@ -26,7 +26,7 @@ properties:
     opencrypto-weight: 1
   platform:
     title: Platform
-    description: Platform where the exchange is run
+    description: Platform used for the exchange.
     type: string
   description:
     title: Description
