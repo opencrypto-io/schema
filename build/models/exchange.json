@@ -27,11 +27,6 @@
       "type": "string",
       "opencrypto-weight": 1
     },
-    "platform": {
-      "title": "Platform",
-      "description": "Platform used for the exchange.",
-      "type": "string",
-    },
     "description": {
       "title": "Description",
       "description": "The short description of the exchange.",
