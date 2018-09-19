@@ -1,6 +1,7 @@
 {
   "id": "bitfinex",
   "name": "Bitfinex",
+  "platform": "stellar, bitshares, ethereum:Ox",
   "countries": [
     "HK"
   ],
