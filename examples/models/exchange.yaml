@@ -1,6 +1,6 @@
 id: bitfinex
 name: Bitfinex
-platform: stellar, bitshares, ethereum:Ox
+platform: stellar
 countries:
   - HK
 web:

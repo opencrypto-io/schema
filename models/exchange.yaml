@@ -28,6 +28,7 @@ properties:
     title: Platform
     description: Platform used for the exchange.
     type: string
+    pattern: '^[a-z0-9-]+$'
   description:
     title: Description
     description: The short description of the exchange.
