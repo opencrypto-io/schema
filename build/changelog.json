@@ -3,7 +3,8 @@
     "version": "Unreleased",
     "changes": [
       "Added CHANGELOG.",
-      "models/all: Added model property `fa-icon` ([Font Awesome](https://fontawesome.com/cheatsheet) icon name)."
+      "models/all: Added model property `fa-icon` ([Font Awesome](https://fontawesome.com/cheatsheet) icon name).",
+      "models/exchange: Added `platform`."
     ]
   },
   {
