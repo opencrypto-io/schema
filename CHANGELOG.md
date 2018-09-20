@@ -17,6 +17,7 @@
 * models/all: Added `description`.
 * models/asset: Added `alt_names`, `token_standard`, `first_distribution.percent`, `denominations.subunits.symbol`.
 * models/network: Added `alt_names`.
+* models/exchange: Added `platform`.
 
 ## v0.9.2
 
