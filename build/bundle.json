@@ -1132,6 +1132,12 @@
                   "type": "string",
                   "opencrypto-weight": 1
                 },
+                "platform": {
+                  "title": "Platform",
+                  "description": "Platform used for the exchange.",
+                  "type": "string",
+                  "pattern": "^[a-z0-9-:]+$"
+                },
                 "description": {
                   "title": "Description",
                   "description": "The short description of the exchange.",
@@ -1987,6 +1993,7 @@
           {
             "id": "bitjap",
             "name": "Bitjap",
+            "platform": "ethereum:0x",
             "countries": [
               "JP"
             ]
@@ -3580,6 +3587,12 @@
             "type": "string",
             "opencrypto-weight": 1
           },
+          "platform": {
+            "title": "Platform",
+            "description": "Platform used for the exchange.",
+            "type": "string",
+            "pattern": "^[a-z0-9-:]+$"
+          },
           "description": {
             "title": "Description",
             "description": "The short description of the exchange.",
@@ -3916,6 +3929,7 @@
       "example": {
         "id": "bitfinex",
         "name": "Bitfinex",
+        "platform": "stellar",
         "countries": [
           "HK"
         ],

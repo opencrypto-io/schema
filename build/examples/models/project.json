@@ -172,6 +172,7 @@
     {
       "id": "bitjap",
       "name": "Bitjap",
+      "platform": "ethereum:0x",
       "countries": [
         "JP"
       ]
