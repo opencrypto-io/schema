@@ -6,6 +6,9 @@ description: >-
   wallet.
 fa-icon: wallet
 type: object
+required:
+  - name
+  - id
 properties:
   id:
     type: string
@@ -20,9 +23,44 @@ properties:
   name:
     title: Name
     type: string
-    description: Name of client.
+    description: Name of the client.
+    opencrypto-weight: 1
   description:
     title: Description
     description: The short description of the client.
     type: string
-
+    opencrypto-weight: 1
+  category:
+    title: Category
+    description: Category of the client.
+    type: string
+    enum:
+      - desktop
+      - mobile
+      - web
+      - hardware
+    opencrypto-weight: 1
+  type:
+    title: Type
+    description: Type of the client.
+    type: string
+    opencrypto-weight: 1
+ download:
+   title: Download
+   description: Client's URL download.
+   type: string
+   format: url
+   opencrypto-weight: 1
+   opencrypto-weight-if: root.type === 'desktop'
+ web:
+   $ref: 'https://schema.opencrypto.io/models/core#/definitions/links'
+   opencrypto-weight: 1
+   opencrypto-weight-if: root.type === 'web'
+ supported_os:
+   title: Supported OS
+   description: Operation system that supports the client.
+   type: array
+   items:
+     type: string
+   opencrypto-weight: 1
+   opencrypto-weight-if: root.type === 'desktop'
