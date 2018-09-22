@@ -1,2 +1,8 @@
-id: test
-
+id: neo-gui
+name: NEO-GUI
+description: 'Desktop client with complete blockchain data.'
+category: desktop
+type: wallet
+download: https://github.com/neo-project/neo-gui/releases
+supported_os:
+  - Windows
