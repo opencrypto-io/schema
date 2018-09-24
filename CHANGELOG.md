@@ -7,6 +7,7 @@
 
 * Added CHANGELOG.
 * models/all: Added model property `fa-icon` ([Font Awesome](https://fontawesome.com/cheatsheet) icon name).
+* models/client: Added `category`, `type`, `download`, `web`, `supported_os`.
 
 ---
 
