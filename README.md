@@ -4,7 +4,7 @@
 
 Schemas for structured cryptocurrency-related data in [JSON Schema](http://json-schema.org/) standard.
 
-We created this schema, because we need normalized way how to create, transfer and store data about crypto-assets and related ecosystem.
+We created this schema to unify the way for creation, transfer and storage of crypto-assets data and related ecosystems.
 
 Schema is divided to models by their purpose and it's designed to be easy to understand and to encompass all data properties that is needed.
 
