@@ -1,22 +1,24 @@
-# Opencrypto Schema v0.9-beta
+# Opencrypto Schema v0.9
 
 [![Build Status](https://travis-ci.org/opencrypto-io/schema.svg?branch=master)](https://travis-ci.org/opencrypto-io/schema)
 
-Schemas for structured cryptocurrency-related data in [JSON Schema](http://json-schema.org/) standart.
+Schemas for structured cryptocurrency-related data in [JSON Schema](http://json-schema.org/) standard.
 
-**WARNING: Schema is currently unreleased and in heavy development. If you have some suggestion, feel free to contact us via [Issues](https://github.com/opencrypto-io/schema/issues).**
+We created this schema to unify the way for creation, transfer and storage of crypto-assets data and related ecosystems.
 
-[Schema Explorer](https://schema.opencrypto.io/)
+Schema is divided to models by their purpose and it's designed to be easy to understand and to encompass all data properties that is needed.
 
-## Schemas
+[Changelog](/CHANGELOG.md) | [Schema Explorer](https://schema.opencrypto.io/)
+
+## Models Structure
 
 ```
-├── Core             
 └── Project
-    ├── Asset
+    ├── Ledger
     │   └── Network
     │       └── Block
     │           └── Transaction
+    ├── Asset
     ├── Client
     └── Exchange
         └── Market
@@ -25,14 +27,27 @@ Schemas for structured cryptocurrency-related data in [JSON Schema](http://json-
 ## Usage
 
 ### Hosted version (standalone)
-You can use web `schema.opencrypto.io` for fetching schemas, format:
+You can use hosted version `https://schema.opencrypto.io`:
 ```
-https://schema.opencrypto.io/<file>
+# One-file Bundle with schemas of all models
+https://schema.opencrypto.io/build/bundle.json
+
+# De-referenced version (ready for use)
+https://schema.opencrypto.io/build/deref/<schema>.json
+
+# Original version with references ($ref)
+https://schema.opencrypto.io/build/models/<schema>.json
+
+# Example for specific model
+https://schema.opencrypto.io/build/models/examples/<schema>.json
+
 ```
 
 For example:
-* https://schema.opencrypto.io/models/asset.json
-* https://schema.opencrypto.io/examples/models/asset.json
+* https://schema.opencrypto.io/build/bundle.json
+* https://schema.opencrypto.io/build/deref/project.json
+* https://schema.opencrypto.io/build/models/exchange.json
+* https://schema.opencrypto.io/build/examples/models/asset.json
 * ...
 
 ### Locally as Node.js or CommonJS module
@@ -54,6 +69,9 @@ var schemaModels = require('opencrypto-schema').models
 // or if you want only one specific schema:
 var assetSchema = require('opencrypto/models/asset')
 ```
+
+## Documentation
+* [How to build & test](/BUILDING.md)
 
 ## Licence
 MIT
