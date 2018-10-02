@@ -102,12 +102,16 @@ definitions:
           description: Name of the whitepaper.
           type: string
           opencrypto-weight: 1
+        file:
+          title: File
+          description: 'Whitepaper downloaded as a PDF file (in format whitepaper.pdf)'
+          type: string
+          opencrypto-weight: 1
         url:
           title: URL
           description: 'URL link to the whitepaper in .pdf format (format https://).'
           type: string
           format: url
-          opencrypto-weight: 1
   history:
     title: History
     description: 'History of the project, important events, happenings, facts.'
@@ -210,4 +214,3 @@ definitions:
           description: 'URL of the tool (format https://).'
           type: string
           format: url
-
