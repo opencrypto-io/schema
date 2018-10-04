@@ -1132,6 +1132,12 @@
                   "type": "string",
                   "opencrypto-weight": 1
                 },
+                "platform": {
+                  "title": "Platform",
+                  "description": "Platform used for the exchange.",
+                  "type": "string",
+                  "pattern": "^[a-z0-9-]+$"
+                },
                 "description": {
                   "title": "Description",
                   "description": "The short description of the exchange.",
@@ -1478,6 +1484,11 @@
               "description": "Client for digital asset. It can be full-node or thin client in form of wallet.",
               "fa-icon": "wallet",
               "type": "object",
+              "required": [
+                "name",
+                "id",
+                "web"
+              ],
               "properties": {
                 "id": {
                   "type": "string",
@@ -1494,12 +1505,238 @@
                 "name": {
                   "title": "Name",
                   "type": "string",
-                  "description": "Name of client."
+                  "description": "Name of the client.",
+                  "opencrypto-weight": 1
                 },
                 "description": {
                   "title": "Description",
                   "description": "The short description of the client.",
-                  "type": "string"
+                  "type": "string",
+                  "opencrypto-weight": 1
+                },
+                "web": {
+                  "title": "Web links",
+                  "description": "Webpages links.",
+                  "type": "array",
+                  "items": {
+                    "type": "string",
+                    "format": "url"
+                  }
+                },
+                "open_source": {
+                  "title": "Open Source",
+                  "description": "Indication if client source code is open-sourced.",
+                  "type": "boolean",
+                  "opencrypto-weight": 1
+                },
+                "type": {
+                  "title": "Type",
+                  "description": "Type of the client (light/full).",
+                  "type": "string",
+                  "enum": [
+                    "light",
+                    "full"
+                  ],
+                  "opencrypto-weight": 1
+                },
+                "platforms": {
+                  "title": "Platforms",
+                  "type": "array",
+                  "items": {
+                    "type": "string",
+                    "enum": [
+                      "windows",
+                      "linux",
+                      "mac-os",
+                      "ios",
+                      "android",
+                      "windows-mobile",
+                      "web"
+                    ]
+                  }
+                },
+                "interfaces": {
+                  "title": "Interfaces",
+                  "type": "array",
+                  "items": {
+                    "type": "string",
+                    "enum": [
+                      "desktop",
+                      "mobile",
+                      "cli",
+                      "api",
+                      "sdk",
+                      "hardware"
+                    ]
+                  },
+                  "opencrypto-weight": 1
+                },
+                "start_date": {
+                  "title": "Start Date",
+                  "description": "The day when the client was published.",
+                  "type": "string",
+                  "format": "date",
+                  "opencrypto-weight": 1
+                },
+                "download_url": {
+                  "title": "Download URL",
+                  "description": "Client's URL download.",
+                  "type": "string",
+                  "format": "url",
+                  "opencrypto-weight": 1
+                },
+                "history": {
+                  "title": "History",
+                  "description": "History of the project, important events, happenings, facts.",
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "date": {
+                        "title": "Date",
+                        "description": "The date of the event (format: YYYY-MM-DD).",
+                        "type": "string",
+                        "format": "date",
+                        "opencrypto-weight": 1
+                      },
+                      "date_approx": {
+                        "title": "Approximate date",
+                        "description": "Approximate date of the event, for example '2013' or '2013-01' or '2013-Q1'.",
+                        "type": "string",
+                        "pattern": "^[0-9]{4}(-Q[1-4]|-[0-9]{2}|)$"
+                      },
+                      "title": {
+                        "title": "Title",
+                        "description": "Title of the event.",
+                        "type": "string",
+                        "opencrypto-weight": 1
+                      },
+                      "description": {
+                        "title": "Description",
+                        "description": "The short description of the event.",
+                        "type": "string",
+                        "opencrypto-weight": 0.5
+                      },
+                      "url": {
+                        "title": "URL",
+                        "description": "URL of the link with event information (format https://).",
+                        "type": "string",
+                        "format": "url",
+                        "opencrypto-weight": 0.5
+                      }
+                    }
+                  }
+                },
+                "images": {
+                  "title": "Images",
+                  "desctiption": "Images of the logo.",
+                  "type": "object",
+                  "opencrypto-weight": 1,
+                  "opencrypto-generated": true,
+                  "properties": {
+                    "logo_square": {
+                      "type": "object",
+                      "properties": {
+                        "type": {
+                          "type": "string"
+                        },
+                        "data": {
+                          "type": "string",
+                          "media": {
+                            "binaryEncoding": "base64"
+                          }
+                        }
+                      }
+                    },
+                    "logo_full": {
+                      "type": "object",
+                      "properties": {
+                        "type": {
+                          "type": "string"
+                        },
+                        "data": {
+                          "type": "string",
+                          "media": {
+                            "binaryEncoding": "base64"
+                          }
+                        }
+                      }
+                    },
+                    "logo_black_white": {
+                      "type": "object",
+                      "properties": {
+                        "type": {
+                          "type": "string"
+                        },
+                        "data": {
+                          "type": "string",
+                          "media": {
+                            "binaryEncoding": "base64"
+                          }
+                        }
+                      }
+                    },
+                    "logo_alternative": {
+                      "type": "object",
+                      "properties": {
+                        "type": {
+                          "type": "string"
+                        },
+                        "data": {
+                          "type": "string",
+                          "media": {
+                            "binaryEncoding": "base64"
+                          }
+                        }
+                      }
+                    },
+                    "logo_square_text": {
+                      "type": "object",
+                      "properties": {
+                        "type": {
+                          "type": "string"
+                        },
+                        "data": {
+                          "type": "string",
+                          "media": {
+                            "binaryEncoding": "base64"
+                          }
+                        }
+                      }
+                    }
+                  }
+                },
+                "webids": {
+                  "title": "WebIDs",
+                  "description": "Webs related to the project.",
+                  "type": "object",
+                  "opencrypto-validation": "webid",
+                  "patternProperties": {
+                    "^[a-z0-9-]{2,20}(\\/[a-z0-9-]{2,20})?$": {
+                      "type": "string"
+                    }
+                  }
+                },
+                "resources": {
+                  "title": "Resources",
+                  "description": "Resources where other information about the project could be found.",
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "title": {
+                        "title": "Title",
+                        "description": "Name of the resources.",
+                        "type": "string"
+                      },
+                      "url": {
+                        "title": "URL",
+                        "description": "URL of the resources (format https://).",
+                        "type": "string",
+                        "format": "url"
+                      }
+                    }
+                  }
                 }
               }
             },
@@ -3513,6 +3750,11 @@
         "description": "Client for digital asset. It can be full-node or thin client in form of wallet.",
         "fa-icon": "wallet",
         "type": "object",
+        "required": [
+          "name",
+          "id",
+          "web"
+        ],
         "properties": {
           "id": {
             "type": "string",
@@ -3529,17 +3771,263 @@
           "name": {
             "title": "Name",
             "type": "string",
-            "description": "Name of client."
+            "description": "Name of the client.",
+            "opencrypto-weight": 1
           },
           "description": {
             "title": "Description",
             "description": "The short description of the client.",
-            "type": "string"
+            "type": "string",
+            "opencrypto-weight": 1
+          },
+          "web": {
+            "title": "Web links",
+            "description": "Webpages links.",
+            "type": "array",
+            "items": {
+              "type": "string",
+              "format": "url"
+            }
+          },
+          "open_source": {
+            "title": "Open Source",
+            "description": "Indication if client source code is open-sourced.",
+            "type": "boolean",
+            "opencrypto-weight": 1
+          },
+          "type": {
+            "title": "Type",
+            "description": "Type of the client (light/full).",
+            "type": "string",
+            "enum": [
+              "light",
+              "full"
+            ],
+            "opencrypto-weight": 1
+          },
+          "platforms": {
+            "title": "Platforms",
+            "type": "array",
+            "items": {
+              "type": "string",
+              "enum": [
+                "windows",
+                "linux",
+                "mac-os",
+                "ios",
+                "android",
+                "windows-mobile",
+                "web"
+              ]
+            }
+          },
+          "interfaces": {
+            "title": "Interfaces",
+            "type": "array",
+            "items": {
+              "type": "string",
+              "enum": [
+                "desktop",
+                "mobile",
+                "cli",
+                "api",
+                "sdk",
+                "hardware"
+              ]
+            },
+            "opencrypto-weight": 1
+          },
+          "start_date": {
+            "title": "Start Date",
+            "description": "The day when the client was published.",
+            "type": "string",
+            "format": "date",
+            "opencrypto-weight": 1
+          },
+          "download_url": {
+            "title": "Download URL",
+            "description": "Client's URL download.",
+            "type": "string",
+            "format": "url",
+            "opencrypto-weight": 1
+          },
+          "history": {
+            "title": "History",
+            "description": "History of the project, important events, happenings, facts.",
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "date": {
+                  "title": "Date",
+                  "description": "The date of the event (format: YYYY-MM-DD).",
+                  "type": "string",
+                  "format": "date",
+                  "opencrypto-weight": 1
+                },
+                "date_approx": {
+                  "title": "Approximate date",
+                  "description": "Approximate date of the event, for example '2013' or '2013-01' or '2013-Q1'.",
+                  "type": "string",
+                  "pattern": "^[0-9]{4}(-Q[1-4]|-[0-9]{2}|)$"
+                },
+                "title": {
+                  "title": "Title",
+                  "description": "Title of the event.",
+                  "type": "string",
+                  "opencrypto-weight": 1
+                },
+                "description": {
+                  "title": "Description",
+                  "description": "The short description of the event.",
+                  "type": "string",
+                  "opencrypto-weight": 0.5
+                },
+                "url": {
+                  "title": "URL",
+                  "description": "URL of the link with event information (format https://).",
+                  "type": "string",
+                  "format": "url",
+                  "opencrypto-weight": 0.5
+                }
+              }
+            }
+          },
+          "images": {
+            "title": "Images",
+            "desctiption": "Images of the logo.",
+            "type": "object",
+            "opencrypto-weight": 1,
+            "opencrypto-generated": true,
+            "properties": {
+              "logo_square": {
+                "type": "object",
+                "properties": {
+                  "type": {
+                    "type": "string"
+                  },
+                  "data": {
+                    "type": "string",
+                    "media": {
+                      "binaryEncoding": "base64"
+                    }
+                  }
+                }
+              },
+              "logo_full": {
+                "type": "object",
+                "properties": {
+                  "type": {
+                    "type": "string"
+                  },
+                  "data": {
+                    "type": "string",
+                    "media": {
+                      "binaryEncoding": "base64"
+                    }
+                  }
+                }
+              },
+              "logo_black_white": {
+                "type": "object",
+                "properties": {
+                  "type": {
+                    "type": "string"
+                  },
+                  "data": {
+                    "type": "string",
+                    "media": {
+                      "binaryEncoding": "base64"
+                    }
+                  }
+                }
+              },
+              "logo_alternative": {
+                "type": "object",
+                "properties": {
+                  "type": {
+                    "type": "string"
+                  },
+                  "data": {
+                    "type": "string",
+                    "media": {
+                      "binaryEncoding": "base64"
+                    }
+                  }
+                }
+              },
+              "logo_square_text": {
+                "type": "object",
+                "properties": {
+                  "type": {
+                    "type": "string"
+                  },
+                  "data": {
+                    "type": "string",
+                    "media": {
+                      "binaryEncoding": "base64"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "webids": {
+            "title": "WebIDs",
+            "description": "Webs related to the project.",
+            "type": "object",
+            "opencrypto-validation": "webid",
+            "patternProperties": {
+              "^[a-z0-9-]{2,20}(\\/[a-z0-9-]{2,20})?$": {
+                "type": "string"
+              }
+            }
+          },
+          "resources": {
+            "title": "Resources",
+            "description": "Resources where other information about the project could be found.",
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "title": {
+                  "title": "Title",
+                  "description": "Name of the resources.",
+                  "type": "string"
+                },
+                "url": {
+                  "title": "URL",
+                  "description": "URL of the resources (format https://).",
+                  "type": "string",
+                  "format": "url"
+                }
+              }
+            }
           }
         }
       },
       "example": {
-        "id": "test"
+        "id": "neon-wallet",
+        "name": "Neon Wallet",
+        "description": "An open source cross-platform light wallet for the NEO blockchain available on Windows, Mac OS, and Linux.",
+        "web": [
+          "http://neonwallet.com"
+        ],
+        "open_source": true,
+        "type": "light",
+        "platforms": [
+          "windows",
+          "mac-os",
+          "linux"
+        ],
+        "interfaces": [
+          "desktop"
+        ],
+        "download_url": "https://github.com/CityOfZion/neon-wallet/releases",
+        "start_date": "2017-07-31",
+        "webids": {
+          "github": "CityOfZion/neon-wallet"
+        }
       }
     },
     "exchange": {
@@ -3579,6 +4067,12 @@
             "description": "Name of the exchange.",
             "type": "string",
             "opencrypto-weight": 1
+          },
+          "platform": {
+            "title": "Platform",
+            "description": "Platform used for the exchange.",
+            "type": "string",
+            "pattern": "^[a-z0-9-]+$"
           },
           "description": {
             "title": "Description",
@@ -3916,6 +4410,7 @@
       "example": {
         "id": "bitfinex",
         "name": "Bitfinex",
+        "platform": "stellar",
         "countries": [
           "HK"
         ],

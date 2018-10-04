@@ -1,8 +1,17 @@
-id: neo-gui
-name: NEO-GUI
-description: 'Desktop client with complete blockchain data.'
-category: desktop
-type: wallet
-download: https://github.com/neo-project/neo-gui/releases
-supported_os:
-  - Windows
+id: neon-wallet
+name: Neon Wallet
+description: An open source cross-platform light wallet for the NEO blockchain available on Windows, Mac OS, and Linux.
+web:
+  - http://neonwallet.com
+open_source: true
+type: light
+platforms:
+  - windows
+  - mac-os
+  - linux
+interfaces:
+  - desktop
+download_url: https://github.com/CityOfZion/neon-wallet/releases
+start_date: '2017-07-31'
+webids:
+  github: CityOfZion/neon-wallet

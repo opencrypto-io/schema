@@ -11,7 +11,7 @@
     "build-append": "git add build",
     "build-web": "node build-web",
     "build-all": "npm run-script build && npm run-script build-web && cp -R build dist/build && cp -R examples dist/examples",
-    "test": "mocha && standard"
+    "test": "npm run-script build && mocha && standard"
   },
   "repository": {
     "type": "git",

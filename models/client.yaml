@@ -9,6 +9,7 @@ type: object
 required:
   - name
   - id
+  - web
 properties:
   id:
     type: string
@@ -30,37 +31,64 @@ properties:
     description: The short description of the client.
     type: string
     opencrypto-weight: 1
-  category:
-    title: Category
-    description: Category of the client.
-    type: string
-    enum:
-      - desktop
-      - mobile
-      - web
-      - hardware
+  web:
+    $ref: 'https://schema.opencrypto.io/models/core#/definitions/links'
+  open_source:
+    title: Open Source
+    description: Indication if client source code is open-sourced.
+    type: boolean
     opencrypto-weight: 1
   type:
     title: Type
-    description: Type of the client.
+    description: Type of the client (light/full).
     type: string
+    enum:
+      - light
+      - full
     opencrypto-weight: 1
- download:
-   title: Download
-   description: Client's URL download.
-   type: string
-   format: url
-   opencrypto-weight: 1
-   opencrypto-weight-if: root.type === 'desktop'
- web:
-   $ref: 'https://schema.opencrypto.io/models/core#/definitions/links'
-   opencrypto-weight: 1
-   opencrypto-weight-if: root.type === 'web'
- supported_os:
-   title: Supported OS
-   description: Operation system that supports the client.
-   type: array
-   items:
-     type: string
-   opencrypto-weight: 1
-   opencrypto-weight-if: root.type === 'desktop'
+  platforms:
+    title: Platforms
+    type: array
+    items:
+      type: string
+      enum:
+        - windows
+        - linux
+        - mac-os
+        - ios
+        - android
+        - windows-mobile
+        - web
+  interfaces:
+    title: Interfaces
+    type: array
+    items:
+      type: string
+      enum:
+        - desktop
+        - mobile
+        - cli
+        - api
+        - sdk
+        - hardware
+    opencrypto-weight: 1
+  start_date:
+    title: Start Date
+    description: The day when the client was published.
+    type: string
+    format: date
+    opencrypto-weight: 1
+  download_url:
+    title: Download URL
+    description: Client's URL download.
+    type: string
+    format: url
+    opencrypto-weight: 1
+  history:
+    $ref: 'https://schema.opencrypto.io/models/core#/definitions/history'
+  images:
+    $ref: 'https://schema.opencrypto.io/models/core#/definitions/images'
+  webids:
+    $ref: 'https://schema.opencrypto.io/models/core#/definitions/webids'
+  resources:
+    $ref: 'https://schema.opencrypto.io/models/core#/definitions/resources'
