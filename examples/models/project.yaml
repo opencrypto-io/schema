@@ -80,6 +80,7 @@ contacts:
   'location:node': 'London, United Kingdom'
 whitepapers:
   - title: 'Bitcoin: A Peer-to-Peer Electronic Cash System'
+    file: whitepaper.pdf
     url: 'https://bitcoin.org/bitcoin.pdf'
 tags:
   - freedom
@@ -117,4 +118,3 @@ exchanges:
     platform: ethereum:0x
     countries:
       - JP
-

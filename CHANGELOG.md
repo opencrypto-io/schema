@@ -8,6 +8,7 @@
 * Added CHANGELOG and BULDING docs.
 * models/all: Added model property `fa-icon` ([Font Awesome](https://fontawesome.com/cheatsheet) icon name).
 * models/exchange: Added `platform`.
+* models/core: Added `whitepapers.file`.
 
 ---
 
