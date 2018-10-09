@@ -129,12 +129,17 @@
             "type": "string",
             "opencrypto-weight": 1
           },
+          "file": {
+            "title": "File",
+            "description": "Whitepaper downloaded as a PDF file (in format whitepaper.pdf)",
+            "type": "string",
+            "opencrypto-weight": 1
+          },
           "url": {
             "title": "URL",
             "description": "URL link to the whitepaper in .pdf format (format https://).",
             "type": "string",
-            "format": "url",
-            "opencrypto-weight": 1
+            "format": "url"
           }
         }
       }

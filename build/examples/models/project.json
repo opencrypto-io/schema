@@ -121,6 +121,7 @@
   "whitepapers": [
     {
       "title": "Bitcoin: A Peer-to-Peer Electronic Cash System",
+      "file": "whitepaper.pdf",
       "url": "https://bitcoin.org/bitcoin.pdf"
     }
   ],
